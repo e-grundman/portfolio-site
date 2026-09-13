@@ -1,0 +1,15 @@
+---
+title: "Parcel zone optimizer"
+summary: "Place one, two, or three fulfillment nodes, then see what the zone distribution and the blended cost per package do in response."
+status: "live"
+route: "/labs/zone-optimizer"
+tags: ["parcel", "network design", "shipping cost"]
+dataProvenance: "Synthetic orders generated from public US Census ZCTA geography. Zone matrix generated from ZIP3 centroid distance against published ground zone bands. Rate table synthetic, produced by a stated formula. No carrier file, no employer data, no negotiated rate."
+publishedAt: "2026-09-12"
+---
+
+Parcel is priced on distance, and distance is priced in zones. A zone is a band of miles between where a package ships from and where it is going, running from zone 2 for a local delivery out to zone 8 for coast to coast. The rate table rises with weight, and it rises faster with zone, which is why where you put a building changes your shipping bill more than almost anything else you negotiate.
+
+The question this tool answers is the one a network planner actually faces. Given where your orders are going, how much does a second node buy you, and where should it be. The answer is rarely the city that feels obvious, because the goal is not to sit near your customers on a map. The goal is to move the most volume into the nearest zone bands, and those are two different objectives whenever demand is lumpy.
+
+Read the histogram before the dollar figures. A configuration that shifts weight from zones 6 and 7 into zones 3 and 4 is doing structural work, and the cost line is only the receipt for it.

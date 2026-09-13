@@ -1,0 +1,13 @@
+---
+title: "Dim weight break-even"
+summary: "The box size at which dimensional weight overtakes actual weight, and what a packaging change is worth across a real order profile."
+status: "planned"
+route: "/labs/dim-weight-break-even"
+tags: ["parcel", "packaging", "shipping cost"]
+dataProvenance: "Will use synthetic order and carton dimension data generated in this repository, plus published dimensional divisors. No carrier file and no employer data."
+publishedAt: "2026-09-12"
+---
+
+Carriers bill the greater of actual weight and dimensional weight, where dimensional weight is the carton volume divided by a published divisor. Past a certain box size the carrier stops charging you for what you shipped and starts charging you for the air around it, and most shippers cross that line without noticing, because the packaging decision is made by a different team than the one holding the transportation budget.
+
+This lab will take a synthetic order profile with carton dimensions, compute the billable weight both ways across the published divisors, and show where the break-even sits and what moving a product from a corrugated box to a poly mailer is worth per order.

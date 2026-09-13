@@ -1,0 +1,265 @@
+"use client";
+
+import { useMemo, useState } from "react";
+import { ConfigPicker } from "./config-picker";
+import { ZoneHistogram } from "./zone-histogram";
+import { compareConfigurations } from "@/lib/labs/zone-optimizer/model";
+import {
+  DEFAULT_ORDER_COUNT,
+  RESIDENTIAL_SHARE,
+  generateOrders,
+} from "@/lib/labs/zone-optimizer/orders";
+import { formatUsd } from "@/lib/format";
+
+const seriesDot = ["bg-series-1", "bg-series-2", "bg-series-3"];
+const seriesText = ["text-series-1", "text-series-2", "text-series-3"];
+
+type Preset = {
+  id: string;
+  label: string;
+  note: string;
+  configs: [string[], string[], string[]];
+};
+
+const presets: Preset[] = [
+  {
+    id: "center-out",
+    label: "Center out",
+    note: "One central node, then add coasts.",
+    configs: [
+      ["kansas-city-ks"],
+      ["edison-nj", "city-of-industry-ca"],
+      ["edison-nj", "dallas-tx", "city-of-industry-ca"],
+    ],
+  },
+  {
+    id: "east-first",
+    label: "East first",
+    note: "A Northeast node, then west, then south.",
+    configs: [
+      ["edison-nj"],
+      ["edison-nj", "las-vegas-nv"],
+      ["edison-nj", "las-vegas-nv", "atlanta-ga"],
+    ],
+  },
+  {
+    id: "cost-sites",
+    label: "Lower cost sites",
+    note: "Avoid the expensive metros and see what the zone map costs you.",
+    configs: [
+      ["indianapolis-in"],
+      ["allentown-pa", "salt-lake-city-ut"],
+      ["allentown-pa", "salt-lake-city-ut", "dallas-tx"],
+    ],
+  },
+];
+
+export function ZoneOptimizer() {
+  const [configs, setConfigs] = useState<[string[], string[], string[]]>(
+    presets[0].configs,
+  );
+
+  const orders = useMemo(() => generateOrders(DEFAULT_ORDER_COUNT), []);
+  const results = useMemo(
+    () => compareConfigurations(configs.filter((config) => config.length > 0), orders),
+    [configs, orders],
+  );
+
+  const setConfig = (index: number) => (nodeIds: string[]) => {
+    setConfigs((current) => {
+      const next = [...current] as [string[], string[], string[]];
+      next[index] = nodeIds;
+      return next;
+    });
+  };
+
+  const baseline = results[0];
+
+  return (
+    <div className="mt-10">
+      <div className="border-t border-rule pt-6">
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+          Presets
+        </p>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {presets.map((preset) => (
+            <button
+              key={preset.id}
+              type="button"
+              onClick={() => setConfigs(preset.configs)}
+              title={preset.note}
+              className="border border-rule px-3 py-1.5 font-mono text-xs uppercase tracking-[0.12em] text-muted transition-colors hover:border-accent hover:text-accent"
+            >
+              {preset.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-3">
+        {configs.map((nodeIds, index) => (
+          <ConfigPicker
+            key={index}
+            label={`Configuration ${String.fromCharCode(65 + index)}`}
+            seriesClass={seriesDot[index]}
+            nodeIds={nodeIds}
+            onChange={setConfig(index)}
+          />
+        ))}
+      </div>
+
+      <div className="mt-12 overflow-x-auto">
+        <table className="w-full border-collapse text-sm">
+          <caption className="sr-only">
+            Zone and cost results for each network configuration
+          </caption>
+          <thead>
+            <tr>
+              <th className="border-b border-rule py-2 pr-4 text-left font-mono text-xs uppercase tracking-[0.12em] text-muted">
+                Configuration
+              </th>
+              <th className="border-b border-rule py-2 pr-4 text-right font-mono text-xs uppercase tracking-[0.12em] text-muted">
+                Avg zone
+              </th>
+              <th className="border-b border-rule py-2 pr-4 text-right font-mono text-xs uppercase tracking-[0.12em] text-muted">
+                Cost per package
+              </th>
+              <th className="border-b border-rule py-2 pr-4 text-right font-mono text-xs uppercase tracking-[0.12em] text-muted">
+                Delta
+              </th>
+              <th className="border-b border-rule py-2 text-right font-mono text-xs uppercase tracking-[0.12em] text-muted">
+                Spend at {DEFAULT_ORDER_COUNT.toLocaleString("en-US")} orders
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {results.map((result, index) => (
+              <tr key={result.label}>
+                <td className="border-b border-rule py-3 pr-4">
+                  <span className="flex items-center gap-2">
+                    <span
+                      aria-hidden="true"
+                      className={`inline-block h-2 w-2 shrink-0 rounded-full ${seriesDot[index]}`}
+                    />
+                    {result.label}
+                  </span>
+                </td>
+                <td className="border-b border-rule py-3 pr-4 text-right font-mono">
+                  {result.averageZone.toFixed(2)}
+                </td>
+                <td className="border-b border-rule py-3 pr-4 text-right font-mono">
+                  {formatUsd(result.costPerPackage)}
+                </td>
+                <td
+                  className={`border-b border-rule py-3 pr-4 text-right font-mono ${
+                    index === 0 ? "text-muted" : seriesText[index]
+                  }`}
+                >
+                  {index === 0
+                    ? "baseline"
+                    : `${formatUsd(result.costPerPackageDelta)} (${(
+                        result.costPerPackagePctDelta * 100
+                      ).toFixed(1)}%)`}
+                </td>
+                <td className="border-b border-rule py-3 text-right font-mono">
+                  {formatUsd(result.totalCost, 0)}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {baseline && results.length > 1 && (
+        <p className="mt-6 max-w-xl leading-relaxed text-ink/85">
+          Against the baseline, the best configuration shown moves the average
+          zone from {baseline.averageZone.toFixed(2)} to{" "}
+          {Math.min(...results.map((r) => r.averageZone)).toFixed(2)} and takes{" "}
+          {formatUsd(
+            Math.abs(Math.min(...results.map((r) => r.costPerPackageDelta))),
+          )}{" "}
+          out of the average package. Across{" "}
+          {DEFAULT_ORDER_COUNT.toLocaleString("en-US")} orders that is{" "}
+          {formatUsd(
+            Math.max(...results.map((r) => r.annualSavingsAtOrderCount)),
+            0,
+          )}
+          , and the same percentage holds at any volume.
+        </p>
+      )}
+
+      <div className="mt-12 border-t border-rule pt-8">
+        <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+          Zone distribution
+        </h2>
+        <p className="mt-3 max-w-xl leading-relaxed text-muted">
+          Zone 2 is a local delivery and zone 8 is coast to coast. Moving weight
+          left on this chart is the whole game, because the rate table rises
+          with distance faster than it rises with anything else you control.
+        </p>
+        <div className="mt-8">
+          <ZoneHistogram results={results} />
+        </div>
+      </div>
+
+      <div className="mt-12 border-t border-rule pt-8">
+        <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+          Where the volume lands
+        </h2>
+        <div className="mt-6 grid gap-x-8 gap-y-6 sm:grid-cols-3">
+          {results.map((result, index) => (
+            <div key={result.label}>
+              <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.12em] text-muted">
+                <span
+                  aria-hidden="true"
+                  className={`inline-block h-2 w-2 shrink-0 rounded-full ${seriesDot[index]}`}
+                />
+                Configuration {String.fromCharCode(65 + index)}
+              </p>
+              <ul className="mt-3 space-y-2">
+                {result.assignments.map((assignment) => (
+                  <li key={assignment.node.id} className="text-sm">
+                    <span className="flex items-baseline justify-between gap-3">
+                      <span>
+                        {assignment.node.city}, {assignment.node.state}
+                      </span>
+                      <span className="font-mono text-xs text-muted">
+                        {(assignment.share * 100).toFixed(0)}% · zone{" "}
+                        {assignment.averageZone.toFixed(2)}
+                      </span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-12 border-t border-rule pt-8">
+        <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+          What the model assumes
+        </h2>
+        <ul className="mt-4 max-w-xl list-disc space-y-2 pl-5 leading-relaxed text-ink/85">
+          <li>
+            {DEFAULT_ORDER_COUNT.toLocaleString("en-US")} synthetic orders,
+            destinations drawn from public ZIP3 geography, weights lognormal with
+            a median near three pounds, {Math.round(RESIDENTIAL_SHARE * 100)}{" "}
+            percent residential.
+          </li>
+          <li>
+            Every order ships from the node that reaches it in the lowest zone.
+            Cost breaks a tie. Inventory placement, capacity, labor cost, and
+            inbound freight are all held constant, which is the assumption most
+            worth arguing with.
+          </li>
+          <li>
+            Rates are a synthetic list table with a synthetic fuel percentage and
+            a flat residential add. Dim weight is not modeled, so a bulky, light
+            product would see a different answer.
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
+}
