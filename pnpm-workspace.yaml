@@ -2,6 +2,10 @@
 # supplies sharp on its own builders, so we skip its native build locally.
 # pnpm 11 fails the install on an unresolved build script, so declare it here
 # rather than leaving it merely ignored.
+#
+# esbuild is vitest's transform step and does need its native binary, so it is
+# allowed rather than skipped.
 allowBuilds:
   sharp: false
   unrs-resolver: false
+  esbuild: true
