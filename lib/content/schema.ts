@@ -58,15 +58,15 @@ export const writingSchema = z.object({
   draft: z.boolean().optional().default(false),
 });
 
-export const labSchema = z.object({
+export const portfolioSchema = z.object({
   title: z.string().min(1),
   summary: z.string().min(1),
   status: z.enum(["live", "prototype", "planned"]),
-  /** Route the lab renders at. A planned lab points at its registry shell. */
-  route: z.string().startsWith("/labs/"),
+  /** Route the piece renders at. A planned one points at its registry shell. */
+  route: z.string().startsWith("/portfolio/"),
   tags: z.array(z.string().min(1)).min(1),
   /**
-   * Required on every lab. Nothing published here may originate from an
+   * Required on every entry. Nothing published here may originate from an
    * employer system, and saying where the data came from is how that stays
    * true under review.
    */
@@ -78,7 +78,7 @@ export const labSchema = z.object({
 export type Metric = z.infer<typeof metricSchema>;
 export type WorkFrontmatter = z.infer<typeof workSchema>;
 export type WritingFrontmatter = z.infer<typeof writingSchema>;
-export type LabFrontmatter = z.infer<typeof labSchema>;
+export type PortfolioFrontmatter = z.infer<typeof portfolioSchema>;
 
 /** Body headings a case study must carry, checked by pnpm content:check. */
 export const requiredWorkHeadings = [

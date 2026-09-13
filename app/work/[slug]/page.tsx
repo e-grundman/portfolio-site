@@ -4,11 +4,13 @@ import { notFound } from "next/navigation";
 import { Kicker } from "@/components/kicker";
 import { MetricList } from "@/components/metric";
 import { getWork, getWorkEntry } from "@/lib/content/loader";
+import { sections } from "@/lib/site";
 import { formatMonthYear } from "@/lib/format";
 
 type Params = { slug: string };
 
 export function generateStaticParams(): Params[] {
+  if (!sections.work) return [];
   return getWork().map((entry) => ({ slug: entry.slug }));
 }
 
@@ -32,6 +34,7 @@ export default async function WorkDetail({
   params: Promise<Params>;
 }) {
   const { slug } = await params;
+  if (!sections.work) notFound();
   const known = getWork().some((entry) => entry.slug === slug);
   if (!known) notFound();
 

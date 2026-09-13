@@ -3,15 +3,15 @@ import path from "node:path";
 import matter from "gray-matter";
 import { z } from "zod";
 import {
-  labSchema,
+  portfolioSchema,
   workSchema,
   writingSchema,
-  type LabFrontmatter,
+  type PortfolioFrontmatter,
   type WorkFrontmatter,
   type WritingFrontmatter,
 } from "./schema";
 
-export type ContentType = "work" | "writing" | "labs";
+export type ContentType = "work" | "writing" | "portfolio";
 
 export type Entry<T> = T & { slug: string };
 
@@ -21,7 +21,7 @@ const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const schemas = {
   work: workSchema,
   writing: writingSchema,
-  labs: labSchema,
+  portfolio: portfolioSchema,
 } satisfies Record<ContentType, z.ZodTypeAny>;
 
 function contentDir(type: ContentType): string {
@@ -106,12 +106,14 @@ export function getLocalWriting(): Entry<WritingFrontmatter>[] {
   return getWriting().filter((post) => !post.externalOnly);
 }
 
-export function getLabs(): Entry<LabFrontmatter>[] {
+export function getPortfolio(): Entry<PortfolioFrontmatter>[] {
   return visible(
-    listSlugs("labs").map((slug) => readFrontmatter("labs", slug, schemas.labs)),
+    listSlugs("portfolio").map((slug) =>
+      readFrontmatter("portfolio", slug, schemas.portfolio),
+    ),
   ).sort(byNewest);
 }
 
-export function getLabEntry(slug: string): Entry<LabFrontmatter> {
-  return readFrontmatter("labs", slug, schemas.labs);
+export function getPortfolioEntry(slug: string): Entry<PortfolioFrontmatter> {
+  return readFrontmatter("portfolio", slug, schemas.portfolio);
 }

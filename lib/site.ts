@@ -31,3 +31,24 @@ export const site = {
 } as const;
 
 export type ProfileKey = keyof typeof site.profiles;
+
+/**
+ * Which sections the site publishes.
+ *
+ * A disabled section keeps its routes and its loader in the repo but is absent
+ * from navigation, generates no pages, and is excluded from the sitemap. Turn
+ * one back on here and it returns with no other change.
+ *
+ * work: cut from navigation. The case studies stay in content/work so nothing
+ * written is lost.
+ * writing: held back until there are long form pieces worth a page of their
+ * own. The four LinkedIn posts that used to be indexed here were removed.
+ */
+export const sections = {
+  about: true,
+  portfolio: true,
+  work: false,
+  writing: false,
+} as const;
+
+export type SectionKey = keyof typeof sections;

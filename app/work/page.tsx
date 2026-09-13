@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { EntryRow } from "@/components/entry-row";
 import { Kicker } from "@/components/kicker";
 import { MetricFigure } from "@/components/metric";
+import { notFound } from "next/navigation";
 import { getWork } from "@/lib/content/loader";
+import { sections } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Work",
@@ -10,7 +12,12 @@ export const metadata: Metadata = {
     "Case studies in parcel transportation, ecommerce fulfillment, logistics billing, and data products.",
 };
 
+/**
+ * Cut from navigation. The case studies stay in content/work, and turning
+ * sections.work back on is the only step needed to publish them again.
+ */
 export default function WorkIndex() {
+  if (!sections.work) notFound();
   const work = getWork();
 
   return (

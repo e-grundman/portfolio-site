@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Kicker } from "@/components/kicker";
+import { notFound } from "next/navigation";
 import { getWriting } from "@/lib/content/loader";
+import { sections } from "@/lib/site";
 import { formatMonthYear } from "@/lib/format";
 
 export const metadata: Metadata = {
@@ -10,7 +12,12 @@ export const metadata: Metadata = {
     "Long form writing on parcel economics, carrier pricing, fulfillment operations, and building data products that change decisions.",
 };
 
+/**
+ * Held back until there are long form pieces worth a page of their own. The
+ * route stays so turning sections.writing back on is the only step required.
+ */
 export default function WritingIndex() {
+  if (!sections.writing) notFound();
   const posts = getWriting();
 
   return (

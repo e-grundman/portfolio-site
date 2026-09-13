@@ -20,15 +20,19 @@ Content is MDX on disk. Adding a case study, a post, or a lab is one file, with 
 
 | Directory | What it holds |
 |---|---|
-| `content/work/` | Case studies. Fixed frontmatter plus five required body sections. |
-| `content/writing/` | Long form posts. `externalOnly: true` indexes a piece published elsewhere and links out. |
-| `content/labs/` | Lab registry. Metadata, provenance, and the explainer body shown above each tool. |
+| `content/portfolio/` | Portfolio entries. Metadata, provenance, and the explainer body shown above each tool. |
+| `content/work/` | Case studies. Fixed frontmatter plus five required body sections. Section currently switched off. |
+| `content/writing/` | Long form posts. Section currently switched off, holding one draft template. |
+
+### Sections
+
+`sections` in `lib/site.ts` controls what the site publishes. A disabled section keeps its routes and its content in the repo, but is absent from navigation, generates no pages, and publishes no sitemap URLs. Work and Writing are off today. Switch one to `true` and it returns with no other change.
 
 Frontmatter schemas live in `lib/content/schema.ts`. `pnpm content:check` runs before every build and fails on an invalid file.
 
-## Labs
+## Portfolio
 
-| Lab | What it does |
+| Entry | What it does |
 |---|---|
 | Parcel zone optimizer | Takes a synthetic distribution of order destinations by ZIP3 and a set of candidate fulfillment nodes, then computes the zone distribution, average zone, and blended cost per package for each network configuration. |
 

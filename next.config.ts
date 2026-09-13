@@ -6,6 +6,15 @@ const nextConfig: NextConfig = {
   // in app/, so .mdx does not need to be a page extension. It is listed anyway
   // so that a future file-based MDX route does not require a config change.
   pageExtensions: ["ts", "tsx", "md", "mdx"],
+
+  // Labs was renamed to Portfolio after the section had already deployed.
+  // These keep the old URLs working for anything that linked them.
+  async redirects() {
+    return [
+      { source: "/labs", destination: "/portfolio", permanent: true },
+      { source: "/labs/:slug", destination: "/portfolio/:slug", permanent: true },
+    ];
+  },
 };
 
 const withMDX = createMDX({

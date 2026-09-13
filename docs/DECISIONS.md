@@ -2,6 +2,20 @@
 
 Architectural choices and the reasoning behind them. Newest first.
 
+## 2026-09-12, sections are a flag rather than a deletion
+
+**Decision.** `sections` in `lib/site.ts` controls which parts of the site publish. Work and Writing are off. Their routes, loaders, and schemas stay in the repo; a disabled section is absent from navigation, returns 404, generates no static params, and publishes no sitemap URLs.
+
+**Why.** Two different instructions arrived together: cut the Work tab, and erase the Writing tab. Cutting a tab is a navigation decision, not a reason to delete three written case studies, so `content/work` is intact and one flag brings it back. Writing was erased as asked: the four external LinkedIn entries are gone. What stays there is a single draft template, because the detail route resolves post bodies through a dynamic import and the bundler needs at least one file in the directory to resolve against. The template doubles as the schema example.
+
+**Cost accepted.** Routes exist for sections nobody can reach. That is the price of making the change reversible with one edit rather than a restore from git history.
+
+## 2026-09-12, Labs became Portfolio, URLs included
+
+**Decision.** The section renamed from Labs to Portfolio everywhere a reader sees it: navigation label, `/portfolio` routes, and the `content/portfolio` directory. Permanent redirects carry `/labs` and `/labs/:slug` to the new paths. Internal implementation directories still use the word lab, for example `lib/labs/zone-optimizer`.
+
+**Why.** A label that says Portfolio over URLs that say labs is the kind of drift that compounds. The rename went all the way through the content directory so that adding an entry matches what the section is called. The implementation directories were left alone because they name what the code is, an interactive model, and renaming them would have touched the model and its tests for no reader benefit.
+
 ## 2026-09-12, road circuity factor on the zone matrix
 
 **Decision.** Zone assignment uses great circle distance between ZIP3 centroids multiplied by 1.17, then the published ground distance bands.

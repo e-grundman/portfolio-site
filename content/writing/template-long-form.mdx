@@ -1,0 +1,26 @@
+---
+title: "Template: a long form piece"
+summary: "Copy this file, rename it, set draft to false, and it appears in the index. Kept as a draft so it never publishes."
+publishedAt: "2026-09-12"
+tags: ["template"]
+draft: true
+---
+
+## Why this file exists
+
+The writing section is switched off in `lib/site.ts` until there are long form
+pieces worth a page of their own. This file stays because the detail route
+resolves each post through a dynamic import against `content/writing`, and the
+bundler needs at least one file there to resolve against.
+
+It also documents the schema by example. Required frontmatter is title,
+summary, publishedAt, and tags. Optional fields are canonical for a piece first
+published elsewhere, externalOnly to index a piece and link out without
+generating a page here, and draft to keep it out of production.
+
+## How to publish the first real one
+
+Copy this file, rename it to the slug you want in the URL, write the body in
+markdown, and set draft to false. Then set `sections.writing` to true in
+`lib/site.ts`, which puts Writing back in the navigation and back in the
+sitemap. Nothing else needs to change.

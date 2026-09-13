@@ -9,15 +9,13 @@ export default function NotFound() {
         That page is not here.
       </h1>
       <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
-        The link is wrong, or the page moved. The work, the writing, and the labs
-        are all one click away.
+        The link is wrong, or the page moved. The about page and the portfolio
+        are both one click away.
       </p>
       <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs uppercase tracking-[0.15em]">
         {[
-          { href: "/work", label: "Work" },
-          { href: "/writing", label: "Writing" },
-          { href: "/labs", label: "Labs" },
-          { href: "/contact", label: "Contact" },
+          { href: "/about", label: "About" },
+          { href: "/portfolio", label: "Portfolio" },
         ].map((link) => (
           <li key={link.href}>
             <Link

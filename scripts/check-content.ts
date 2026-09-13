@@ -8,7 +8,7 @@
  *   3. lab routes point at a route the app can serve
  */
 import {
-  getLabEntry,
+  getPortfolioEntry,
   getWorkEntry,
   getWritingEntry,
   listSlugs,
@@ -49,13 +49,13 @@ for (const slug of listSlugs("writing")) {
   }
 }
 
-for (const slug of listSlugs("labs")) {
+for (const slug of listSlugs("portfolio")) {
   try {
-    const lab = getLabEntry(slug);
-    const expected = `/labs/${slug}`;
-    if (lab.route !== expected) {
+    const entry = getPortfolioEntry(slug);
+    const expected = `/portfolio/${slug}`;
+    if (entry.route !== expected) {
       problems.push(
-        `content/labs/${slug}.mdx: route is "${lab.route}" but the file name resolves to "${expected}"`,
+        `content/portfolio/${slug}.mdx: route is "${entry.route}" but the file name resolves to "${expected}"`,
       );
     }
   } catch (error) {
@@ -69,7 +69,7 @@ if (problems.length > 0) {
   process.exit(1);
 }
 
-const counts = (["work", "writing", "labs"] as const)
+const counts = (["work", "writing", "portfolio"] as const)
   .map((type) => `${listSlugs(type).length} ${type}`)
   .join(", ");
 console.log(`Content check passed: ${counts}.`);

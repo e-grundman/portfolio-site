@@ -2,28 +2,28 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ZoneOptimizer } from "@/components/labs/zone-optimizer/zone-optimizer";
 import { Kicker } from "@/components/kicker";
-import { getLabEntry } from "@/lib/content/loader";
+import { getPortfolioEntry } from "@/lib/content/loader";
 import { rateDataProvenance } from "@/lib/rates";
 import { zoneDataProvenance } from "@/lib/zones";
 import { orderDataProvenance } from "@/lib/labs/zone-optimizer/orders";
-import Explainer from "@/content/labs/zone-optimizer.mdx";
+import Explainer from "@/content/portfolio/zone-optimizer.mdx";
 
-const lab = getLabEntry("zone-optimizer");
+const entry = getPortfolioEntry("zone-optimizer");
 
 export const metadata: Metadata = {
-  title: lab.title,
-  description: lab.summary,
+  title: entry.title,
+  description: entry.summary,
 };
 
-export default function ZoneOptimizerLab() {
+export default function ZoneOptimizerPage() {
   return (
     <article className="border-t border-rule py-16">
-      <Kicker>Lab · {lab.status}</Kicker>
+      <Kicker>Interactive model</Kicker>
       <h1 className="font-serif text-4xl leading-tight tracking-tight">
-        {lab.title}
+        {entry.title}
       </h1>
       <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
-        {lab.summary}
+        {entry.summary}
       </p>
 
       <div className="mt-8 max-w-xl">
@@ -84,10 +84,10 @@ export default function ZoneOptimizerLab() {
 
       <p className="mt-12 border-t border-rule pt-8">
         <Link
-          href="/labs"
+          href="/portfolio"
           className="font-mono text-xs uppercase tracking-[0.15em] text-accent transition-opacity hover:opacity-70"
         >
-          ← All labs
+          ← Back to portfolio
         </Link>
       </p>
     </article>

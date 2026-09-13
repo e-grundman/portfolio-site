@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Kicker } from "@/components/kicker";
 import { getLocalWriting, getWritingEntry } from "@/lib/content/loader";
+import { sections } from "@/lib/site";
 import { formatLongDate } from "@/lib/format";
 
 type Params = { slug: string };
@@ -12,6 +13,7 @@ type Params = { slug: string };
  * linked out, so generating a page for it would create a thin duplicate.
  */
 export function generateStaticParams(): Params[] {
+  if (!sections.writing) return [];
   return getLocalWriting().map((post) => ({ slug: post.slug }));
 }
 
@@ -39,6 +41,7 @@ export default async function WritingDetail({
   params: Promise<Params>;
 }) {
   const { slug } = await params;
+  if (!sections.writing) notFound();
   const known = getLocalWriting().some((post) => post.slug === slug);
   if (!known) notFound();
 

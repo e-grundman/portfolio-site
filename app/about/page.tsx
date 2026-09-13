@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Kicker } from "@/components/kicker";
 import { ProfileLinks } from "@/components/profile-links";
 import { site } from "@/lib/site";
@@ -97,14 +96,28 @@ export default function About() {
         <ProfileLinks className="mt-6" withEmail />
       </div>
 
-      <p className="mt-14 border-t border-rule pt-8">
-        <Link
-          href="/contact"
-          className="font-mono text-xs uppercase tracking-[0.15em] text-accent transition-opacity hover:opacity-70"
-        >
-          Get in touch →
-        </Link>
-      </p>
+      <div className="mt-14 border-t border-rule pt-10">
+        <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+          Get in touch
+        </h2>
+        <p className="mt-4 max-w-xl leading-relaxed text-ink/85">
+          Two kinds of conversation reach me here. Senior product and AI product
+          builder roles at logistics, fulfillment, and ecommerce infrastructure
+          companies. Consulting engagements covering carrier contract audits, 3PL
+          RFP packages, and logistics billing dispute briefs. Say which one you
+          are starting and include the shape of the problem, because a specific
+          first message gets a specific answer.
+        </p>
+        <p className="mt-6">
+          <a
+            href={`mailto:${site.email}`}
+            aria-label={`Email ${site.name}`}
+            className="font-mono text-sm text-accent transition-opacity hover:opacity-70"
+          >
+            {site.email}
+          </a>
+        </p>
+      </div>
     </section>
   );
 }
