@@ -9,7 +9,9 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "content:check": "tsx scripts/check-content.ts",
-    "zones:generate": "tsx scripts/generate-zone-matrix.ts"
+    "zones:generate": "tsx scripts/generate-zone-matrix.ts",
+    "zones:centroids": "tsx scripts/generate-zip3-centroids.ts",
+    "rates:generate": "tsx scripts/generate-rate-table.ts"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
