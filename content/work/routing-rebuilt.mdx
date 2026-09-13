@@ -1,0 +1,39 @@
+---
+title: "Routing, rebuilt"
+summary: "A guaranteed delivery window was missing half the time. The fix was not more code, it was trading average transit times for percentiles and renegotiating the one fixed constraint the model was never allowed to touch."
+role: "Senior Product Manager, Shipping and Transportation"
+org: "ShipMonk"
+timeframe: "2024 to 2025"
+domains: ["parcel", "data", "ops"]
+constraint: "The delivery promise shown to the buyer at checkout was already made, so the network had to meet it rather than restate it."
+metrics:
+  - label: "on-time delivery"
+    before: "50%"
+    after: "90%"
+publishedAt: "2026-07-01"
+featured: true
+---
+
+## Situation
+
+A guaranteed delivery window was missing half the time. The fix was not more code. We traded average transit times for percentiles, then renegotiated one fixed constraint the model was never allowed to touch.
+
+The routing logic was not obviously broken. It selected the cheapest method that met the promised transit time, it used carrier published transit data, and it had been reviewed more than once. What it did was select against the average, which meant that roughly half of every lane it chose was expected to arrive late before a single package moved.
+
+## Constraint
+
+The promise shown to the buyer at checkout was fixed. Nobody was going to widen the delivery window to make the routing logic look better, because the window was a commercial commitment rather than an engineering input. That left two levers: which method the order routed to, and which facility it shipped from.
+
+## What I did
+
+The first change was statistical rather than operational. Selecting on average transit time means accepting a coin flip on every lane, so we moved the selection criterion to a high percentile of observed transit, lane by lane, using our own scan data rather than published carrier estimates. Published transit times describe what the carrier intends. Scan data describes what the carrier does, and the gap between those two is where the misses were living.
+
+The second change was to stop treating one constraint as fixed. The model had been built around an origin assignment rule that predated the current network, and that rule was quietly forcing long zone moves on a meaningful share of orders. Once the rule was open for negotiation rather than assumed, the same percentile logic had materially better options to choose from.
+
+## Result
+
+On-time delivery moved from roughly half to above ninety percent against the same promise, without widening the window and without a rewrite of the routing service. The change that mattered was the selection criterion, and the change that unlocked it was social rather than technical.
+
+## What I would do differently
+
+I would have questioned the fixed constraint first rather than last. The statistics work was correct and it was necessary, but it spent weeks optimizing inside a boundary that turned out to be movable in a single conversation. The lesson I now apply early: before tuning a model, list every input it is not allowed to change, then ask who owns each one.

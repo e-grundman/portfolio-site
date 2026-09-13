@@ -1,0 +1,38 @@
+---
+title: "Exceptions, automated"
+summary: "A package exception used to mean a person opening a case, chasing dead tracking, and deciding what to do. I shipped a production pipeline that detects the stall, decides the recovery, and acts on it."
+role: "Senior Product Manager, Shipping and Transportation"
+org: "ShipMonk"
+timeframe: "2025 to 2026"
+domains: ["parcel", "ai", "ops"]
+constraint: "No engineering team was assigned, so the system had to be built and operated by a product manager without becoming a thing only one person could run."
+metrics:
+  - label: "cases handled unattended"
+    value: "20,000+"
+publishedAt: "2026-06-01"
+featured: true
+---
+
+## Situation
+
+A package exception used to mean a person opening a case, chasing dead tracking, and deciding what to do. I shipped a production pipeline that detects the stall, decides the recovery, and acts on it. Built with AI-assisted development, shipped by a product manager, not a platform team.
+
+The work was real and it was repetitive. Someone watched tracking events that had stopped moving, decided whether the package was delayed, misrouted, damaged, or lost, then executed whatever the answer implied: a carrier claim, a reship, a refund, or a note to the merchant. The decision itself was not hard. Making it twenty thousand times was.
+
+## Constraint
+
+There was no engineering team assigned to this problem, and there was not going to be one. That set the real requirement, which was not automation so much as durability. Anything I built had to run without me, log why it decided what it decided, and be legible to the operations team that would inherit it.
+
+## What I did
+
+I modeled the exception lifecycle as a state machine over scan events rather than as a queue of tickets, because the underlying question is always the same: what has this package done recently, and what does its silence mean. Stall detection keys off expected scan latency per lane, which varies more than most people expect, so the thresholds are derived per lane rather than set globally.
+
+Recovery selection is a rules layer on top of that state, with a defined action per terminal state and a documented escalation path when confidence is low. Every decision writes its inputs and its reasoning to a record an operations lead can read without me. I built it with AI-assisted development, which is what made a system of this size tractable for one product manager, and I want to be precise about that claim: the leverage was in implementation speed, not in judgment. The domain model, the thresholds, and the escalation rules came from knowing the network.
+
+## Result
+
+Over twenty thousand cases handled unattended, with the remainder escalated deliberately rather than by default. The operations team moved from processing exceptions to auditing an exception system, which is a different and much smaller job.
+
+## What I would do differently
+
+I would build the audit view before the automation rather than after. The pipeline worked earlier than anyone trusted it, and the gap between working and trusted was entirely about visibility. A system that acts on its own has to explain itself on day one, not once someone asks.

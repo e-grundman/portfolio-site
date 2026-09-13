@@ -1,0 +1,40 @@
+---
+title: "The dashboard that changed nothing"
+summary: "I built an analytics dashboard I was convinced was brilliant. It changed no decisions. v2 forces the team to review each inefficiency, decide the action, and document it inside the tool."
+role: "Senior Product Manager, Shipping and Transportation"
+org: "ShipMonk"
+timeframe: "2025"
+domains: ["data", "ops", "fulfillment"]
+constraint: "The underlying analysis was already correct, so the failure could not be fixed with better numbers."
+metrics:
+  - label: "information to action"
+    before: "v1"
+    after: "v2"
+publishedAt: "2026-07-17"
+sourceUrl: "https://www.linkedin.com/posts/erich-grundman_i-built-a-dashboard-i-was-convinced-was-brilliant-share-7483844628367093760-DTiT/"
+featured: true
+---
+
+## Situation
+
+I built an analytics dashboard I was convinced was brilliant. It changed no decisions. v2 forces the team to review each inefficiency, decide the action, and document it inside the tool. The deliverable stopped being the summary and became the decision.
+
+Version one surfaced every shipping inefficiency in the network, correctly, with the cost of each one attached. It was accurate, it was fast, and people opened it. Nothing downstream of it moved.
+
+## Constraint
+
+The analysis was not wrong, so there was nothing to fix in the numbers. That ruled out the comfortable response, which is to add a metric, add a filter, or rebuild the chart. The failure was structural: the dashboard ended where the work began.
+
+## What I did
+
+Version two made the unit of work a decision rather than a view. Each surfaced inefficiency became a record with an owner, a required disposition, and a documented action, reviewed on a cadence inside the tool rather than in a meeting that referenced the tool. Dismissing an item is allowed, and it requires a reason, which turns out to be the most valuable field in the system because it is where the model learns which inefficiencies were never really inefficiencies.
+
+The chart did not get better. The workflow around it did.
+
+## Result
+
+The tool stopped being a display and started being a queue with a memory. Recurring items became visible as recurring, which is the thing a dashboard of point-in-time charts structurally cannot show, and the review cadence gave the operation a record of what it had decided and why.
+
+## What I would do differently
+
+I would ask the decision question before building anything: which decision does this change, who makes it, and what do they do differently on Monday. If a dashboard cannot answer that, more charts will not save it. I now treat that question as the acceptance criterion rather than as a retrospective.
