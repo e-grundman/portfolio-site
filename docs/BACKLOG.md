@@ -26,3 +26,7 @@ Deferred on purpose. Each line says why, so a future session does not relitigate
 | Site search | Not useful under roughly thirty content items. |
 | Case study PDF export for consulting prospects | Wait until a prospect asks. |
 | OG image generation per content item | `next/og` makes this cheap later. Not a Phase 1 blocker. |
+| Delivery area surcharge in the rate model | It is a real cost driver, but it does not vary with node placement, so adding it would raise every configuration by the same amount and dilute the comparison the lab exists to make. |
+| Order count and seed controls in the lab UI | The model already takes both as arguments. Exposing them is a UI decision worth making after watching someone use the tool. |
+| Real population weighting for demand | Census population by ZCTA now needs an API key. Revisit with a keyless public source. |
+| Transit time alongside zone | Zone drives both cost and transit, and showing days would make the service argument as well as the cost one. Needs a transit matrix with its own provenance. |

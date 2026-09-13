@@ -49,3 +49,15 @@ pnpm zones:generate  # regenerate the ZIP3 zone matrix from centroids and bands
 ## Docs
 
 `docs/PLAN.md` holds the Phase 1 plan, `docs/DECISIONS.md` the architectural choices and why, `docs/BACKLOG.md` what was deferred and the reason.
+
+## Deploy
+
+Vercel, connected to this repository, deploying `main` to production and every branch push to a preview.
+
+First time setup, if the project is not connected yet:
+
+1. Go to https://vercel.com/new and import `e-grundman/portfolio-site`.
+2. Leave the framework preset on Next.js and the root directory at the repo root. No environment variables are required.
+3. Deploy. Production follows `main` from then on.
+
+When a custom domain is added, set `NEXT_PUBLIC_SITE_URL` to it in the Vercel project so canonical URLs, Open Graph metadata, sitemap, and robots all follow. That variable is the only place the origin is configured.
