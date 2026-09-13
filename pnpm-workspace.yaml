@@ -1,0 +1,7 @@
+# sharp is Next.js image optimization. This app uses no next/image, and Vercel
+# supplies sharp on its own builders, so we skip its native build locally.
+# pnpm 11 fails the install on an unresolved build script, so declare it here
+# rather than leaving it merely ignored.
+allowBuilds:
+  sharp: false
+  unrs-resolver: false
