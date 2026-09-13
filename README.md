@@ -52,12 +52,8 @@ pnpm zones:generate  # regenerate the ZIP3 zone matrix from centroids and bands
 
 ## Deploy
 
-Vercel, connected to this repository, deploying `main` to production and every branch push to a preview.
+Live at https://portfolio-site-three-eta-12.vercel.app
 
-First time setup, if the project is not connected yet:
+Vercel is connected to this repository. A push to `main` deploys to production, and a push to any other branch creates a preview. Both paths are verified.
 
-1. Go to https://vercel.com/new and import `e-grundman/portfolio-site`.
-2. Leave the framework preset on Next.js and the root directory at the repo root. No environment variables are required.
-3. Deploy. Production follows `main` from then on.
-
-When a custom domain is added, set `NEXT_PUBLIC_SITE_URL` to it in the Vercel project so canonical URLs, Open Graph metadata, sitemap, and robots all follow. That variable is the only place the origin is configured.
+When a custom domain is added, set `NEXT_PUBLIC_SITE_URL` to it in the Vercel project so canonical URLs, Open Graph metadata, sitemap, and robots all follow. That variable is the only place the origin is configured, and changing it needs no code change.
