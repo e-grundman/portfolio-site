@@ -6,11 +6,13 @@
   --muted: #6b6862;
   --rule: #e4e1d9;
   --accent: #b5451f;
-  /* Series colors for comparing up to three network configurations. Kept to
-     three because a fourth would be decoration rather than information. */
+  /* Series colors for comparing up to three configurations. Kept to three
+     because a fourth would be decoration rather than information. Validated
+     for color vision deficiency against each mode's surface: the earlier teal
+     and violet pair was indistinguishable under deuteranopia. */
   --series-1: #b5451f;
-  --series-2: #2f6f78;
-  --series-3: #6b5a8a;
+  --series-2: #2a6fb0;
+  --series-3: #8a7a12;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,8 +23,8 @@
     --rule: #2a2926;
     --accent: #e86a3c;
     --series-1: #e86a3c;
-    --series-2: #59a7b1;
-    --series-3: #a08fc4;
+    --series-2: #4a8fdc;
+    --series-3: #a8922a;
   }
 }
 
