@@ -4,7 +4,7 @@
  * Sourced from the LinkedIn profile rework (About, 2026-09-13), so the site
  * and the profile make the same claims in the same numbers. No exact dollar
  * figures, by the same decision that governs the profile. "Millions in
- * savings" on the click to delivery row is Erich's call, made 2026-09-17.
+ * savings" on the ship to delivery row is Erich's call, made 2026-09-17.
  */
 export type Highlight = {
   figure: string;
@@ -15,15 +15,15 @@ export type Highlight = {
 export const highlights: Highlight[] = [
   {
     figure: "50%",
-    label: "Faster click to delivery, millions saved",
+    label: "Faster click to delivery, at no added cost",
     detail:
-      "Cut in six months for a top ecommerce brand, through method mix, carrier selection, and warehouse routing. The faster service cost nothing extra, and the program produced millions in savings for the brand.",
+      "Cut in six months for a top ecommerce brand, through method mix, carrier selection, and warehouse routing. The speed came without any increase in shipping cost.",
   },
   {
     figure: "25%",
-    label: "Faster ship to delivery",
+    label: "Faster ship to delivery, millions saved",
     detail:
-      "A customized shipping solution for a key merchant that also reduced transportation cost.",
+      "A customized shipping solution for a key merchant that also reduced transportation cost, producing millions in savings for the merchant.",
   },
   {
     figure: "20,000+",
