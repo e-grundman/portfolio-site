@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { sections } from "@/lib/site";
+import { sections, site } from "@/lib/site";
 
 /**
  * Navigation follows the section flags in lib/site.ts. A disabled section is
  * absent here and its routes generate nothing, so there is one switch rather
- * than two places to keep in agreement.
+ * than two places to keep in agreement. Profile links follow the sections and
+ * leave the site, so they carry the outbound arrow.
  */
 const links = [
   { href: "/about", label: "About", section: "about" },
@@ -42,6 +43,20 @@ export function SiteNav() {
             </li>
           );
         })}
+        {Object.entries(site.profiles).map(([key, profile]) => (
+          <li key={key}>
+            <a
+              href={profile.href}
+              aria-label={profile.accessibleLabel}
+              target="_blank"
+              rel="noopener noreferrer me"
+              className="transition-colors hover:text-accent"
+            >
+              {profile.label}
+              <span aria-hidden="true"> ↗</span>
+            </a>
+          </li>
+        ))}
       </ul>
     </nav>
   );

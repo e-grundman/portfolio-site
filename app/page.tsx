@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { EntryRow } from "@/components/entry-row";
 import { Kicker } from "@/components/kicker";
-import { ProfileLinks } from "@/components/profile-links";
 import { getPortfolio } from "@/lib/content/loader";
 import { site } from "@/lib/site";
 
@@ -30,7 +29,6 @@ export default function Home() {
             <p className="mt-3 text-lg leading-snug text-muted">
               {site.headline}
             </p>
-            <ProfileLinks className="mt-5" />
           </div>
         </div>
         <p className="mt-16 font-serif text-3xl leading-[1.15] tracking-tight sm:text-4xl">
