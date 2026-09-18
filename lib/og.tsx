@@ -43,10 +43,12 @@ async function loadHeadshot(): Promise<string> {
   return `data:image/jpeg;base64,${bytes.toString("base64")}`;
 }
 
+// Sized for the thumbnail, not the full image: LinkedIn shows the card at
+// under half scale, and 20 pixel mono text turned to noise at that size.
 const kicker = {
   fontFamily: "Geist Mono",
-  fontSize: 22,
-  letterSpacing: "0.14em",
+  fontSize: 32,
+  letterSpacing: "0.1em",
   textTransform: "uppercase" as const,
   color: color.muted,
 };
@@ -97,7 +99,7 @@ export async function renderHomeCard(headline: {
           />
           <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
             <div style={{ fontSize: 56, letterSpacing: "-0.01em" }}>{site.name}</div>
-            <div style={{ ...kicker, fontSize: 20 }}>{site.role}</div>
+            <div style={kicker}>{site.role}</div>
           </div>
         </div>
 
@@ -127,7 +129,7 @@ export async function renderHomeCard(headline: {
             paddingTop: 28,
           }}
         >
-          <div style={{ fontSize: 56, color: color.accent }}>{headline.figure}</div>
+          <div style={{ fontSize: 72, color: color.accent }}>{headline.figure}</div>
           <div style={{ ...kicker, color: color.ink }}>{headline.label}</div>
         </div>
       </Frame>
