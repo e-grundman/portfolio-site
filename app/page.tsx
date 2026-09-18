@@ -46,14 +46,13 @@ export default function Home() {
 
           <div className="p-4 sm:p-6">
             <p className="field-label text-xs text-muted">Contents</p>
-            {/* Erich writes this line and the paragraph under it. */}
+            {/* Erich's line, 2026-09-18. */}
             <p className="mt-2 max-w-2xl text-3xl leading-[1.15] font-semibold tracking-tight sm:text-4xl">
-              I turn operations into software, and better decisions.
+              I build products that help operators save time and money and make better decisions about their business.
             </p>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">
               I work at the intersection of parcel transportation, ecommerce
-              fulfillment, decision science, and applied AI. I find the hidden
-              variable, then build the system that acts on it.
+              fulfillment, decision science, and applied AI.
             </p>
             <p className="mt-6">
               <Link href="/about" className="field-label text-sm">

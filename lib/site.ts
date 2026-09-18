@@ -9,7 +9,7 @@ export const site = {
   role: "Senior Product Manager",
   headline: "Senior Product Manager | Ecommerce Fulfillment & Parcel Economics",
   headshot: "/headshot.jpg",
-  tagline: "Operations into software",
+  tagline: "Products for operators",
   description:
     "Senior product manager working where operations meet software: parcel transportation, ecommerce fulfillment, decision science, and applied AI.",
   // The custom domain, registered 2026-09-18. NEXT_PUBLIC_SITE_URL in the
