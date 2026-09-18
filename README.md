@@ -56,7 +56,7 @@ pnpm zones:generate  # regenerate the ZIP3 zone matrix from centroids and bands
 
 ## Deploy
 
-Live at https://portfolio-site-three-eta-12.vercel.app
+Live at https://erichgrundman.com
 
 Vercel is connected to this repository. A push to `main` deploys to production, and a push to any other branch creates a preview. Both paths are verified.
 

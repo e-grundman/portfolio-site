@@ -12,11 +12,10 @@ export const site = {
   tagline: "Operations into software",
   description:
     "Senior product manager working where operations meet software: parcel transportation, ecommerce fulfillment, decision science, and applied AI.",
-  // The live Vercel alias. Swap for the custom domain when it is registered,
-  // or override with NEXT_PUBLIC_SITE_URL in the Vercel project, which is the
-  // no deploy path. Used for canonical URLs, Open Graph metadata, sitemap,
-  // and robots.
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://portfolio-site-three-eta-12.vercel.app",
+  // The custom domain, registered 2026-09-18. NEXT_PUBLIC_SITE_URL in the
+  // Vercel project overrides it without a deploy. Used for canonical URLs,
+  // Open Graph metadata, sitemap, and robots.
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://erichgrundman.com",
   email: "e.grundman@gmail.com",
   profiles: {
     linkedin: {
