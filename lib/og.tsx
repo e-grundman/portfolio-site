@@ -54,16 +54,14 @@ async function loadFonts() {
   ];
 }
 
-/** The headshot in black and white, like everything else a thermal printer prints. */
+/** The headshot, in color, cropped square for the ship-to field. */
 async function loadHeadshot(): Promise<string> {
   const bytes = await readFile(join(process.cwd(), "public", site.headshot));
-  const gray = await sharp(bytes)
+  const square = await sharp(bytes)
     .resize(320, 320, { fit: "cover" })
-    .grayscale()
-    .linear(1.25, -20)
     .jpeg({ quality: 85 })
     .toBuffer();
-  return `data:image/jpeg;base64,${gray.toString("base64")}`;
+  return `data:image/jpeg;base64,${square.toString("base64")}`;
 }
 
 const fieldLabel = {

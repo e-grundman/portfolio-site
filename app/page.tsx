@@ -24,7 +24,7 @@ export default function Home() {
                 width={144}
                 height={144}
                 priority
-                className="h-28 w-28 shrink-0 border-2 border-line object-cover grayscale contrast-125 sm:h-36 sm:w-36"
+                className="h-28 w-28 shrink-0 border-2 border-line object-cover sm:h-36 sm:w-36"
               />
               <div>
                 <p className="field-label text-xs text-muted">Ship to</p>
