@@ -29,7 +29,7 @@ async function toJpeg(image: ImageResponse): Promise<Response> {
   });
 }
 
-const color = {
+export const color = {
   bg: "#fbfaf7",
   ink: "#1b1a17",
   muted: "#6b6862",
@@ -194,4 +194,42 @@ export async function renderEntryCard(entry: { title: string; summary: string })
     ),
     { ...ogSize, fonts },
   ));
+}
+
+/**
+ * The browser tab icon: an EG monogram in the display serif, paper on rust.
+ * Drawn heavier than the site's headlines because at 32 pixels a regular
+ * weight serif breaks up. PNG, since browsers expect it for icons.
+ */
+export async function renderIcon(px: number, rounded: boolean) {
+  const bold = await fontFile("newsreader", "newsreader-latin-600-normal.woff");
+
+  return new ImageResponse(
+    (
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          background: color.accent,
+          color: color.bg,
+          borderRadius: rounded ? px * 0.2 : 0,
+          fontFamily: "Newsreader",
+          fontSize: px * 0.62,
+          letterSpacing: "-0.04em",
+          lineHeight: 1,
+          paddingBottom: px * 0.06,
+        }}
+      >
+        EG
+      </div>
+    ),
+    {
+      width: px,
+      height: px,
+      fonts: [{ name: "Newsreader", data: bold, style: "normal", weight: 600 }],
+    },
+  );
 }
