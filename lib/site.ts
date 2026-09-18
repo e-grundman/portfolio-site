@@ -7,7 +7,7 @@
 export const site = {
   name: "Erich Grundman",
   role: "Senior Product Manager",
-  headline: "Senior Product Manager at ShipMonk",
+  headline: "Senior Product Manager | Ecommerce Fulfillment & Parcel Economics",
   headshot: "/headshot.jpg",
   tagline: "Operations into software",
   description:
