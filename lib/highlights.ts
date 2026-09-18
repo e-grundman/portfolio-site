@@ -1,6 +1,7 @@
 /**
- * Career highlights on the home page, ordered by weight: money, then the
- * software proof, then service results.
+ * Career highlights on the home page, ordered by weight: money, then scale,
+ * then the software proof, then service results. Six, so the two column grid
+ * closes evenly.
  *
  * Sourced from the resume and the LinkedIn profile rework. Dollar figures are
  * shown here by Erich's call on 2026-09-17, a deliberate difference from
@@ -18,6 +19,15 @@ export const highlights: Highlight[] = [
     label: "Annual carrier savings, delivered through 10 launches",
     detail:
       "6 new carriers, 3 expansions into new countries and warehouses, and 1 relaunch, all API integrations. Product lead on each, and on several the full launch: negotiation data and strategy, implementation, engineering requirements, and rollout.",
+  },
+  {
+    // A growth multiple rather than monthly volume, by Erich's call on
+    // 2026-09-18: the multiple tells the story without publishing how many
+    // orders the service line ships.
+    figure: "~9×",
+    label: "Hazmat order volume, 3 carriers to 6, same margin",
+    detail:
+      "Instrumental in overhauling the dangerous goods shipping program and the controls that keep it compliant. Monthly volume grew almost ninefold across twice the carriers, with margin percentage held and carrier violations sharply down.",
   },
   {
     figure: "4,000+",
