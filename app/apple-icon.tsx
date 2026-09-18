@@ -1,6 +1,6 @@
 import { renderIcon } from "@/lib/og";
 
-// iOS rounds the corners itself, so the square is drawn flat.
+// iOS rounds the corners itself, so the home screen icon has no frame.
 export const size = { width: 180, height: 180 };
 export const contentType = "image/png";
 

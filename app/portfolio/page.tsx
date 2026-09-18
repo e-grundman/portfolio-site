@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Kicker } from "@/components/kicker";
+import { PackageCard } from "@/components/package-card";
 import { getPortfolio } from "@/lib/content/loader";
 
 export const metadata: Metadata = {
@@ -21,9 +21,10 @@ export default function PortfolioIndex() {
   const entries = getPortfolio();
 
   return (
-    <section className="border-t border-rule py-16">
+    <section className="py-6">
       <Kicker>Portfolio</Kicker>
-      <h1 className="font-serif text-4xl leading-tight tracking-tight">
+      {/* Erich writes this title and intro. */}
+      <h1 className="headline text-5xl sm:text-6xl">
         The mechanics, made playable.
       </h1>
       <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
@@ -40,30 +41,21 @@ export default function PortfolioIndex() {
 
         return (
           <div key={status} className="mt-12">
-            <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+            <h2 className="field-label text-sm">
               {statusCopy[status]}
             </h2>
-            <div className="mt-4">
-              {group.map((entry) => (
-                <article
+            <div className="mt-4 grid gap-6">
+              {group.map((entry, index) => (
+                <PackageCard
                   key={entry.slug}
-                  className="group border-b border-rule py-6"
-                >
-                  <h3 className="font-serif text-2xl tracking-tight">
-                    <Link
-                      href={entry.route}
-                      className="transition-colors group-hover:text-accent"
-                    >
-                      {entry.title}
-                    </Link>
-                  </h3>
-                  <p className="mt-3 max-w-lg leading-relaxed text-muted">
-                    {entry.summary}
-                  </p>
-                  <p className="mt-3 font-mono text-xs uppercase tracking-[0.12em] text-muted">
-                    {entry.tags.join(" · ")}
-                  </p>
-                </article>
+                  href={entry.route}
+                  title={entry.title}
+                  summary={entry.summary}
+                  tags={entry.tags}
+                  index={index + 1}
+                  total={group.length}
+                  kind={status === "live" ? "Interactive model" : statusCopy[status]}
+                />
               ))}
             </div>
           </div>

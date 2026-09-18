@@ -11,7 +11,7 @@ export function MetricFigure({ metric }: { metric: Metric }) {
         {metric.before ? (
           <>
             {metric.before}
-            <span className="mx-1.5 text-accent" aria-hidden="true">
+            <span className="mx-1.5" aria-hidden="true">
               →
             </span>
             {metric.after}
@@ -25,7 +25,7 @@ export function MetricFigure({ metric }: { metric: Metric }) {
           </>
         )}
       </div>
-      <div className="mt-1 font-mono text-xs uppercase tracking-[0.12em] text-muted">
+      <div className="mt-1 field-label text-xs text-muted">
         {metric.label}
       </div>
     </div>

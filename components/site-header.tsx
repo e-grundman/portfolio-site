@@ -4,11 +4,8 @@ import { SiteNav } from "./site-nav";
 
 export function SiteHeader() {
   return (
-    <header className="flex flex-col gap-4 py-8 sm:flex-row sm:items-center sm:justify-between">
-      <Link
-        href="/"
-        className="font-serif text-lg tracking-tight transition-colors hover:text-accent"
-      >
+    <header className="mb-6 flex flex-col gap-3 border-b-2 border-line py-5 sm:flex-row sm:items-center sm:justify-between">
+      <Link href="/" className="headline text-2xl">
         {site.name}
       </Link>
       <SiteNav />

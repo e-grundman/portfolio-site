@@ -1,28 +1,43 @@
 @import "tailwindcss";
 
+/*
+ * The shipping label system. Thermal labels are black on white with heavy
+ * rules and condensed bold caps, and the only color on a dock is the safety
+ * yellow of tape and priority stickers. So: ink, paper, one hard line weight,
+ * and yellow used as a fill behind ink, never as text.
+ */
 :root {
-  --bg: #fbfaf7;
-  --ink: #1b1a17;
-  --muted: #6b6862;
-  --rule: #e4e1d9;
-  --accent: #b5451f;
-  /* Series colors for comparing up to three configurations. Kept to three
-     because a fourth would be decoration rather than information. Validated
-     for color vision deficiency against each mode's surface: the earlier teal
-     and violet pair was indistinguishable under deuteranopia. */
-  --series-1: #b5451f;
+  --bg: #eef0f0;
+  --panel: #ffffff;
+  --ink: #111111;
+  --muted: #5a5d5f;
+  --rule: #d5d8d9;
+  --line: #111111;
+  --highlight: #ffd100;
+  --on-highlight: #111111;
+  /* Interactive and emphasis text. Ink on this system, because yellow text on
+     white fails contrast; emphasis comes from weight and the yellow fill. */
+  --accent: #111111;
+  /* Series colors for comparing up to three configurations. Ink, blue, olive:
+     the blue and olive pair already passed the color vision deficiency check,
+     and ink separates from both on lightness alone. */
+  --series-1: #111111;
   --series-2: #2a6fb0;
   --series-3: #8a7a12;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #111110;
-    --ink: #edeae3;
-    --muted: #928d83;
-    --rule: #2a2926;
-    --accent: #e86a3c;
-    --series-1: #e86a3c;
+    --bg: #0c0c0c;
+    --panel: #171717;
+    --ink: #f1f1ef;
+    --muted: #a3a6a8;
+    --rule: #2c2e2f;
+    --line: #f1f1ef;
+    --highlight: #ffd100;
+    --on-highlight: #111111;
+    --accent: #f1f1ef;
+    --series-1: #f1f1ef;
     --series-2: #4a8fdc;
     --series-3: #a8922a;
   }
@@ -30,16 +45,44 @@
 
 @theme inline {
   --color-bg: var(--bg);
+  --color-panel: var(--panel);
   --color-ink: var(--ink);
   --color-muted: var(--muted);
   --color-rule: var(--rule);
+  --color-line: var(--line);
+  --color-highlight: var(--highlight);
+  --color-on-highlight: var(--on-highlight);
   --color-accent: var(--accent);
   --color-series-1: var(--series-1);
   --color-series-2: var(--series-2);
   --color-series-3: var(--series-3);
-  --font-serif: var(--font-newsreader), Georgia, serif;
-  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-sans: var(--font-archivo), "Arial Narrow", Arial, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+}
+
+/* Headlines: condensed heavy caps, the way a label prints the ship-to name. */
+@utility headline {
+  font-family: var(--font-archivo), "Arial Narrow", Arial, sans-serif;
+  font-stretch: 70%;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  line-height: 0.95;
+}
+
+/* Field names on a label: small, bold, condensed caps, no wide tracking. */
+@utility field-label {
+  font-family: var(--font-archivo), "Arial Narrow", Arial, sans-serif;
+  font-stretch: 80%;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* A bordered label panel. */
+@utility label-panel {
+  background: var(--panel);
+  border: 2px solid var(--line);
 }
 
 html {
@@ -54,7 +97,19 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* Every link gets the same hover: a strip of yellow tape behind the text. */
+a {
+  transition:
+    background-color 120ms ease,
+    color 120ms ease;
+}
+a:hover {
+  background-color: var(--highlight);
+  color: var(--on-highlight);
+  opacity: 1;
+}
+
 ::selection {
-  background: var(--accent);
-  color: var(--bg);
+  background: var(--highlight);
+  color: var(--on-highlight);
 }

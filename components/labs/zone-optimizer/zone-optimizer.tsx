@@ -83,8 +83,8 @@ export function ZoneOptimizer() {
 
   return (
     <div className="mt-10">
-      <div className="border-t border-rule pt-6">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+      <div className="border-t-2 border-line pt-6">
+        <p className="field-label text-sm">
           Presets
         </p>
         <div className="mt-3 flex flex-wrap gap-2">
@@ -94,7 +94,7 @@ export function ZoneOptimizer() {
               type="button"
               onClick={() => setConfigs(preset.configs)}
               title={preset.note}
-              className="border border-rule px-3 py-1.5 font-mono text-xs uppercase tracking-[0.12em] text-muted transition-colors hover:border-accent hover:text-accent"
+              className="border-2 border-line px-3 py-1.5 field-label text-xs hover:bg-highlight hover:text-on-highlight"
             >
               {preset.label}
             </button>
@@ -121,19 +121,19 @@ export function ZoneOptimizer() {
           </caption>
           <thead>
             <tr>
-              <th className="border-b border-rule py-2 pr-4 text-left font-mono text-xs uppercase tracking-[0.12em] text-muted">
+              <th className="border-b border-rule py-2 pr-4 text-left field-label text-xs text-muted">
                 Configuration
               </th>
-              <th className="border-b border-rule py-2 pr-4 text-right font-mono text-xs uppercase tracking-[0.12em] text-muted">
+              <th className="border-b border-rule py-2 pr-4 text-right field-label text-xs text-muted">
                 Avg zone
               </th>
-              <th className="border-b border-rule py-2 pr-4 text-right font-mono text-xs uppercase tracking-[0.12em] text-muted">
+              <th className="border-b border-rule py-2 pr-4 text-right field-label text-xs text-muted">
                 Cost per package
               </th>
-              <th className="border-b border-rule py-2 pr-4 text-right font-mono text-xs uppercase tracking-[0.12em] text-muted">
+              <th className="border-b border-rule py-2 pr-4 text-right field-label text-xs text-muted">
                 Delta
               </th>
-              <th className="border-b border-rule py-2 text-right font-mono text-xs uppercase tracking-[0.12em] text-muted">
+              <th className="border-b border-rule py-2 text-right field-label text-xs text-muted">
                 Spend at {DEFAULT_ORDER_COUNT.toLocaleString("en-US")} orders
               </th>
             </tr>
@@ -145,7 +145,7 @@ export function ZoneOptimizer() {
                   <span className="flex items-center gap-2">
                     <span
                       aria-hidden="true"
-                      className={`inline-block h-2 w-2 shrink-0 rounded-full ${seriesDot[index]}`}
+                      className={`inline-block h-2.5 w-2.5 shrink-0 outline outline-1 outline-line ${seriesDot[index]}`}
                     />
                     {result.label}
                   </span>
@@ -196,8 +196,8 @@ export function ZoneOptimizer() {
         </p>
       )}
 
-      <div className="mt-12 border-t border-rule pt-8">
-        <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+      <div className="mt-12 border-t-2 border-line pt-8">
+        <h2 className="field-label text-sm">
           Zone distribution
         </h2>
         <p className="mt-3 max-w-xl leading-relaxed text-muted">
@@ -210,17 +210,17 @@ export function ZoneOptimizer() {
         </div>
       </div>
 
-      <div className="mt-12 border-t border-rule pt-8">
-        <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+      <div className="mt-12 border-t-2 border-line pt-8">
+        <h2 className="field-label text-sm">
           Where the volume lands
         </h2>
         <div className="mt-6 grid gap-x-8 gap-y-6 sm:grid-cols-3">
           {results.map((result, index) => (
             <div key={result.label}>
-              <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.12em] text-muted">
+              <p className="flex items-center gap-2 field-label text-xs text-muted">
                 <span
                   aria-hidden="true"
-                  className={`inline-block h-2 w-2 shrink-0 rounded-full ${seriesDot[index]}`}
+                  className={`inline-block h-2.5 w-2.5 shrink-0 outline outline-1 outline-line ${seriesDot[index]}`}
                 />
                 Configuration {String.fromCharCode(65 + index)}
               </p>
@@ -244,8 +244,8 @@ export function ZoneOptimizer() {
         </div>
       </div>
 
-      <div className="mt-12 border-t border-rule pt-8">
-        <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+      <div className="mt-12 border-t-2 border-line pt-8">
+        <h2 className="field-label text-sm">
           What the model assumes
         </h2>
         <ul className="mt-4 max-w-xl list-disc space-y-2 pl-5 leading-relaxed text-ink/85">

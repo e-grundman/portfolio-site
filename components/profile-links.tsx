@@ -21,7 +21,7 @@ export function ProfileLinks({
             aria-label={profile.accessibleLabel}
             target="_blank"
             rel="noopener noreferrer me"
-            className="font-mono text-xs uppercase tracking-[0.15em] text-muted transition-colors hover:text-accent"
+            className="field-label text-sm"
           >
             {profile.label}
             <span aria-hidden="true"> ↗</span>
@@ -33,7 +33,7 @@ export function ProfileLinks({
           <a
             href={`mailto:${site.email}`}
             aria-label={`Email ${site.name}`}
-            className="font-mono text-xs tracking-[0.05em] text-muted transition-colors hover:text-accent"
+            className="font-mono text-sm"
           >
             {site.email}
           </a>

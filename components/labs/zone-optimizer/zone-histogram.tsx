@@ -29,9 +29,9 @@ export function ZoneHistogram({
           <div key={result.label} className="flex items-center gap-2">
             <span
               aria-hidden="true"
-              className={`inline-block h-2 w-2 rounded-full ${seriesBar[index]}`}
+              className={`inline-block h-2.5 w-2.5 shrink-0 outline outline-1 outline-line ${seriesBar[index]}`}
             />
-            <span className="font-mono text-xs uppercase tracking-[0.12em] text-muted">
+            <span className="field-label text-sm">
               {result.label}
             </span>
           </div>
@@ -47,7 +47,7 @@ export function ZoneHistogram({
             <tr key={zone} className="align-middle">
               <th
                 scope="row"
-                className="w-16 pr-3 pb-3 text-left font-mono text-xs uppercase tracking-[0.12em] text-muted"
+                className="w-16 pr-3 pb-3 text-left field-label text-xs text-muted"
               >
                 Zone {zone}
               </th>

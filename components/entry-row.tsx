@@ -18,11 +18,11 @@ export function EntryRow({
   external?: boolean;
 }) {
   const heading = (
-    <span className="font-serif text-2xl tracking-tight transition-colors group-hover:text-accent">
+    <span className="headline text-2xl tracking-tight">
       {title}
       {external && (
         <span
-          className="ml-2 inline-block font-mono text-sm text-muted transition-colors group-hover:text-accent"
+          className="ml-2 inline-block font-mono text-sm text-muted"
           aria-hidden="true"
         >
           ↗

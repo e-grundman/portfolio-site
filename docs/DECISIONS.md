@@ -2,6 +2,14 @@
 
 Architectural choices and the reasoning behind them. Newest first.
 
+## 2026-09-18, shipping label design system
+
+**Decision.** The editorial look (cream paper, rust accent, Newsreader serif, tracked mono micro labels, an italic accent word, a thin rule between every section) is replaced by a shipping label system: paper and ink, one heavy line weight, Archivo condensed bold caps for headlines and field names, IBM Plex Mono for figures, and safety yellow used only as a fill behind ink. The home page is a label: ship to, an SR PM priority box, a barcode, and a contents field. Highlights are label fields, portfolio pieces are package cards, and share cards and the icon follow the same system.
+
+**Why.** Erich's read was that the site looked Claude built, and he was right: the palette sat close to Claude's own brand, and the serif plus tracked mono pairing is the house style of AI built portfolios. A label is specific to the field he works in, which a template is not.
+
+**Kept.** Series colors keep the blue and olive pair that passed the color vision deficiency check; series one moves from rust to ink, which separates from both on lightness. The barcode is decorative, derived from a string, and hidden from assistive technology.
+
 ## 2026-09-18, synthetic rate table halved, labs lead with percentages
 
 **Decision.** Every coefficient in the synthetic ground table and the residential add was halved, which puts the table at roughly half of list. Both labs now lead with the percentage change and show the dollar figure second, labeled as illustration.

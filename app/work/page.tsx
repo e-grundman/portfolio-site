@@ -21,9 +21,9 @@ export default function WorkIndex() {
   const work = getWork();
 
   return (
-    <section className="border-t border-rule py-16">
+    <section className="py-6">
       <Kicker>Work</Kicker>
-      <h1 className="font-serif text-4xl leading-tight tracking-tight">
+      <h1 className="headline text-5xl sm:text-6xl">
         Problems nobody had untangled yet.
       </h1>
       <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">

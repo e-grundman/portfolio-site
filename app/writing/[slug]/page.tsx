@@ -49,9 +49,9 @@ export default async function WritingDetail({
   const { default: Body } = await import(`@/content/writing/${slug}.mdx`);
 
   return (
-    <article className="border-t border-rule py-16">
+    <article className="py-6">
       <Kicker>{formatLongDate(post.publishedAt)}</Kicker>
-      <h1 className="font-serif text-4xl leading-tight tracking-tight">
+      <h1 className="headline text-5xl sm:text-6xl">
         {post.title}
       </h1>
       <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
@@ -60,10 +60,10 @@ export default async function WritingDetail({
       <div className="mt-10 max-w-xl">
         <Body />
       </div>
-      <p className="mt-12 border-t border-rule pt-8">
+      <p className="mt-12 border-t-2 border-line pt-8">
         <Link
           href="/writing"
-          className="font-mono text-xs uppercase tracking-[0.15em] text-accent transition-opacity hover:opacity-70"
+          className="field-label text-xs"
         >
           ← All writing
         </Link>

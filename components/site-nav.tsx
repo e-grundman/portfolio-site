@@ -23,7 +23,7 @@ export function SiteNav() {
 
   return (
     <nav aria-label="Primary">
-      <ul className="flex flex-wrap gap-x-6 gap-y-1 font-mono text-xs uppercase tracking-[0.15em] text-muted">
+      <ul className="flex flex-wrap gap-x-5 gap-y-1 field-label text-sm">
         {visible.map((link) => {
           const active =
             pathname === link.href || pathname.startsWith(`${link.href}/`);
@@ -33,9 +33,7 @@ export function SiteNav() {
                 href={link.href}
                 aria-current={active ? "page" : undefined}
                 className={
-                  active
-                    ? "text-ink underline decoration-accent decoration-2 underline-offset-[6px]"
-                    : "transition-colors hover:text-accent"
+                  active ? "bg-line px-1 text-panel" : "px-1"
                 }
               >
                 {link.label}
@@ -50,7 +48,7 @@ export function SiteNav() {
               aria-label={profile.accessibleLabel}
               target="_blank"
               rel="noopener noreferrer me"
-              className="transition-colors hover:text-accent"
+              className="px-1 text-muted"
             >
               {profile.label}
               <span aria-hidden="true"> ↗</span>

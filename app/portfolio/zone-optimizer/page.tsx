@@ -18,9 +18,9 @@ export const metadata: Metadata = {
 
 export default function ZoneOptimizerPage() {
   return (
-    <article className="border-t border-rule py-16">
+    <article className="py-6">
       <Kicker>Interactive model</Kicker>
-      <h1 className="font-serif text-4xl leading-tight tracking-tight">
+      <h1 className="headline text-5xl sm:text-6xl">
         {entry.title}
       </h1>
       <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
@@ -30,7 +30,7 @@ export default function ZoneOptimizerPage() {
       <p className="mt-6">
         <a
           href="#how-it-works"
-          className="font-mono text-xs uppercase tracking-[0.15em] text-accent transition-opacity hover:opacity-70"
+          className="field-label text-xs"
         >
           How the model works ↓
         </a>
@@ -38,12 +38,12 @@ export default function ZoneOptimizerPage() {
 
       {/* The tool leads and gets more width than the reading column, so the
           tables and charts are not squeezed on a laptop screen. */}
-      <div className="lg:-mx-16 xl:-mx-32">
+      <div className="xl:-mx-24">
         <ZoneOptimizer />
       </div>
 
-      <div id="how-it-works" className="mt-12 scroll-mt-8 border-t border-rule pt-8">
-        <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+      <div id="how-it-works" className="mt-12 scroll-mt-8 border-t-2 border-line pt-8">
+        <h2 className="field-label text-sm">
           How it works
         </h2>
         <div className="mt-6 max-w-xl">
@@ -51,13 +51,13 @@ export default function ZoneOptimizerPage() {
         </div>
       </div>
 
-      <div className="mt-12 border-t border-rule pt-8">
-        <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+      <div className="mt-12 border-t-2 border-line pt-8">
+        <h2 className="field-label text-sm">
           Data provenance
         </h2>
         <dl className="mt-4 max-w-xl space-y-4 leading-relaxed text-ink/85">
           <div>
-            <dt className="font-mono text-xs uppercase tracking-[0.12em] text-muted">
+            <dt className="field-label text-sm">
               Orders
             </dt>
             <dd className="mt-1">
@@ -66,7 +66,7 @@ export default function ZoneOptimizerPage() {
             </dd>
           </div>
           <div>
-            <dt className="font-mono text-xs uppercase tracking-[0.12em] text-muted">
+            <dt className="field-label text-sm">
               Zones
             </dt>
             <dd className="mt-1">
@@ -76,7 +76,7 @@ export default function ZoneOptimizerPage() {
             </dd>
           </div>
           <div>
-            <dt className="font-mono text-xs uppercase tracking-[0.12em] text-muted">
+            <dt className="field-label text-sm">
               Rates
             </dt>
             <dd className="mt-1">
@@ -93,7 +93,7 @@ export default function ZoneOptimizerPage() {
             href="https://github.com/e-grundman/portfolio-site"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-accent underline decoration-rule underline-offset-4 transition-colors hover:decoration-accent"
+            className="underline decoration-highlight decoration-[3px] underline-offset-2"
           >
             GitHub
           </a>
@@ -101,10 +101,10 @@ export default function ZoneOptimizerPage() {
         </p>
       </div>
 
-      <p className="mt-12 border-t border-rule pt-8">
+      <p className="mt-12 border-t-2 border-line pt-8">
         <Link
           href="/portfolio"
-          className="font-mono text-xs uppercase tracking-[0.15em] text-accent transition-opacity hover:opacity-70"
+          className="field-label text-xs"
         >
           ← Back to portfolio
         </Link>

@@ -18,13 +18,13 @@ export function ConfigPicker({
   const available = candidateNodes.filter((node) => !nodeIds.includes(node.id));
 
   return (
-    <div className="border-t border-rule pt-4">
+    <div className="border-t-2 border-line pt-4">
       <div className="flex items-baseline gap-2">
         <span
           aria-hidden="true"
-          className={`inline-block h-2 w-2 shrink-0 rounded-full ${seriesClass}`}
+          className={`inline-block h-2.5 w-2.5 shrink-0 outline outline-1 outline-line ${seriesClass}`}
         />
-        <h3 className="font-mono text-xs uppercase tracking-[0.15em] text-muted">
+        <h3 className="field-label text-sm">
           {label}
         </h3>
       </div>
@@ -44,7 +44,7 @@ export function ConfigPicker({
               <button
                 type="button"
                 onClick={() => onChange(nodeIds.filter((kept) => kept !== id))}
-                className="font-mono text-xs uppercase tracking-[0.12em] text-muted transition-colors hover:text-accent"
+                className="field-label text-xs text-muted"
                 aria-label={`Remove ${node.city} from ${label}`}
               >
                 Remove

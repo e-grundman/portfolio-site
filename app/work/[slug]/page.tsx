@@ -42,11 +42,11 @@ export default async function WorkDetail({
   const { default: Body } = await import(`@/content/work/${slug}.mdx`);
 
   return (
-    <article className="border-t border-rule py-16">
+    <article className="py-6">
       <Kicker>
         {entry.role} · {entry.org} · {entry.timeframe}
       </Kicker>
-      <h1 className="font-serif text-4xl leading-tight tracking-tight">
+      <h1 className="headline text-5xl sm:text-6xl">
         {entry.title}
       </h1>
       <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
@@ -57,11 +57,11 @@ export default async function WorkDetail({
         <MetricList metrics={entry.metrics} />
       </div>
 
-      <div className="mt-10 border-l-2 border-accent pl-5">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+      <div className="mt-10 border-l-4 border-highlight pl-5">
+        <p className="field-label text-sm">
           The fixed constraint
         </p>
-        <p className="mt-2 max-w-xl font-serif text-lg leading-relaxed">
+        <p className="mt-2 max-w-xl headline text-lg leading-relaxed">
           {entry.constraint}
         </p>
       </div>
@@ -71,13 +71,13 @@ export default async function WorkDetail({
       </div>
 
       {entry.sourceUrl && (
-        <p className="mt-12 font-mono text-xs uppercase tracking-[0.15em] text-muted">
+        <p className="mt-12 field-label text-xs text-muted">
           First published{" "}
           <a
             href={entry.sourceUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-accent transition-opacity hover:opacity-70"
+            className="underline decoration-highlight decoration-[3px] underline-offset-2"
           >
             on LinkedIn ↗
           </a>{" "}
@@ -85,10 +85,10 @@ export default async function WorkDetail({
         </p>
       )}
 
-      <p className="mt-12 border-t border-rule pt-8">
+      <p className="mt-12 border-t-2 border-line pt-8">
         <Link
           href="/work"
-          className="font-mono text-xs uppercase tracking-[0.15em] text-accent transition-opacity hover:opacity-70"
+          className="field-label text-xs"
         >
           ← All work
         </Link>

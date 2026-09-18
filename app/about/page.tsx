@@ -12,9 +12,9 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <section className="border-t border-rule py-16">
+    <section className="py-6">
       <Kicker>About</Kicker>
-      <h1 className="font-serif text-4xl leading-tight tracking-tight">
+      <h1 className="headline text-5xl sm:text-6xl">
         I learned the network from the floor up.
       </h1>
 
@@ -46,8 +46,8 @@ export default function About() {
         </p>
       </div>
 
-      <div className="mt-14 border-t border-rule pt-10">
-        <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+      <div className="mt-14 border-t-2 border-line pt-10">
+        <h2 className="field-label text-sm">
           What I work on
         </h2>
         <div className="mt-6 max-w-xl space-y-5 leading-relaxed text-ink/85">
@@ -76,8 +76,8 @@ export default function About() {
         </div>
       </div>
 
-      <div className="mt-14 border-t border-rule pt-10">
-        <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+      <div className="mt-14 border-t-2 border-line pt-10">
+        <h2 className="field-label text-sm">
           Off the clock
         </h2>
         <div className="mt-6 max-w-xl space-y-5 leading-relaxed text-ink/85">
@@ -98,8 +98,8 @@ export default function About() {
         </div>
       </div>
 
-      <div className="mt-14 border-t border-rule pt-10">
-        <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+      <div className="mt-14 border-t-2 border-line pt-10">
+        <h2 className="field-label text-sm">
           Elsewhere
         </h2>
         <p className="mt-4 max-w-xl leading-relaxed text-ink/85">
@@ -109,7 +109,7 @@ export default function About() {
             aria-label={site.profiles.linkedin.accessibleLabel}
             target="_blank"
             rel="noopener noreferrer me"
-            className="text-accent underline decoration-rule underline-offset-4 transition-colors hover:decoration-accent"
+            className="underline decoration-highlight decoration-[3px] underline-offset-2"
           >
             LinkedIn
           </a>{" "}
@@ -120,7 +120,7 @@ export default function About() {
             aria-label={site.profiles.github.accessibleLabel}
             target="_blank"
             rel="noopener noreferrer me"
-            className="text-accent underline decoration-rule underline-offset-4 transition-colors hover:decoration-accent"
+            className="underline decoration-highlight decoration-[3px] underline-offset-2"
           >
             GitHub
           </a>
@@ -129,8 +129,8 @@ export default function About() {
         <ProfileLinks className="mt-6" withEmail />
       </div>
 
-      <div className="mt-14 border-t border-rule pt-10">
-        <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+      <div className="mt-14 border-t-2 border-line pt-10">
+        <h2 className="field-label text-sm">
           Get in touch
         </h2>
         <p className="mt-4 max-w-xl leading-relaxed text-ink/85">
@@ -143,7 +143,7 @@ export default function About() {
           <a
             href={`mailto:${site.email}`}
             aria-label={`Email ${site.name}`}
-            className="font-mono text-sm text-accent transition-opacity hover:opacity-70"
+            className="font-mono text-sm"
           >
             {site.email}
           </a>

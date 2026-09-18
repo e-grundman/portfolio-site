@@ -73,14 +73,14 @@ export function BreakEvenChart({
     <figure>
       <div className="flex flex-wrap gap-x-6 gap-y-2">
         <span className="flex items-center gap-2">
-          <span aria-hidden="true" className="inline-block h-2 w-2 rounded-full bg-series-1" />
-          <span className="font-mono text-xs uppercase tracking-[0.12em] text-muted">
+          <span aria-hidden="true" className="inline-block h-2 w-2 rounded-full bg-series-1 outline outline-1 outline-line" />
+          <span className="field-label text-sm">
             Billed on space ({dimBilled.toLocaleString("en-US")})
           </span>
         </span>
         <span className="flex items-center gap-2">
           <span aria-hidden="true" className="inline-block h-2 w-2 rounded-full border border-muted" />
-          <span className="font-mono text-xs uppercase tracking-[0.12em] text-muted">
+          <span className="field-label text-sm">
             Billed on weight ({(priced.length - dimBilled).toLocaleString("en-US")})
           </span>
         </span>
@@ -189,7 +189,7 @@ export function BreakEvenChart({
               transform: "translate(12px, -50%)",
             }}
           >
-            <p className="font-mono uppercase tracking-[0.12em] text-muted">
+            <p className="field-label text-sm">
               {categoriesById.get(hover.item.category)!.label}
             </p>
             <p className="mt-1 text-ink">{hover.pkg.container}</p>

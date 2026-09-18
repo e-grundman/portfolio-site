@@ -21,9 +21,9 @@ export default function WritingIndex() {
   const posts = getWriting();
 
   return (
-    <section className="border-t border-rule py-16">
+    <section className="py-6">
       <Kicker>Writing</Kicker>
-      <h1 className="font-serif text-4xl leading-tight tracking-tight">
+      <h1 className="headline text-5xl sm:text-6xl">
         Parcel economics, in public.
       </h1>
       <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
@@ -41,11 +41,11 @@ export default function WritingIndex() {
           const inner = (
             <>
               <div>
-                <span className="font-serif text-xl leading-snug tracking-tight transition-colors group-hover:text-accent">
+                <span className="headline text-xl leading-snug tracking-tight">
                   {post.title}
                   {external && (
                     <span
-                      className="ml-2 inline-block font-mono text-sm text-muted transition-colors group-hover:text-accent"
+                      className="ml-2 inline-block font-mono text-sm text-muted"
                       aria-hidden="true"
                     >
                       ↗
@@ -55,11 +55,11 @@ export default function WritingIndex() {
                 <span className="mt-2 block max-w-lg leading-relaxed text-muted">
                   {post.summary}
                 </span>
-                <span className="mt-3 block font-mono text-xs uppercase tracking-[0.12em] text-muted">
+                <span className="mt-3 block field-label text-xs text-muted">
                   {post.tags.join(" · ")}
                 </span>
               </div>
-              <span className="shrink-0 font-mono text-xs uppercase tracking-[0.12em] text-muted">
+              <span className="shrink-0 field-label text-xs text-muted">
                 {formatMonthYear(post.publishedAt)}
               </span>
             </>

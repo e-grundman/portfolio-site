@@ -1,15 +1,17 @@
 /**
- * Share images for LinkedIn, Slack, and anything else that unfurls a link.
+ * Share images and the site icon, drawn as shipping labels.
  *
- * Rendered at build time by next/og. Satori reads woff but not woff2, so the
- * fonts come from the @fontsource packages rather than from next/font. The
- * palette is the light mode palette in globals.css, because a share card is
- * shown on whatever surface the platform picks.
+ * Rendered at build time by next/og. Satori reads woff but not woff2, and it
+ * does not read variable fonts, so the condensed caps come from Archivo Narrow
+ * (the static cousin of the Archivo width axis the site uses) through the
+ * @fontsource packages. Cards are always the light label, because a share card
+ * is shown on whatever surface the platform picks.
  */
 import { ImageResponse } from "next/og";
 import sharp from "sharp";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
+import { barcodeModules } from "@/lib/barcode";
 import { site } from "@/lib/site";
 
 export const ogSize = { width: 1200, height: 630 };
@@ -18,10 +20,19 @@ export const ogSize = { width: 1200, height: 630 };
 // most widely accepted format, and it is about a third of the size.
 export const ogContentType = "image/jpeg";
 
+export const color = {
+  paper: "#ffffff",
+  ink: "#111111",
+  muted: "#5a5d5f",
+  highlight: "#ffd100",
+};
+
+const LINE = 6;
+
 async function toJpeg(image: ImageResponse): Promise<Response> {
   const png = Buffer.from(await image.arrayBuffer());
   const jpeg = await sharp(png)
-    .flatten({ background: "#fbfaf7" })
+    .flatten({ background: color.paper })
     .jpeg({ quality: 88, mozjpeg: true })
     .toBuffer();
   return new Response(new Uint8Array(jpeg), {
@@ -29,180 +40,238 @@ async function toJpeg(image: ImageResponse): Promise<Response> {
   });
 }
 
-export const color = {
-  bg: "#fbfaf7",
-  ink: "#1b1a17",
-  muted: "#6b6862",
-  rule: "#e4e1d9",
-  accent: "#b5451f",
-};
-
 const fontFile = (pkg: string, file: string) =>
   readFile(join(process.cwd(), "node_modules", "@fontsource", pkg, "files", file));
 
 async function loadFonts() {
-  const [serif, serifItalic, mono] = await Promise.all([
-    fontFile("newsreader", "newsreader-latin-400-normal.woff"),
-    fontFile("newsreader", "newsreader-latin-400-italic.woff"),
-    fontFile("geist-mono", "geist-mono-latin-400-normal.woff"),
+  const [caps, mono] = await Promise.all([
+    fontFile("archivo-narrow", "archivo-narrow-latin-700-normal.woff"),
+    fontFile("ibm-plex-mono", "ibm-plex-mono-latin-500-normal.woff"),
   ]);
   return [
-    { name: "Newsreader", data: serif, style: "normal" as const, weight: 400 as const },
-    { name: "Newsreader", data: serifItalic, style: "italic" as const, weight: 400 as const },
-    { name: "Geist Mono", data: mono, style: "normal" as const, weight: 400 as const },
+    { name: "Caps", data: caps, style: "normal" as const, weight: 700 as const },
+    { name: "Mono", data: mono, style: "normal" as const, weight: 500 as const },
   ];
 }
 
+/** The headshot in black and white, like everything else a thermal printer prints. */
 async function loadHeadshot(): Promise<string> {
   const bytes = await readFile(join(process.cwd(), "public", site.headshot));
-  return `data:image/jpeg;base64,${bytes.toString("base64")}`;
+  const gray = await sharp(bytes)
+    .resize(320, 320, { fit: "cover" })
+    .grayscale()
+    .linear(1.25, -20)
+    .jpeg({ quality: 85 })
+    .toBuffer();
+  return `data:image/jpeg;base64,${gray.toString("base64")}`;
 }
 
-// Sized for the thumbnail, not the full image: LinkedIn shows the card at
-// under half scale, and 20 pixel mono text turned to noise at that size.
-const kicker = {
-  fontFamily: "Geist Mono",
-  fontSize: 32,
-  letterSpacing: "0.1em",
+const fieldLabel = {
+  fontFamily: "Caps",
+  fontSize: 22,
   textTransform: "uppercase" as const,
   color: color.muted,
 };
 
-function Frame({ children }: { children: React.ReactNode }) {
+function Barcode({ value, height }: { value: string; height: number }) {
+  const widths = barcodeModules(value);
+  const total = widths.reduce((sum, w) => sum + w, 0);
+  return (
+    <div style={{ display: "flex", width: "100%", height }}>
+      {widths.map((w, i) => (
+        <div
+          key={i}
+          style={{
+            width: `${(w / total) * 100}%`,
+            height: "100%",
+            background: i % 2 === 0 ? color.ink : "transparent",
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
+/** Outer label: paper, with a heavy frame inset from the edge. */
+function Label({ children }: { children: React.ReactNode }) {
   return (
     <div
       style={{
         width: "100%",
         height: "100%",
         display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        background: color.bg,
-        color: color.ink,
-        padding: "72px 80px",
-        fontFamily: "Newsreader",
-        borderTop: `12px solid ${color.accent}`,
+        background: color.paper,
+        padding: 28,
       }}
     >
-      {children}
+      <div
+        style={{
+          flex: 1,
+          display: "flex",
+          flexDirection: "column",
+          border: `${LINE}px solid ${color.ink}`,
+          color: color.ink,
+          fontFamily: "Caps",
+        }}
+      >
+        {children}
+      </div>
     </div>
   );
 }
 
-/** The home page card: who, the claim, and the lead number. */
-export async function renderHomeCard(headline: {
-  figure: string;
-  label: string;
-}) {
+/** The home page card: ship to, the priority box, the barcode, the lead number. */
+export async function renderHomeCard(headline: { figure: string; label: string }) {
   const [fonts, headshot] = await Promise.all([loadFonts(), loadHeadshot()]);
 
-  return toJpeg(new ImageResponse(
-    (
-      <Frame>
-        <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={headshot}
-            width={120}
-            height={120}
-            alt=""
-            style={{
-              borderRadius: 60,
-              border: `2px solid ${color.rule}`,
-              objectFit: "cover",
-            }}
-          />
-          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-            <div style={{ fontSize: 56, letterSpacing: "-0.01em" }}>{site.name}</div>
-            <div style={kicker}>{site.role}</div>
+  return toJpeg(
+    new ImageResponse(
+      (
+        <Label>
+          <div style={{ display: "flex", borderBottom: `${LINE}px solid ${color.ink}` }}>
+            <div style={{ flex: 1, display: "flex", alignItems: "center", gap: 32, padding: 28 }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={headshot}
+                width={170}
+                height={170}
+                alt=""
+                style={{ border: `4px solid ${color.ink}`, objectFit: "cover" }}
+              />
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <div style={fieldLabel}>Ship to</div>
+                <div style={{ fontSize: 80, lineHeight: 0.95, textTransform: "uppercase" }}>
+                  {site.name}
+                </div>
+                <div style={{ fontSize: 28, marginTop: 10, textTransform: "uppercase" }}>
+                  {site.role}
+                </div>
+              </div>
+            </div>
+            <div
+              style={{
+                width: 190,
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                background: color.highlight,
+                borderLeft: `${LINE}px solid ${color.ink}`,
+                fontSize: 84,
+                lineHeight: 0.9,
+              }}
+            >
+              <div>SR</div>
+              <div>PM</div>
+            </div>
           </div>
-        </div>
 
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            fontSize: 68,
-            lineHeight: 1.1,
-            letterSpacing: "-0.015em",
-            maxWidth: 1000,
-          }}
-        >
-          <span>I turn operations into software, and&nbsp;</span>
-          <span style={{ fontStyle: "italic", color: color.accent }}>
-            better decisions
-          </span>
-          <span>.</span>
-        </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              padding: "22px 28px 16px",
+              borderBottom: `${LINE}px solid ${color.ink}`,
+            }}
+          >
+            <Barcode value={site.name} height={78} />
+            <div style={{ fontFamily: "Mono", fontSize: 20, letterSpacing: "0.3em", marginTop: 8 }}>
+              ERICHGRUNDMAN.COM
+            </div>
+          </div>
 
-        <div
-          style={{
-            display: "flex",
-            alignItems: "baseline",
-            gap: 28,
-            borderTop: `2px solid ${color.rule}`,
-            paddingTop: 28,
-          }}
-        >
-          <div style={{ fontSize: 72, color: color.accent }}>{headline.figure}</div>
-          <div style={{ ...kicker, color: color.ink }}>{headline.label}</div>
-        </div>
-      </Frame>
+          <div style={{ flex: 1, display: "flex", alignItems: "center", gap: 28, padding: "0 28px" }}>
+            <div style={{ fontSize: 104, lineHeight: 1 }}>{headline.figure}</div>
+            <div style={{ fontSize: 34, textTransform: "uppercase", lineHeight: 1.05, maxWidth: 420 }}>
+              {headline.label}
+            </div>
+          </div>
+        </Label>
+      ),
+      { ...ogSize, fonts },
     ),
-    { ...ogSize, fonts },
-  ));
+  );
 }
 
-/** A portfolio piece: the title and summary, signed. */
+/** A portfolio piece, as a package label. */
 export async function renderEntryCard(entry: { title: string; summary: string }) {
   const fonts = await loadFonts();
 
-  return toJpeg(new ImageResponse(
-    (
-      <Frame>
-        <div style={kicker}>Interactive model</div>
-
-        <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
-          <div style={{ fontSize: 88, lineHeight: 1.05, letterSpacing: "-0.02em" }}>
-            {entry.title}
-          </div>
+  return toJpeg(
+    new ImageResponse(
+      (
+        <Label>
           <div
             style={{
-              fontSize: 36,
-              lineHeight: 1.3,
-              color: color.muted,
-              maxWidth: 980,
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              padding: "14px 28px",
+              background: color.ink,
+              color: color.paper,
+              fontSize: 26,
+              textTransform: "uppercase",
             }}
           >
-            {entry.summary}
+            <div>Interactive model</div>
+            <div>{site.name}</div>
           </div>
-        </div>
 
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "baseline",
-            borderTop: `2px solid ${color.rule}`,
-            paddingTop: 28,
-          }}
-        >
-          <div style={{ fontSize: 36 }}>{site.name}</div>
-          <div style={kicker}>{site.role}</div>
-        </div>
-      </Frame>
+          <div
+            style={{
+              flex: 1,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              padding: "0 28px",
+              gap: 22,
+            }}
+          >
+            <div style={{ fontSize: 110, lineHeight: 0.95, textTransform: "uppercase" }}>
+              {entry.title}
+            </div>
+            <div
+              style={{
+                fontFamily: "Mono",
+                fontSize: 28,
+                lineHeight: 1.35,
+                color: color.muted,
+                maxWidth: 1000,
+              }}
+            >
+              {entry.summary}
+            </div>
+          </div>
+
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 28,
+              padding: "18px 28px",
+              borderTop: `${LINE}px solid ${color.ink}`,
+            }}
+          >
+            <div style={{ display: "flex", width: 420 }}>
+              <Barcode value={entry.title} height={52} />
+            </div>
+            <div style={{ fontFamily: "Mono", fontSize: 22, letterSpacing: "0.3em" }}>
+              ERICHGRUNDMAN.COM
+            </div>
+          </div>
+        </Label>
+      ),
+      { ...ogSize, fonts },
     ),
-    { ...ogSize, fonts },
-  ));
+  );
 }
 
 /**
- * The browser tab icon: an EG monogram in the display serif, paper on rust.
- * Drawn heavier than the site's headlines because at 32 pixels a regular
- * weight serif breaks up. PNG, since browsers expect it for icons.
+ * The browser tab icon: EG in condensed caps, ink on safety yellow, the same
+ * yellow as the SR PM box on the home page.
  */
-export async function renderIcon(px: number, rounded: boolean) {
-  const bold = await fontFile("newsreader", "newsreader-latin-600-normal.woff");
+export async function renderIcon(px: number, framed: boolean) {
+  const caps = await fontFile("archivo-narrow", "archivo-narrow-latin-700-normal.woff");
 
   return new ImageResponse(
     (
@@ -213,14 +282,14 @@ export async function renderIcon(px: number, rounded: boolean) {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: color.accent,
-          color: color.bg,
-          borderRadius: rounded ? px * 0.2 : 0,
-          fontFamily: "Newsreader",
-          fontSize: px * 0.62,
-          letterSpacing: "-0.04em",
+          background: color.highlight,
+          color: color.ink,
+          border: framed ? `${Math.max(1, Math.round(px / 16))}px solid ${color.ink}` : "none",
+          fontFamily: "Caps",
+          fontSize: px * 0.72,
+          letterSpacing: "-0.02em",
           lineHeight: 1,
-          paddingBottom: px * 0.06,
+          paddingTop: px * 0.04,
         }}
       >
         EG
@@ -229,7 +298,7 @@ export async function renderIcon(px: number, rounded: boolean) {
     {
       width: px,
       height: px,
-      fonts: [{ name: "Newsreader", data: bold, style: "normal", weight: 600 }],
+      fonts: [{ name: "Caps", data: caps, style: "normal", weight: 700 }],
     },
   );
 }

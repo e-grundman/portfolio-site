@@ -1,25 +1,22 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
-import { Geist, Geist_Mono, Newsreader } from "next/font/google";
+import { Archivo, IBM_Plex_Mono } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Archivo carries a width axis, so one family covers the condensed label caps
+// and the normal width body text.
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
+  axes: ["wdth"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const plexMono = IBM_Plex_Mono({
+  variable: "--font-plex-mono",
   subsets: ["latin"],
-});
-
-const newsreader = Newsreader({
-  variable: "--font-newsreader",
-  subsets: ["latin"],
-  style: ["normal", "italic"],
   weight: ["400", "500", "600"],
 });
 
@@ -55,16 +52,16 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${newsreader.variable} antialiased`}
+      className={`${archivo.variable} ${plexMono.variable} antialiased`}
     >
       <body>
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-10 focus:rounded focus:bg-ink focus:px-3 focus:py-2 focus:font-mono focus:text-xs focus:text-bg"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-10 focus:bg-highlight focus:px-3 focus:py-2 focus:field-label focus:text-xs text-xs focus:text-on-highlight"
         >
           Skip to content
         </a>
-        <div className="mx-auto flex min-h-screen max-w-3xl flex-col px-6">
+        <div className="mx-auto flex min-h-screen max-w-4xl flex-col px-4 sm:px-6">
           <SiteHeader />
           <main id="main" className="flex-1">
             {children}

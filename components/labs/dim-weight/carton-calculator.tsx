@@ -18,7 +18,7 @@ import { ZONES, type Zone } from "@/lib/zones";
 import { formatUsd } from "@/lib/format";
 
 const th =
-  "border-b border-rule py-2 pr-4 font-mono text-xs uppercase tracking-[0.12em] text-muted";
+  "border-b border-rule py-2 pr-4 field-label text-xs text-muted";
 const td = "whitespace-nowrap border-b border-rule py-3 pr-4 font-mono";
 
 function NumberField({
@@ -40,7 +40,7 @@ function NumberField({
 }) {
   return (
     <label className="block">
-      <span className="font-mono text-xs uppercase tracking-[0.12em] text-muted">
+      <span className="field-label text-sm">
         {label}
       </span>
       <span className="mt-1 flex items-baseline gap-2 border-b border-rule">
@@ -101,7 +101,7 @@ export function CartonCalculator({ rule }: { rule: DimRule }) {
         <NumberField label="Height" unit="in" value={dims.height} step={0.25} min={1} max={48} onChange={setSide("height")} />
         <NumberField label="Weight" unit="lb" value={weightLb} step={0.1} min={0.1} max={70} onChange={setWeightLb} />
         <label className="block">
-          <span className="font-mono text-xs uppercase tracking-[0.12em] text-muted">
+          <span className="field-label text-sm">
             Zone
           </span>
           <select
@@ -143,8 +143,8 @@ export function CartonCalculator({ rule }: { rule: DimRule }) {
                     <span className="flex items-center gap-2">
                       <span
                         aria-hidden="true"
-                        className={`inline-block h-2 w-2 shrink-0 rounded-full ${
-                          active ? "bg-accent" : "bg-rule"
+                        className={`inline-block h-2.5 w-2.5 shrink-0 outline outline-1 outline-line ${
+                          active ? "bg-line" : "bg-rule"
                         }`}
                       />
                       {candidate.label}

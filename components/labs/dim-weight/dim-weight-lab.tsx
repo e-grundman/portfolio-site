@@ -28,12 +28,12 @@ const seriesDot = ["bg-series-1", "bg-series-2", "bg-series-3"];
 const CHART_SAMPLE_STEP = 25;
 
 const th =
-  "border-b border-rule py-2 pr-4 font-mono text-xs uppercase tracking-[0.12em] text-muted";
+  "border-b border-rule py-2 pr-4 field-label text-xs text-muted";
 const td = "whitespace-nowrap border-b border-rule py-3 pr-4 text-right font-mono";
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+    <h2 className="field-label text-sm">
       {children}
     </h2>
   );
@@ -53,10 +53,10 @@ function Toggle({
       type="button"
       aria-pressed={active}
       onClick={onClick}
-      className={`flex items-center gap-2 border px-3 py-1.5 font-mono text-xs uppercase tracking-[0.12em] transition-colors ${
+      className={`flex items-center gap-2 border px-3 py-1.5 field-label text-xs transition-colors ${
         active
-          ? "border-accent text-accent"
-          : "border-rule text-muted hover:border-accent hover:text-accent"
+          ? "border-line bg-highlight text-on-highlight"
+          : "border-rule text-muted hover:border-line hover:text-ink"
       }`}
     >
       {children}
@@ -99,8 +99,8 @@ export function DimWeightLab() {
 
   return (
     <div className="mt-10">
-      <div className="border-t border-rule pt-6">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+      <div className="border-t-2 border-line pt-6">
+        <p className="field-label text-sm">
           Rule set
         </p>
         <div className="mt-3 flex flex-wrap gap-2">
@@ -126,7 +126,7 @@ export function DimWeightLab() {
         </p>
       </div>
 
-      <div className="mt-12 border-t border-rule pt-8">
+      <div className="mt-12 border-t-2 border-line pt-8">
         <SectionHeading>One package</SectionHeading>
         <p className="mt-3 max-w-xl leading-relaxed text-muted">
           Enter the outside dimensions as the carrier would measure them. The
@@ -138,7 +138,7 @@ export function DimWeightLab() {
         </div>
       </div>
 
-      <div className="mt-12 border-t border-rule pt-8">
+      <div className="mt-12 border-t-2 border-line pt-8">
         <SectionHeading>Packaging program</SectionHeading>
         <p className="mt-3 max-w-xl leading-relaxed text-muted">
           The same {DEFAULT_ITEM_COUNT.toLocaleString("en-US")} synthetic orders,
@@ -169,7 +169,7 @@ export function DimWeightLab() {
                     <span className="flex items-center gap-2">
                       <span
                         aria-hidden="true"
-                        className={`inline-block h-2 w-2 shrink-0 rounded-full ${seriesDot[index]}`}
+                        className={`inline-block h-2.5 w-2.5 shrink-0 outline outline-1 outline-line ${seriesDot[index]}`}
                       />
                       {result.label}
                     </span>
@@ -203,7 +203,7 @@ export function DimWeightLab() {
         </p>
       </div>
 
-      <div className="mt-12 border-t border-rule pt-8">
+      <div className="mt-12 border-t-2 border-line pt-8">
         <SectionHeading>Where the break even sits</SectionHeading>
         <p className="mt-3 max-w-xl leading-relaxed text-muted">
           One package in every {CHART_SAMPLE_STEP}, plotted by measured cube and
@@ -219,7 +219,7 @@ export function DimWeightLab() {
             >
               <span
                 aria-hidden="true"
-                className={`inline-block h-2 w-2 shrink-0 rounded-full ${seriesDot[index]}`}
+                className={`inline-block h-2.5 w-2.5 shrink-0 outline outline-1 outline-line ${seriesDot[index]}`}
               />
               {strategy.label}
             </Toggle>
@@ -230,7 +230,7 @@ export function DimWeightLab() {
         </div>
       </div>
 
-      <div className="mt-12 border-t border-rule pt-8">
+      <div className="mt-12 border-t-2 border-line pt-8">
         <SectionHeading>Where the air is</SectionHeading>
         <p className="mt-3 max-w-xl leading-relaxed text-muted">
           Air premium per order by category under {rule.label}. Dense goods
@@ -289,7 +289,7 @@ export function DimWeightLab() {
         </p>
       </div>
 
-      <div className="mt-12 border-t border-rule pt-8">
+      <div className="mt-12 border-t-2 border-line pt-8">
         <SectionHeading>What the rule changes cost</SectionHeading>
         <p className="mt-3 max-w-xl leading-relaxed text-muted">
           Cost per order for each program under each rule set. Nothing about
@@ -307,7 +307,7 @@ export function DimWeightLab() {
                   <th
                     key={candidate.id}
                     className={`${th} text-right ${index === dimRules.length - 1 ? "pr-0" : ""} ${
-                      candidate.id === ruleId ? "text-accent" : ""
+                      candidate.id === ruleId ? "bg-highlight text-on-highlight" : ""
                     }`}
                   >
                     {candidate.short}
@@ -322,7 +322,7 @@ export function DimWeightLab() {
                     <span className="flex items-center gap-2">
                       <span
                         aria-hidden="true"
-                        className={`inline-block h-2 w-2 shrink-0 rounded-full ${seriesDot[index]}`}
+                        className={`inline-block h-2.5 w-2.5 shrink-0 outline outline-1 outline-line ${seriesDot[index]}`}
                       />
                       {row.label}
                     </span>
@@ -357,7 +357,7 @@ export function DimWeightLab() {
         </p>
       </div>
 
-      <div className="mt-12 border-t border-rule pt-8">
+      <div className="mt-12 border-t-2 border-line pt-8">
         <SectionHeading>What the model assumes</SectionHeading>
         <ul className="mt-4 max-w-xl list-disc space-y-2 pl-5 leading-relaxed text-ink/85">
           <li>

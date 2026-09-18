@@ -44,9 +44,9 @@ export default async function PortfolioShell({
   const { default: Body } = await import(`@/content/portfolio/${slug}.mdx`);
 
   return (
-    <article className="border-t border-rule py-16">
+    <article className="py-6">
       <Kicker>{entry.status}</Kicker>
-      <h1 className="font-serif text-4xl leading-tight tracking-tight">
+      <h1 className="headline text-5xl sm:text-6xl">
         {entry.title}
       </h1>
       <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
@@ -58,7 +58,7 @@ export default async function PortfolioShell({
       </div>
 
       <div className="mt-12 border border-rule p-6">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+        <p className="field-label text-sm">
           Not built yet
         </p>
         <p className="mt-3 max-w-lg leading-relaxed text-ink/85">
@@ -68,8 +68,8 @@ export default async function PortfolioShell({
         </p>
       </div>
 
-      <div className="mt-8 border-t border-rule pt-6">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+      <div className="mt-8 border-t-2 border-line pt-6">
+        <p className="field-label text-sm">
           Data provenance
         </p>
         <p className="mt-3 max-w-xl leading-relaxed text-ink/85">
@@ -77,10 +77,10 @@ export default async function PortfolioShell({
         </p>
       </div>
 
-      <p className="mt-12 border-t border-rule pt-8">
+      <p className="mt-12 border-t-2 border-line pt-8">
         <Link
           href="/portfolio"
-          className="font-mono text-xs uppercase tracking-[0.15em] text-accent transition-opacity hover:opacity-70"
+          className="field-label text-xs"
         >
           ← Back to portfolio
         </Link>
