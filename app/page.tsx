@@ -3,6 +3,7 @@ import Link from "next/link";
 import { EntryRow } from "@/components/entry-row";
 import { Kicker } from "@/components/kicker";
 import { getPortfolio } from "@/lib/content/loader";
+import { highlights } from "@/lib/highlights";
 import { site } from "@/lib/site";
 
 export default function Home() {
@@ -49,6 +50,30 @@ export default function Home() {
             More about how I work →
           </Link>
         </p>
+      </section>
+
+      <section className="border-t border-rule py-16">
+        <Kicker>Career highlights</Kicker>
+        <dl>
+          {highlights.map((highlight) => (
+            <div
+              key={highlight.label}
+              className="grid grid-cols-1 gap-2 border-b border-rule py-6 sm:grid-cols-[9rem_1fr] sm:gap-8"
+            >
+              <dt className="font-serif text-4xl tracking-tight text-accent">
+                {highlight.figure}
+              </dt>
+              <dd>
+                <p className="font-mono text-xs uppercase tracking-[0.12em]">
+                  {highlight.label}
+                </p>
+                <p className="mt-2 max-w-lg leading-relaxed text-muted">
+                  {highlight.detail}
+                </p>
+              </dd>
+            </div>
+          ))}
+        </dl>
       </section>
 
       <section className="border-t border-rule py-16">
