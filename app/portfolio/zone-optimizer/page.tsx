@@ -13,6 +13,7 @@ const entry = getPortfolioEntry("zone-optimizer");
 export const metadata: Metadata = {
   title: entry.title,
   description: entry.summary,
+  alternates: { canonical: entry.route },
 };
 
 export default function ZoneOptimizerPage() {

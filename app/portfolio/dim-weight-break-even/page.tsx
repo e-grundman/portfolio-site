@@ -13,6 +13,7 @@ const entry = getPortfolioEntry("dim-weight-break-even");
 export const metadata: Metadata = {
   title: entry.title,
   description: entry.summary,
+  alternates: { canonical: entry.route },
 };
 
 export default function DimWeightBreakEvenPage() {

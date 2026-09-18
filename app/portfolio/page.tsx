@@ -4,6 +4,7 @@ import { Kicker } from "@/components/kicker";
 import { getPortfolio } from "@/lib/content/loader";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/portfolio" },
   title: "Portfolio",
   description:
     "Interactive models of parcel economics, built on synthetic data: zone optimization, dimensional weight, and the mechanics behind shipping cost.",
