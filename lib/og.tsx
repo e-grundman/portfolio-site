@@ -7,12 +7,27 @@
  * shown on whatever surface the platform picks.
  */
 import { ImageResponse } from "next/og";
+import sharp from "sharp";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { site } from "@/lib/site";
 
 export const ogSize = { width: 1200, height: 630 };
-export const ogContentType = "image/png";
+// JPEG rather than the PNG ImageResponse produces. LinkedIn's inspector showed
+// a blank frame for the PNG card; a flat JPEG with no alpha channel is the
+// most widely accepted format, and it is about a third of the size.
+export const ogContentType = "image/jpeg";
+
+async function toJpeg(image: ImageResponse): Promise<Response> {
+  const png = Buffer.from(await image.arrayBuffer());
+  const jpeg = await sharp(png)
+    .flatten({ background: "#fbfaf7" })
+    .jpeg({ quality: 88, mozjpeg: true })
+    .toBuffer();
+  return new Response(new Uint8Array(jpeg), {
+    headers: { "Content-Type": ogContentType },
+  });
+}
 
 const color = {
   bg: "#fbfaf7",
@@ -81,7 +96,7 @@ export async function renderHomeCard(headline: {
 }) {
   const [fonts, headshot] = await Promise.all([loadFonts(), loadHeadshot()]);
 
-  return new ImageResponse(
+  return toJpeg(new ImageResponse(
     (
       <Frame>
         <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
@@ -135,14 +150,14 @@ export async function renderHomeCard(headline: {
       </Frame>
     ),
     { ...ogSize, fonts },
-  );
+  ));
 }
 
 /** A portfolio piece: the title and summary, signed. */
 export async function renderEntryCard(entry: { title: string; summary: string }) {
   const fonts = await loadFonts();
 
-  return new ImageResponse(
+  return toJpeg(new ImageResponse(
     (
       <Frame>
         <div style={kicker}>Interactive model</div>
@@ -178,5 +193,5 @@ export async function renderEntryCard(entry: { title: string; summary: string })
       </Frame>
     ),
     { ...ogSize, fonts },
-  );
+  ));
 }

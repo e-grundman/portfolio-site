@@ -90,11 +90,6 @@ export default function Home() {
               href={entry.route}
               title={entry.title}
               summary={entry.summary}
-              rail={
-                <span className="font-mono text-xs uppercase tracking-[0.12em] text-muted">
-                  {entry.status}
-                </span>
-              }
             />
           ))}
         </div>
@@ -104,7 +99,7 @@ export default function Home() {
               href="/portfolio"
               className="font-mono text-xs uppercase tracking-[0.15em] text-accent transition-opacity hover:opacity-70"
             >
-              Everything, including what is queued →
+              See what is in progress →
             </Link>
           </p>
         )}

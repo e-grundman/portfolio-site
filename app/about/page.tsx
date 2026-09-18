@@ -29,10 +29,9 @@ export default function About() {
           Two things from the phones never left me. Information nobody can act
           on is only slightly better than no information at all, and it usually
           costs more to produce. Additionally, the greatest reassurance you can
-          give a customer is not an apology, it is an explanation, because if
-          you can tell someone exactly why something is happening, that will
-          carry you through almost anything short of a purely emotional
-          reaction.
+          give a customer is not an apology, it is an explanation. If you can
+          tell someone exactly why something is happening, that will carry you
+          through almost anything short of a purely emotional reaction.
         </p>
         <p className="text-muted">
           Cost models across twelve fulfillment sites. KPI frameworks for cost,
