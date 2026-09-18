@@ -25,10 +25,19 @@ export default function About() {
           on.
         </p>
         <p className="text-muted">
+          Two things from the phones never left me. Information nobody can act
+          on is only slightly better than no information at all, and it usually
+          costs more to produce. Additionally, the greatest reassurance you can
+          give a customer is not an apology, it is an explanation, because if
+          you can tell someone exactly why something is happening, that will
+          carry you through almost anything short of a purely emotional
+          reaction.
+        </p>
+        <p className="text-muted">
           Cost models across twelve fulfillment sites. KPI frameworks for cost,
           margin, and on-time performance. Three production apps I shipped myself.
-          I learned the network from the floor up, which is why I trust the
-          operation over the spreadsheet when they disagree.
+          When the operation and the spreadsheet disagree, I trust the
+          operation.
         </p>
         <p className="text-muted">
           Every operational decision is an economic decision. Software should
@@ -63,6 +72,28 @@ export default function About() {
             no-code automation prototypes. Together they eliminated more than
             4,000 hours of manual work a year. The judgment stays with the
             person who knows the network. The speed comes from the tooling.
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-14 border-t border-rule pt-10">
+        <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+          Off the clock
+        </h2>
+        <div className="mt-6 max-w-xl space-y-5 leading-relaxed text-ink/85">
+          <p>
+            Chicago native, so Chicago&apos;s teams still hold my heart,
+            however as a Tampa transplant the Bucs have become a close second,
+            and Sundays in the fall are spent at Raymond James. My wife and I
+            are expecting a son.
+          </p>
+          <p>
+            My nerd hobby is points and miles, which, it turns out, is the same
+            game as parcel pricing with better destinations: a published rate, a
+            set of rules almost nobody reads, and real value hiding in the gap
+            between them. I fell for it planning our two-week honeymoon to
+            Singapore and Thailand almost entirely on points, including round
+            trip on Singapore Airlines in business class.
           </p>
         </div>
       </div>
