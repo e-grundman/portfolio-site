@@ -2,6 +2,20 @@
 
 Architectural choices and the reasoning behind them. Newest first.
 
+## 2026-09-18, dim weight lab uses published billing rules on the synthetic rate table
+
+**Decision.** The dim weight lab models four published rule sets (UPS and FedEx before and after the August 2025 round up, USPS before and after the July 2026 change) as data: divisor, side rounding, and the size threshold. All four price on the one synthetic rate table the zone optimizer uses.
+
+**Why.** Divisors and rounding rules are public tariff mechanics, so naming the carriers stays inside the data policy. Pricing every rule on one rate table isolates billing mechanics from rate levels, so a column difference is a rule change and never a claim about which carrier is cheaper. The page says so.
+
+**Cost accepted.** Dollar figures are synthetic and higher than a real negotiated book would show. The ratios between programs and rule sets are the point.
+
+## 2026-09-18, series colors re-stepped for color vision deficiency
+
+**Decision.** `--series-2` and `--series-3` moved from teal and violet to blue and olive in both modes.
+
+**Why.** The old pair failed a colorblind check: adjacent separation under deuteranopia was ΔE 3.0, and 10.3 with full color vision, so two configurations in the zone optimizer were near indistinguishable for a large share of readers. The new set passes lightness, chroma, CVD separation, and contrast against both surfaces. It affects the zone optimizer too, which is intended.
+
 ## 2026-09-12, sections are a flag rather than a deletion
 
 **Decision.** `sections` in `lib/site.ts` controls which parts of the site publish. Work and Writing are off. Their routes, loaders, and schemas stay in the repo; a disabled section is absent from navigation, returns 404, generates no static params, and publishes no sitemap URLs.

@@ -19,6 +19,9 @@ Deferred on purpose. Each line says why, so a future session does not relitigate
 | Item | Why deferred |
 |---|---|
 | Dim weight modeling in the zone lab | A real lever that deserves its own lab. Adding it to the zone tool would blur the one variable that lab exists to isolate. |
+| Multi item orders in the dim weight lab | Every synthetic order is one item. Cartonizing several items is its own algorithm and would bury the break even behind a bin packing problem. |
+| Additional handling and oversize surcharges in the dim weight lab | Both would widen the gap the lab already shows, not change its direction. Worth adding once the rate module takes accessorials. |
+| Editable carton catalog in the dim weight lab | The catalogs are data in `lib/labs/dim-weight/packaging.ts`. Exposing them in the UI is a decision to make after watching someone use the tool. |
 | Real carrier rate data | Compliance line. The rate module is pluggable so published list rates can be added later with provenance. |
 | Multi-carrier comparison in the lab | Needs a second rate table and a routing rule set. Phase 2. |
 | Contact form with a backend | Mailto and LinkedIn cover both audiences with zero infrastructure and zero spam surface. |

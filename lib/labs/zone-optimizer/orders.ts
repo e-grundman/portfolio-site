@@ -16,7 +16,7 @@ export type SyntheticOrder = {
 };
 
 /** Deterministic PRNG. Same seed, same dataset, every time. */
-function mulberry32(seed: number): () => number {
+export function mulberry32(seed: number): () => number {
   let a = seed;
   return () => {
     a |= 0;
