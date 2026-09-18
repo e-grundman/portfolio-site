@@ -1,5 +1,6 @@
-# sharp is Next.js image optimization. This app uses no next/image, and Vercel
-# supplies sharp on its own builders, so we skip its native build locally.
+# sharp converts the share cards to JPEG in lib/og.tsx. Its install script only
+# compiles from source as a fallback; the prebuilt @img/sharp-* binaries arrive
+# as optional dependencies, so skipping the script is safe here and on Vercel.
 # pnpm 11 fails the install on an unresolved build script, so declare it here
 # rather than leaving it merely ignored.
 #
