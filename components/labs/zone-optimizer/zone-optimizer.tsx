@@ -14,6 +14,12 @@ import { formatUsd } from "@/lib/format";
 const seriesDot = ["bg-series-1", "bg-series-2", "bg-series-3"];
 const seriesText = ["text-series-1", "text-series-2", "text-series-3"];
 
+const signedPct = (value: number) =>
+  `${value > 0 ? "+" : value < 0 ? "−" : ""}${Math.abs(value * 100).toFixed(1)}%`;
+const pctMagnitude = (value: number) => `${Math.abs(value * 100).toFixed(1)}%`;
+const signedUsd = (value: number) =>
+  `${value > 0 ? "+" : value < 0 ? "−" : ""}${formatUsd(Math.abs(value))}`;
+
 type Preset = {
   id: string;
   label: string;
@@ -157,9 +163,9 @@ export function ZoneOptimizer() {
                 >
                   {index === 0
                     ? "baseline"
-                    : `${formatUsd(result.costPerPackageDelta)} (${(
-                        result.costPerPackagePctDelta * 100
-                      ).toFixed(1)}%)`}
+                    : `${signedPct(result.costPerPackagePctDelta)} (${signedUsd(
+                        result.costPerPackageDelta,
+                      )})`}
                 </td>
                 <td className="border-b border-rule py-3 text-right font-mono">
                   {formatUsd(result.totalCost, 0)}
@@ -174,17 +180,19 @@ export function ZoneOptimizer() {
         <p className="mt-6 max-w-xl leading-relaxed text-ink/85">
           Against the baseline, the best configuration shown moves the average
           zone from {baseline.averageZone.toFixed(2)} to{" "}
-          {Math.min(...results.map((r) => r.averageZone)).toFixed(2)} and takes{" "}
+          {Math.min(...results.map((r) => r.averageZone)).toFixed(2)} and cuts
+          the cost of the average package by{" "}
+          {pctMagnitude(Math.min(...results.map((r) => r.costPerPackagePctDelta)))}
+          , which holds at any volume. On this synthetic table that is{" "}
           {formatUsd(
             Math.abs(Math.min(...results.map((r) => r.costPerPackageDelta))),
           )}{" "}
-          out of the average package. Across{" "}
-          {DEFAULT_ORDER_COUNT.toLocaleString("en-US")} orders that is{" "}
+          a package, or{" "}
           {formatUsd(
             Math.max(...results.map((r) => r.annualSavingsAtOrderCount)),
             0,
-          )}
-          , and the same percentage holds at any volume.
+          )}{" "}
+          across {DEFAULT_ORDER_COUNT.toLocaleString("en-US")} orders.
         </p>
       )}
 
@@ -254,8 +262,10 @@ export function ZoneOptimizer() {
             worth arguing with.
           </li>
           <li>
-            Rates are a synthetic list table with a synthetic fuel percentage and
-            a flat residential add. Dim weight is not modeled, so a bulky, light
+            Rates are a synthetic ground table set at roughly half of list, the
+            range a mid-volume shipper tends to pay after discounts, with a
+            synthetic fuel percentage and a flat residential add. Read the
+            percentages as the result and the dollars as illustration. Dim weight is not modeled, so a bulky, light
             product would see a different answer.
           </li>
         </ul>

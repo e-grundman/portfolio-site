@@ -113,7 +113,7 @@ export default function Home() {
       <section className="border-t border-rule py-16">
         <Kicker>Contact</Kicker>
         <h2 className="font-serif text-3xl tracking-tight">
-          Working on something where operations meet software?
+          Hiring for product where operations meet software?
         </h2>
         <p className="mt-6 max-w-xl leading-relaxed text-muted">
           Direct email reaches me fastest, and a specific first message gets a

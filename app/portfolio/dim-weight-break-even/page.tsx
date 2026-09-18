@@ -26,11 +26,29 @@ export default function DimWeightBreakEvenPage() {
         {entry.summary}
       </p>
 
-      <div className="mt-8 max-w-xl">
-        <Explainer />
+      <p className="mt-6">
+        <a
+          href="#how-it-works"
+          className="font-mono text-xs uppercase tracking-[0.15em] text-accent transition-opacity hover:opacity-70"
+        >
+          How the model works ↓
+        </a>
+      </p>
+
+      {/* The tool leads and gets more width than the reading column, so the
+          tables and charts are not squeezed on a laptop screen. */}
+      <div className="lg:-mx-16 xl:-mx-32">
+        <DimWeightLab />
       </div>
 
-      <DimWeightLab />
+      <div id="how-it-works" className="mt-12 scroll-mt-8 border-t border-rule pt-8">
+        <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+          How it works
+        </h2>
+        <div className="mt-6 max-w-xl">
+          <Explainer />
+        </div>
+      </div>
 
       <div className="mt-12 border-t border-rule pt-8">
         <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-muted">

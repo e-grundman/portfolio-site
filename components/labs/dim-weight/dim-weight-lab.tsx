@@ -65,6 +65,11 @@ function Toggle({
 }
 
 const pct = (value: number) => `${(value * 100).toFixed(0)}%`;
+const signedPct = (value: number) =>
+  `${value > 0 ? "+" : value < 0 ? "−" : ""}${Math.abs(value * 100).toFixed(1)}%`;
+const pctMagnitude = (value: number) => `${Math.abs(value * 100).toFixed(1)}%`;
+const pctChange = (before: number, after: number) =>
+  pctMagnitude((after - before) / before);
 const signedUsd = (value: number) =>
   `${value > 0 ? "+" : value < 0 ? "−" : ""}${formatUsd(Math.abs(value))}`;
 
@@ -177,9 +182,9 @@ export function DimWeightLab() {
                   <td className={`${td} pr-0 ${index === 0 ? "text-muted" : ""}`}>
                     {index === 0
                       ? "baseline"
-                      : `${signedUsd(result.costPerOrderDelta)} (${(
-                          result.costPerOrderPctDelta * 100
-                        ).toFixed(1)}%)`}
+                      : `${signedPct(result.costPerOrderPctDelta)} (${signedUsd(
+                          result.costPerOrderDelta,
+                        )})`}
                   </td>
                 </tr>
               ))}
@@ -190,11 +195,11 @@ export function DimWeightLab() {
           Under {rule.label}, the average order weighs{" "}
           {stock.averageActualLb.toFixed(1)} lb in stock cartons and bills{" "}
           {stock.averageBillableLb.toFixed(1)}. Moving to the twelve carton set
-          and bagging the soft goods takes {formatUsd(-best.costPerOrderDelta)}{" "}
-          out of every order, which is{" "}
-          {formatUsd(best.savingsAtOrderCount, 0)} across{" "}
-          {best.orderCount.toLocaleString("en-US")} orders, and no one touched a
-          rate.
+          and bagging the soft goods cuts the cost of every order by{" "}
+          {pctMagnitude(best.costPerOrderPctDelta)}, and no one touched a rate.
+          On this synthetic table that is {formatUsd(-best.costPerOrderDelta)}{" "}
+          an order, or {formatUsd(best.savingsAtOrderCount, 0)} across{" "}
+          {best.orderCount.toLocaleString("en-US")} orders.
         </p>
       </div>
 
@@ -336,10 +341,15 @@ export function DimWeightLab() {
           </table>
         </div>
         <p className="mt-6 max-w-xl leading-relaxed text-ink/85">
-          The UPS and FedEx round up added{" "}
+          The UPS and FedEx round up raised the cost of the average order in
+          stock cartons by{" "}
+          {pctChange(stockRow.costPerOrder[upsBefore], stockRow.costPerOrder[upsNow])}
+          , or{" "}
           {formatUsd(stockRow.costPerOrder[upsNow] - stockRow.costPerOrder[upsBefore])}{" "}
-          to the average order in stock cartons. The USPS change, a lower divisor
-          and the same round up, added{" "}
+          on this table. The USPS change, a lower divisor and the same round up,
+          raised it by{" "}
+          {pctChange(stockRow.costPerOrder[uspsBefore], stockRow.costPerOrder[uspsNow])}
+          , or{" "}
           {formatUsd(stockRow.costPerOrder[uspsNow] - stockRow.costPerOrder[uspsBefore])}
           . Under both, the right sized program with mailers costs less than
           stock cartons did before either rule moved, which is the argument for
@@ -365,8 +375,9 @@ export function DimWeightLab() {
             compresses their height. Fragile and dense goods stay boxed.
           </li>
           <li>
-            Rates are the site&apos;s synthetic list table with synthetic fuel and
-            residential surcharges. One rate table is used for every rule set, so
+            Rates are the site&apos;s synthetic ground table, set at roughly half
+            of list, with synthetic fuel and residential surcharges. Read the
+            percentages as the result and the dollars as illustration. One rate table is used for every rule set, so
             the columns isolate billing mechanics and say nothing about which
             carrier is cheaper.
           </li>

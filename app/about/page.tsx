@@ -134,12 +134,10 @@ export default function About() {
           Get in touch
         </h2>
         <p className="mt-4 max-w-xl leading-relaxed text-ink/85">
-          Two kinds of conversation reach me here. Senior product and AI product
-          builder roles at logistics, fulfillment, and ecommerce infrastructure
-          companies. Consulting engagements covering carrier contract audits, 3PL
-          RFP packages, and logistics billing dispute briefs. Say which one you
-          are starting and include the shape of the problem, because a specific
-          first message gets a specific answer.
+          If you are hiring for senior product or AI product builder roles at a
+          logistics, fulfillment, or ecommerce infrastructure company, this is
+          the right inbox. Include the role and the problem it exists to solve,
+          because a specific first message gets a specific answer.
         </p>
         <p className="mt-6">
           <a

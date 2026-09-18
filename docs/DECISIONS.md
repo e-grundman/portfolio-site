@@ -2,6 +2,26 @@
 
 Architectural choices and the reasoning behind them. Newest first.
 
+## 2026-09-18, synthetic rate table halved, labs lead with percentages
+
+**Decision.** Every coefficient in the synthetic ground table and the residential add was halved, which puts the table at roughly half of list. Both labs now lead with the percentage change and show the dollar figure second, labeled as illustration.
+
+**Why.** The zone optimizer showed about $21 per package, a retail level. A reader who knows parcel sees that number, doubts the model, and stops reading before the mechanics land. Halving every term keeps the ratios between cells, so every percentage the labs report is unchanged, and the dollars now sit in the range a mid-volume ecommerce shipper tends to pay after discounts. The percentage is the finding, because it holds at any rate level; the dollars depend on a table the reader cannot see.
+
+**Still true.** The table is synthetic and comes from no agreement. The data policy in the README is unchanged.
+
+## 2026-09-18, labs lead with the tool, and the tool gets more width
+
+**Decision.** On each lab page the interactive model sits directly under the title and summary, and the explainer moves below it under How it works, with an anchor link at the top for readers who want context first. The tool breaks out of the 768 pixel reading column on large screens.
+
+**Why.** Three paragraphs of prose put the controls below the fold, and a hiring manager scanning the page never reached the thing that proves the point. Prose stays in the reading column; tables and charts get the width they need.
+
+## 2026-09-18, share images generated at build
+
+**Decision.** `app/opengraph-image.tsx` renders a home card with the headshot, the claim, and the lead highlight. Each lab has its own card with its title and summary. Fonts are read from `@fontsource` woff files, because Satori does not read woff2 and next/font does not expose files.
+
+**Why.** LinkedIn is the main distribution channel, and a shared link previously unfurled with no image.
+
 ## 2026-09-18, dim weight lab uses published billing rules on the synthetic rate table
 
 **Decision.** The dim weight lab models four published rule sets (UPS and FedEx before and after the August 2025 round up, USPS before and after the July 2026 change) as data: divisor, side rounding, and the size threshold. All four price on the one synthetic rate table the zone optimizer uses.

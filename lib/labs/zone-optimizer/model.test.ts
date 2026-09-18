@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { getBaseRate, getRate } from "@/lib/rates";
+import { SURCHARGES, getBaseRate, getRate } from "@/lib/rates";
 import { ZONES, getZone, roadMiles, getCentroid } from "@/lib/zones";
 import { compareConfigurations, evaluateConfiguration } from "./model";
 import { generateOrders } from "./orders";
@@ -71,7 +71,7 @@ describe("rate table", () => {
       residential: true,
     });
     expect(commercial.total).toBeCloseTo(commercial.base + commercial.fuel, 10);
-    expect(residential.total - commercial.total).toBeCloseTo(5.95, 10);
+    expect(residential.total - commercial.total).toBeCloseTo(SURCHARGES.residential, 10);
   });
 });
 

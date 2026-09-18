@@ -14,8 +14,8 @@ const rates = rateData.rates as Record<string, Record<string, number>>;
 export const SURCHARGES = {
   /** Percentage of the base rate. Real fuel surcharges move weekly. */
   fuelPct: 0.165,
-  /** Flat add for a residential delivery. */
-  residential: 5.95,
+  /** Flat add for a residential delivery, halved with the base table. */
+  residential: 2.95,
 } as const;
 
 export const MIN_WEIGHT_LB = 1;

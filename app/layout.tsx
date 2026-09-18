@@ -36,6 +36,11 @@ export const metadata: Metadata = {
     description: site.description,
     url: site.url,
   },
+  // The card image itself comes from the opengraph-image files. This only
+  // asks platforms that read Twitter tags to show it large.
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({
