@@ -101,11 +101,11 @@ export default function Home() {
 
       <section className="pb-20">
         <Kicker>Portfolio</Kicker>
-        {/* Erich writes this intro. */}
+        {/* Erich's intro, 2026-09-18. Written to stay true as tools are added. */}
         <p className="max-w-xl text-lg leading-relaxed text-muted">
-          Interactive models of how parcel economics actually work, built on
-          synthetic data so the mechanics can be published without publishing
-          anyone&apos;s rates.
+          Tools for the decisions shippers actually have to make, like where to
+          put the next warehouse or what packaging really costs. I build them
+          with Claude Code on synthetic data, so the math can be public.
         </p>
         <div className="mt-8 grid gap-6">
           {live.map((entry, index) => (
@@ -117,7 +117,7 @@ export default function Home() {
               tags={entry.tags}
               index={index + 1}
               total={live.length}
-              kind="Interactive model"
+              kind="Decision tool"
             />
           ))}
         </div>

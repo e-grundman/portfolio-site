@@ -211,7 +211,7 @@ export async function renderEntryCard(entry: { title: string; summary: string })
               textTransform: "uppercase",
             }}
           >
-            <div>Interactive model</div>
+            <div>Decision tool</div>
             <div>{site.name}</div>
           </div>
 

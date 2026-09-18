@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function ZoneOptimizerPage() {
   return (
     <article className="py-6">
-      <Kicker>Interactive model</Kicker>
+      <Kicker>Decision tool</Kicker>
       <h1 className="headline text-5xl sm:text-6xl">
         {entry.title}
       </h1>

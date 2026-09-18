@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/portfolio" },
   title: "Portfolio",
   description:
-    "Interactive models of parcel economics, built on synthetic data: zone optimization, dimensional weight, and the mechanics behind shipping cost.",
+    "Tools for the decisions shippers have to make, built with Claude Code on synthetic data: warehouse placement, packaging, and the mechanics behind shipping cost.",
 };
 
 const statusOrder = ["live", "prototype", "planned"] as const;
@@ -23,16 +23,15 @@ export default function PortfolioIndex() {
   return (
     <section className="py-6">
       <Kicker>Portfolio</Kicker>
-      {/* Erich writes this title and intro. */}
       <h1 className="headline text-5xl sm:text-6xl">
-        The mechanics, made playable.
+        Tools for shipping decisions
       </h1>
       <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
-        Parcel economics are not complicated, they are just invisible. Each
-        piece here takes one cost mechanism, models it on synthetic data I
-        control, and lets you move the inputs until the behavior is obvious.
-        Every dataset states where it came from, because none of it may come
-        from an employer.
+        Each tool starts from a decision a shipper has to make and models the
+        cost mechanism underneath it, so you can change the inputs and see what
+        moves. I build them with Claude Code on synthetic data, and every
+        dataset states where it came from, because none of it may come from an
+        employer.
       </p>
 
       {statusOrder.map((status) => {
@@ -54,7 +53,7 @@ export default function PortfolioIndex() {
                   tags={entry.tags}
                   index={index + 1}
                   total={group.length}
-                  kind={status === "live" ? "Interactive model" : statusCopy[status]}
+                  kind={status === "live" ? "Decision tool" : statusCopy[status]}
                 />
               ))}
             </div>
