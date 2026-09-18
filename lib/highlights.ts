@@ -18,7 +18,7 @@ export const highlights: Highlight[] = [
     figure: "$10M+",
     label: "Annual carrier savings, delivered through 10 launches",
     detail:
-      "6 new carriers, 3 expansions into new countries and warehouses, and 1 relaunch, all API integrations. Product lead on each, and on several the full launch: negotiation data and strategy, implementation, engineering requirements, and rollout.",
+      "6 new carriers, 3 expansions, and 1 relaunch, all API integrations. Product lead on each, and on several the full launch, from negotiation data to rollout.",
   },
   {
     // A growth multiple rather than monthly volume, by Erich's call on
@@ -27,25 +27,25 @@ export const highlights: Highlight[] = [
     figure: "~9×",
     label: "Hazmat order volume, 3 carriers to 6, same margin",
     detail:
-      "Instrumental in overhauling the dangerous goods shipping program and the controls that keep it compliant. Monthly volume grew almost ninefold across twice the carriers, with margin percentage held and carrier violations sharply down.",
+      "Instrumental in overhauling the dangerous goods program and its compliance controls. Volume grew almost ninefold, with margin held and carrier violations sharply down.",
   },
   {
     figure: "4,000+",
     label: "Hours of manual work eliminated a year",
     detail:
-      "Three production internal apps, built and shipped as a non-engineer on Next.js, Vercel, and Neon from my own no-code automation prototypes. They centralized the Transportation team's operations, carrier management, and financial reporting.",
+      "Three production internal apps, built and shipped as a non-engineer, that centralized the Transportation team's operations, carrier management, and financial reporting.",
   },
   {
     figure: "50% → 90%+",
     label: "On-time delivery, fixed by changing the math",
     detail:
-      "A brand's retail-compliance shipments missed their delivery window half the time. Planning to 90th percentile transit instead of the average, and getting the retailer to move the window off the weekend, fixed it.",
+      "Retail-compliance shipments missed their window half the time. Planning to 90th percentile transit, and getting the retailer to move the window off the weekend, fixed it.",
   },
   {
     figure: "50%",
     label: "Faster order to doorstep, at no added cost",
     detail:
-      "Click to delivery time cut in six months for a top ecommerce brand, through method mix, carrier selection, and warehouse routing, with no increase in shipping cost.",
+      "Click to delivery time cut in six months for a top ecommerce brand, through method mix, carrier selection, and warehouse routing.",
   },
   {
     figure: "25%",

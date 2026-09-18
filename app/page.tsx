@@ -84,12 +84,12 @@ export default function Home() {
                   spansRow ? "sm:col-span-2" : index % 2 === 0 ? "sm:border-r-2" : "",
                 ].join(" ")}
               >
-                <dt className="field-label text-xs">{highlight.label}</dt>
+                <dt className="field-label text-sm">{highlight.label}</dt>
                 <dd>
                   <p className="headline mt-3 text-5xl sm:text-6xl">
                     {highlight.figure}
                   </p>
-                  <p className="mt-3 max-w-md text-sm leading-relaxed text-muted">
+                  <p className="mt-3 max-w-md text-[0.95rem] leading-relaxed text-ink/80">
                     {highlight.detail}
                   </p>
                 </dd>
@@ -137,7 +137,8 @@ export default function Home() {
           </p>
           <div className="p-4 sm:p-6">
             <h2 className="headline text-3xl sm:text-5xl">
-              Hiring for product where operations meet software?
+              Hiring a senior PM for an{" "}
+              <span className="whitespace-nowrap">operations-heavy</span> business?
             </h2>
             <p className="mt-4 max-w-xl leading-relaxed text-muted">
               Direct email reaches me fastest, and a specific first message gets
