@@ -58,9 +58,9 @@ export default function Home() {
           {highlights.map((highlight) => (
             <div
               key={highlight.label}
-              className="grid grid-cols-1 gap-2 border-b border-rule py-6 sm:grid-cols-[9rem_1fr] sm:gap-8"
+              className="grid grid-cols-1 gap-2 border-b border-rule py-6 sm:grid-cols-[11rem_1fr] sm:gap-8"
             >
-              <dt className="font-serif text-4xl tracking-tight text-accent">
+              <dt className="font-serif text-3xl whitespace-nowrap tracking-tight text-accent">
                 {highlight.figure}
               </dt>
               <dd>
