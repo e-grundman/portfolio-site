@@ -1,6 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import { EntryRow } from "@/components/entry-row";
 import { Kicker } from "@/components/kicker";
+import { ProfileLinks } from "@/components/profile-links";
 import { getPortfolio } from "@/lib/content/loader";
 import { site } from "@/lib/site";
 
@@ -12,12 +14,30 @@ export default function Home() {
   return (
     <>
       <section className="border-t border-rule pt-16 pb-24">
-        <Kicker>Senior Product Manager</Kicker>
-        <h1 className="font-serif text-5xl leading-[1.05] tracking-tight sm:text-6xl">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-8">
+          <Image
+            src={site.headshot}
+            alt={`Portrait of ${site.name}`}
+            width={160}
+            height={160}
+            priority
+            className="h-32 w-32 shrink-0 rounded-full border border-rule object-cover sm:h-40 sm:w-40"
+          />
+          <div>
+            <h1 className="font-serif text-4xl leading-tight tracking-tight sm:text-5xl">
+              {site.name}
+            </h1>
+            <p className="mt-3 text-lg leading-snug text-muted">
+              {site.headline}
+            </p>
+            <ProfileLinks className="mt-5" />
+          </div>
+        </div>
+        <p className="mt-16 font-serif text-3xl leading-[1.15] tracking-tight sm:text-4xl">
           I turn operations into software,
           <br />
           and <em className="text-accent">better decisions</em>.
-        </h1>
+        </p>
         <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted">
           I work at the intersection of parcel transportation, ecommerce
           fulfillment, decision science, and applied AI. I find the hidden
