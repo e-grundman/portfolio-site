@@ -2,8 +2,9 @@
  * Career highlights on the home page.
  *
  * Sourced from the LinkedIn profile rework (About, 2026-09-13), so the site
- * and the profile make the same claims in the same numbers. No dollar figures,
- * by the same decision that governs the profile.
+ * and the profile make the same claims in the same numbers. No exact dollar
+ * figures, by the same decision that governs the profile. "Millions in
+ * savings" on the click to delivery row is Erich's call, made 2026-09-17.
  */
 export type Highlight = {
   figure: string;
@@ -14,9 +15,9 @@ export type Highlight = {
 export const highlights: Highlight[] = [
   {
     figure: "50%",
-    label: "Faster click to delivery",
+    label: "Faster click to delivery, millions saved",
     detail:
-      "Cut in six months for ShipMonk's largest customer, through method mix, carrier selection, and warehouse routing.",
+      "Cut in six months for a top ecommerce brand, through method mix, carrier selection, and warehouse routing. The faster service cost nothing extra, and the program produced millions in savings for the brand.",
   },
   {
     figure: "25%",
