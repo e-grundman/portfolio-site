@@ -26,21 +26,15 @@ export const highlights: Highlight[] = [
       "A customized shipping solution for a key merchant that also reduced transportation cost, producing millions in savings for the merchant.",
   },
   {
-    figure: "20,000+",
-    label: "Exceptions handled unattended",
+    figure: "10",
+    label: "Carrier launches, millions saved a year",
     detail:
-      "An exception automation pipeline, shipped with AI-assisted development alongside a warehouse scheduling system of record.",
+      "6 new carriers, 3 expansions into new countries and warehouses, and 1 relaunch, all API integrations. Together they put millions in annualized carrier savings into production. Product lead on every one, and on several I owned the full launch: the data and strategy behind the rate negotiation, the implementation strategy, the integration requirements for engineering, and the rollout.",
   },
   {
-    figure: "12",
-    label: "Fulfillment sites measured",
+    figure: "4,000+",
+    label: "Hours of manual work eliminated a year",
     detail:
-      "KPI frameworks for cost per order, shipping margin, on-time delivery, scan latency, carrier exceptions, and warehouse to carrier handoff.",
-  },
-  {
-    figure: "8 yrs",
-    label: "From the phones to product",
-    detail:
-      "Started in 2018 explaining late packages to merchants. Then customer success operations, business operations, product marketing, and operations analytics before product.",
+      "Three production internal apps, built and shipped as a non-engineer on Next.js, Vercel, and Neon from my own no-code automation prototypes. They centralized the Transportation team's operations, carrier management, and financial reporting.",
   },
 ];

@@ -26,7 +26,7 @@ export default function About() {
         </p>
         <p className="text-muted">
           Cost models across twelve fulfillment sites. KPI frameworks for cost,
-          margin, and on-time performance. Production software I shipped myself.
+          margin, and on-time performance. Three production apps I shipped myself.
           I learned the network from the floor up, which is why I trust the
           operation over the spreadsheet when they disagree.
         </p>
@@ -57,10 +57,12 @@ export default function About() {
             between what was quoted and what was rated.
           </p>
           <p>
-            Applied AI where it earns its place, which for me has meant using
-            AI-assisted development to ship production systems without a
-            platform team behind me. The judgment stays with the person who
-            knows the network. The speed comes from the tooling.
+            Applied AI where it earns its place. AI-assisted development let
+            me build and ship three production internal apps as a
+            non-engineer, on Next.js, Vercel, and Neon, starting from my own
+            no-code automation prototypes. Together they eliminated more than
+            4,000 hours of manual work a year. The judgment stays with the
+            person who knows the network. The speed comes from the tooling.
           </p>
         </div>
       </div>
