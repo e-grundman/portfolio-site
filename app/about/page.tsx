@@ -20,7 +20,7 @@ export default function About() {
 
       <div className="mt-10 text-pretty space-y-5 text-lg leading-relaxed">
         <p>
-          Eight years at ShipMonk across six roles and five teams, and I started
+          Eight years at ShipMonk across seven roles and five teams, and I started
           in customer support. The job never changed: find the problem nobody
           had untangled yet, and turn it into a decision the business could bet
           on.
@@ -34,8 +34,7 @@ export default function About() {
           through almost anything short of a purely emotional reaction.
         </p>
         <p className="text-muted">
-          Cost models across twelve fulfillment sites. KPI frameworks for cost,
-          margin, and on-time performance. Three production apps I shipped myself.
+          KPI frameworks for cost, margin, and on-time performance. Three production apps I shipped myself.
           When the operation and the spreadsheet disagree, I trust the
           operation.
         </p>
