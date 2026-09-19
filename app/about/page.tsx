@@ -18,7 +18,7 @@ export default function About() {
         I learned the network from the floor up.
       </h1>
 
-      <div className="mt-10 max-w-xl space-y-5 text-lg leading-relaxed">
+      <div className="mt-10 text-pretty space-y-5 text-lg leading-relaxed">
         <p>
           Eight years at ShipMonk across six roles and five teams, and I started
           in customer support. The job never changed: find the problem nobody
@@ -50,7 +50,7 @@ export default function About() {
         <h2 className="field-label text-sm">
           What I work on
         </h2>
-        <div className="mt-6 max-w-xl space-y-5 leading-relaxed text-ink/85">
+        <div className="mt-6 text-pretty space-y-5 leading-relaxed text-ink/85">
           <p>
             Parcel transportation and the cost mechanics underneath it: zone
             structure, dim weight, accessorials, the annual general rate
@@ -80,7 +80,7 @@ export default function About() {
         <h2 className="field-label text-sm">
           Off the clock
         </h2>
-        <div className="mt-6 max-w-xl space-y-5 leading-relaxed text-ink/85">
+        <div className="mt-6 text-pretty space-y-5 leading-relaxed text-ink/85">
           <p>
             Chicago native, so Chicago&apos;s teams still hold my heart,
             however as a Tampa transplant the Bucs have become a close second,
@@ -102,7 +102,7 @@ export default function About() {
         <h2 className="field-label text-sm">
           Elsewhere
         </h2>
-        <p className="mt-4 max-w-xl leading-relaxed text-ink/85">
+        <p className="mt-4 text-pretty leading-relaxed text-ink/85">
           I write regularly on{" "}
           <a
             href={site.profiles.linkedin.href}
@@ -133,7 +133,7 @@ export default function About() {
         <h2 className="field-label text-sm">
           Get in touch
         </h2>
-        <p className="mt-4 max-w-xl leading-relaxed text-ink/85">
+        <p className="mt-4 text-pretty leading-relaxed text-ink/85">
           If you are hiring for senior product or AI product builder roles at a
           logistics, fulfillment, or ecommerce infrastructure company, this is
           the right inbox. Include the role and the problem it exists to solve,
