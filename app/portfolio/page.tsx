@@ -26,7 +26,7 @@ export default function PortfolioIndex() {
       <h1 className="headline text-5xl sm:text-6xl">
         Tools for shipping decisions
       </h1>
-      <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
+      <p className="mt-6 text-pretty text-lg leading-relaxed text-muted">
         Each tool starts from a decision a shipper has to make and models the
         cost mechanism underneath it, so you can change the inputs and see what
         moves. I build them with Claude Code on synthetic data, and every

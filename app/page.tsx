@@ -29,7 +29,7 @@ export default function Home() {
               <div>
                 <p className="field-label text-xs text-muted">Ship to</p>
                 <h1 className="headline mt-1 text-5xl sm:text-7xl">{site.name}</h1>
-                <p className="mt-3 max-w-md text-base leading-snug sm:text-lg">
+                <p className="mt-3 text-pretty text-base leading-snug sm:text-lg">
                   {site.headline}
                 </p>
               </div>
@@ -47,10 +47,10 @@ export default function Home() {
           <div className="p-4 sm:p-6">
             <p className="field-label text-xs text-muted">Contents</p>
             {/* Erich's line, 2026-09-18. */}
-            <p className="mt-2 max-w-2xl text-3xl leading-[1.15] font-semibold tracking-tight sm:text-4xl">
+            <p className="mt-2 text-pretty text-3xl leading-[1.15] font-semibold tracking-tight sm:text-4xl">
               I build products that help operators save time and money and make better decisions about their business.
             </p>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">
+            <p className="mt-5 text-pretty text-lg leading-relaxed text-muted">
               I work at the intersection of parcel transportation, ecommerce
               fulfillment, decision science, and applied AI.
             </p>
@@ -89,7 +89,7 @@ export default function Home() {
                   <p className="headline mt-3 text-5xl sm:text-6xl">
                     {highlight.figure}
                   </p>
-                  <p className="mt-3 max-w-md text-[0.95rem] leading-relaxed text-ink/80">
+                  <p className="mt-3 text-pretty text-[0.95rem] leading-relaxed text-ink/80">
                     {highlight.detail}
                   </p>
                 </dd>
@@ -102,7 +102,7 @@ export default function Home() {
       <section className="pb-20">
         <Kicker>Portfolio</Kicker>
         {/* Erich's intro, 2026-09-18. Written to stay true as tools are added. */}
-        <p className="max-w-xl text-lg leading-relaxed text-muted">
+        <p className="text-pretty text-lg leading-relaxed text-muted">
           Tools for the decisions shippers actually have to make, like where to
           put the next warehouse or what packaging really costs. I build them
           with Claude Code on synthetic data, so the math can be public.
@@ -140,7 +140,7 @@ export default function Home() {
               Hiring a senior PM for an{" "}
               <span className="whitespace-nowrap">operations-heavy</span> business?
             </h2>
-            <p className="mt-4 max-w-xl leading-relaxed text-muted">
+            <p className="mt-4 text-pretty leading-relaxed text-muted">
               Direct email reaches me fastest, and a specific first message gets
               a specific answer.
             </p>

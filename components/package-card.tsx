@@ -36,7 +36,7 @@ export function PackageCard({
           </Link>
         </h3>
         {summary && (
-          <p className="mt-3 max-w-xl leading-relaxed text-muted">{summary}</p>
+          <p className="mt-3 text-pretty leading-relaxed text-muted">{summary}</p>
         )}
         <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
           {tags.length > 0 && (
