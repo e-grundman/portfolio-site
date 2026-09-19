@@ -15,23 +15,34 @@ export default function About() {
     <section className="py-6">
       <Kicker>About</Kicker>
       <h1 className="headline text-5xl sm:text-6xl">
-        I learned the network from the floor up.
+        I built my career up from the call-center floor.
       </h1>
 
+      {/* Erich's copy, 2026-09-19. */}
       <div className="mt-10 text-pretty space-y-5 text-lg leading-relaxed">
         <p>
-          Eight years at ShipMonk across seven roles and five teams, and I started
-          in customer support. The job never changed: find the problem nobody
-          had untangled yet, and turn it into a decision the business could bet
-          on.
+          I spent the first two years of my career in Grubhub&apos;s Customer
+          Care department, and my first three years at ShipMonk in Customer
+          Success.
         </p>
         <p className="text-muted">
-          Two things from the phones never left me. Information nobody can act
-          on is only slightly better than no information at all, and it usually
-          costs more to produce. Additionally, the greatest reassurance you can
-          give a customer is not an apology, it is an explanation. If you can
-          tell someone exactly why something is happening, that will carry you
-          through almost anything short of a purely emotional reaction.
+          Two things from the phones have never left me. First, information
+          nobody can act on is only slightly better than no information at all.
+          Second, the best reassurance you can give a customer isn&apos;t an
+          apology, it&apos;s an explanation grounded in knowing the subject. If
+          you can tell someone exactly why something is happening and how they
+          can act on it, now or next time, that will carry you through almost
+          anything short of a purely emotional reaction.
+        </p>
+        <p className="text-muted">
+          Since support, I&apos;ve worked in Business Operations, Marketing, and
+          Operations Analytics before moving into Product. Each stop taught me
+          lessons that shaped how I think about building, running, and improving
+          products.
+        </p>
+        <p>
+          The job has always been the same: find the problems nobody has
+          untangled, and turn them into decisions the business can bet on.
         </p>
         <p className="text-muted">
           KPI frameworks for cost, margin, and on-time performance. Three production apps I shipped myself.
