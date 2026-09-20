@@ -44,11 +44,6 @@ export default function About() {
           The job has always been the same: find the problems nobody has
           untangled, and turn them into decisions the business can bet on.
         </p>
-        <p className="text-muted">
-          Every operational decision is an economic decision. Software should
-          remove decisions before it removes clicks. Most dashboards are vanity
-          displays. I build the ones that aren&apos;t.
-        </p>
       </div>
 
       <div className="mt-14 border-t-2 border-line pt-10">
