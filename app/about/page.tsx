@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Kicker } from "@/components/kicker";
 import { ProfileLinks } from "@/components/profile-links";
 import { site } from "@/lib/site";
@@ -80,7 +81,8 @@ export default function About() {
         <h2 className="field-label text-sm">
           Off the clock
         </h2>
-        <div className="mt-6 text-pretty space-y-5 leading-relaxed text-ink/85">
+        <div className="mt-6 grid gap-8 sm:grid-cols-[1fr_260px] sm:items-start">
+          <div className="text-pretty space-y-5 leading-relaxed text-ink/85">
           <p>
             Chicago native, so Chicago&apos;s teams still hold my heart,
             however as a Tampa transplant the Bucs have become a close second,
@@ -95,6 +97,15 @@ export default function About() {
             Singapore and Thailand almost entirely on points, including round
             trip on Singapore Airlines in business class.
           </p>
+          </div>
+          <Image
+            src="/about-portrait.jpg"
+            alt={`${site.name} off the clock`}
+            width={900}
+            height={1200}
+            sizes="(min-width: 640px) 260px, 100vw"
+            className="w-full border-2 border-line object-cover"
+          />
         </div>
       </div>
 
