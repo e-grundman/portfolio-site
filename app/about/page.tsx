@@ -45,11 +45,6 @@ export default function About() {
           untangled, and turn them into decisions the business can bet on.
         </p>
         <p className="text-muted">
-          KPI frameworks for cost, margin, and on-time performance. Three production apps I shipped myself.
-          When the operation and the spreadsheet disagree, I trust the
-          operation.
-        </p>
-        <p className="text-muted">
           Every operational decision is an economic decision. Software should
           remove decisions before it removes clicks. Most dashboards are vanity
           displays. I build the ones that aren&apos;t.
