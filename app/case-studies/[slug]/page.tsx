@@ -49,10 +49,6 @@ export default async function CaseStudyDetail({
       <h1 className="headline text-5xl sm:text-6xl">
         {entry.title}
       </h1>
-      <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
-        {entry.summary}
-      </p>
-
       <div className="mt-10 border-y border-rule py-8">
         <MetricList metrics={entry.metrics} />
       </div>
