@@ -148,9 +148,9 @@ export default function About() {
           Get in touch
         </h2>
         <p className="mt-4 text-pretty leading-relaxed text-ink/85">
-          If you are hiring for senior product or AI product builder roles at a
-          logistics, fulfillment, or ecommerce infrastructure company, this is
-          the right inbox. Include the role and the problem it exists to solve,
+          If you are hiring for senior product manager roles at a logistics,
+          fulfillment, or ecommerce infrastructure company, this is the right
+          inbox. Include the role and the problem it exists to solve,
           because a specific first message gets a specific answer.
         </p>
         <p className="mt-4 text-pretty leading-relaxed text-muted">
