@@ -19,9 +19,17 @@ export default function About() {
         I built my career up from the call-center floor.
       </h1>
 
-      <div className="mt-10 grid gap-8 sm:grid-cols-[1fr_280px] sm:items-start">
+      <div className="mt-10 text-pretty space-y-5 text-lg leading-relaxed">
+        <Image
+          src="/about-portrait.jpg"
+          alt={site.name}
+          width={900}
+          height={1200}
+          priority
+          sizes="(min-width: 640px) 280px, 100vw"
+          className="mb-2 w-full border-2 border-line object-cover sm:float-right sm:mt-1 sm:mb-4 sm:ml-8 sm:w-[280px]"
+        />
         {/* Erich's copy, 2026-09-19. */}
-        <div className="text-pretty space-y-5 text-lg leading-relaxed">
         <p>
           I spent the first two years of my career in Grubhub&apos;s Customer
           Care department, and my first three years at ShipMonk in Customer
@@ -62,19 +70,9 @@ export default function About() {
           The job has always been the same: find the problems nobody has
           untangled, and turn them into decisions the business can bet on.
         </p>
-        </div>
-        <Image
-          src="/about-portrait.jpg"
-          alt={site.name}
-          width={900}
-          height={1200}
-          priority
-          sizes="(min-width: 640px) 280px, 100vw"
-          className="w-full border-2 border-line object-cover"
-        />
       </div>
 
-      <div className="mt-14 border-t-2 border-line pt-10">
+      <div className="mt-14 clear-both border-t-2 border-line pt-10">
         <h2 className="field-label text-sm">
           Timeline
         </h2>
