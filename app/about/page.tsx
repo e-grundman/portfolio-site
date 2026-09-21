@@ -42,6 +42,13 @@ export default function About() {
           I am the senior product manager for shipping and transportation at
           ShipMonk, in Tampa.
         </p>
+        <p className="text-muted">
+          The surface is carrier integrations and launches, rating and routing,
+          hazmat compliance, and the internal tools the transportation team runs
+          on. The work runs through engineering, operations, finance, and the
+          carrier account teams, and most of it starts as an argument about what
+          the data says before it is ever a roadmap item.
+        </p>
         <p>
           The job has always been the same: find the problems nobody has
           untangled, and turn them into decisions the business can bet on.

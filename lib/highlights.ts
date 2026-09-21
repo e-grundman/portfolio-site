@@ -27,7 +27,7 @@ export const highlights: Highlight[] = [
     figure: "~9×",
     label: "Hazmat order volume, 3 carriers to 6, same margin",
     detail:
-      "Instrumental in overhauling the dangerous goods program and its compliance controls. Volume grew almost ninefold, with margin held and carrier violations sharply down.",
+      "I identified the flaws in the existing setup, designed the solution, and worked with engineering and operations to implement it. Volume grew almost ninefold, with margin held and carrier violations sharply down.",
   },
   {
     figure: "4,000+",

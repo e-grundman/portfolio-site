@@ -51,8 +51,8 @@ export default function Home() {
               I build products that help operators save time and money and make better decisions about their business.
             </p>
             <p className="mt-5 text-pretty text-lg leading-relaxed text-muted">
-              I work at the intersection of parcel transportation, ecommerce
-              fulfillment, decision science, and applied AI.
+              I work on parcel transportation and ecommerce fulfillment: what
+              shipping costs, why it costs that, and which decisions change it.
             </p>
             <p className="mt-6">
               <Link href="/about" className="field-label text-sm">
@@ -107,9 +107,9 @@ export default function Home() {
         <Kicker>Portfolio</Kicker>
         {/* Erich's intro, 2026-09-18. Written to stay true as tools are added. */}
         <p className="text-pretty text-lg leading-relaxed text-muted">
-          Tools for the decisions shippers actually have to make, like where to
-          put the next warehouse or what packaging really costs. I build them
-          with Claude Code on synthetic data, so the math can be public.
+          Tools for the decisions shippers have to make, like where to put the
+          next warehouse or what packaging costs to ship. I build them with
+          Claude Code on synthetic data, so the math can be public.
         </p>
         <div className="mt-8 grid gap-6">
           {live.map((entry, index) => (
