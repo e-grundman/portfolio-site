@@ -70,58 +70,55 @@ export default function About() {
           Timeline
         </h2>
         <dl className="mt-6">
-          <div className="grid grid-cols-[4.5rem_1fr] gap-4 border-b border-rule py-2.5 last:border-b-0">
-            <dt className="font-mono text-sm text-muted">2026</dt>
+          <div className="grid grid-cols-[7rem_1fr] gap-4 border-b border-rule py-2.5 last:border-b-0">
+            <dt className="font-mono text-sm text-muted">2026 – now</dt>
             <dd className="text-pretty">
               Senior Product Manager, Shipping and Transportation <span className="text-muted">· ShipMonk</span>
             </dd>
           </div>
-          <div className="grid grid-cols-[4.5rem_1fr] gap-4 border-b border-rule py-2.5 last:border-b-0">
-            <dt className="font-mono text-sm text-muted">2024</dt>
+          <div className="grid grid-cols-[7rem_1fr] gap-4 border-b border-rule py-2.5 last:border-b-0">
+            <dt className="font-mono text-sm text-muted">2024 – 2026</dt>
             <dd className="text-pretty">
               Product Manager, Shipping and Transportation <span className="text-muted">· ShipMonk</span>
             </dd>
           </div>
-          <div className="grid grid-cols-[4.5rem_1fr] gap-4 border-b border-rule py-2.5 last:border-b-0">
-            <dt className="font-mono text-sm text-muted">2023</dt>
+          <div className="grid grid-cols-[7rem_1fr] gap-4 border-b border-rule py-2.5 last:border-b-0">
+            <dt className="font-mono text-sm text-muted">2023 – 2024</dt>
             <dd className="text-pretty">
               Senior Manager, Operations Analytics <span className="text-muted">· ShipMonk</span>
             </dd>
           </div>
-          <div className="grid grid-cols-[4.5rem_1fr] gap-4 border-b border-rule py-2.5 last:border-b-0">
-            <dt className="font-mono text-sm text-muted">2022</dt>
+          <div className="grid grid-cols-[7rem_1fr] gap-4 border-b border-rule py-2.5 last:border-b-0">
+            <dt className="font-mono text-sm text-muted">2022 – 2023</dt>
             <dd className="text-pretty">
               Product Marketing Manager <span className="text-muted">· ShipMonk</span>
             </dd>
           </div>
-          <div className="grid grid-cols-[4.5rem_1fr] gap-4 border-b border-rule py-2.5 last:border-b-0">
-            <dt className="font-mono text-sm text-muted">2021</dt>
+          <div className="grid grid-cols-[7rem_1fr] gap-4 border-b border-rule py-2.5 last:border-b-0">
+            <dt className="font-mono text-sm text-muted">2021 – 2022</dt>
             <dd className="text-pretty">
               Business Operations Manager <span className="text-muted">· ShipMonk</span>
             </dd>
           </div>
-          <div className="grid grid-cols-[4.5rem_1fr] gap-4 border-b border-rule py-2.5 last:border-b-0">
-            <dt className="font-mono text-sm text-muted">2019</dt>
+          <div className="grid grid-cols-[7rem_1fr] gap-4 border-b border-rule py-2.5 last:border-b-0">
+            <dt className="font-mono text-sm text-muted">2019 – 2021</dt>
             <dd className="text-pretty">
               Customer Success Operations Manager <span className="text-muted">· ShipMonk</span>
             </dd>
           </div>
-          <div className="grid grid-cols-[4.5rem_1fr] gap-4 border-b border-rule py-2.5 last:border-b-0">
-            <dt className="font-mono text-sm text-muted">2018</dt>
+          <div className="grid grid-cols-[7rem_1fr] gap-4 border-b border-rule py-2.5 last:border-b-0">
+            <dt className="font-mono text-sm text-muted">2018 – 2019</dt>
             <dd className="text-pretty">
               Customer Success Manager <span className="text-muted">· ShipMonk</span>
             </dd>
           </div>
-          <div className="grid grid-cols-[4.5rem_1fr] gap-4 border-b border-rule py-2.5 last:border-b-0">
-            <dt className="font-mono text-sm text-muted">2015</dt>
+          <div className="grid grid-cols-[7rem_1fr] gap-4 border-b border-rule py-2.5 last:border-b-0">
+            <dt className="font-mono text-sm text-muted">2015 – 2017</dt>
             <dd className="text-pretty">
               Customer Care, specialist then team lead <span className="text-muted">· Grubhub</span>
             </dd>
           </div>
         </dl>
-        <p className="mt-4 field-label text-xs text-muted">
-          Start year of each role
-        </p>
       </div>
 
       <div className="mt-14 border-t-2 border-line pt-10">
@@ -138,7 +135,7 @@ export default function About() {
             </p>
           </div>
           <div>
-            <h3 className="text-lg font-semibold">Understand the machinery, not the abstraction sitting on top of it.</h3>
+            <h3 className="text-lg font-semibold">Walk the machinery yourself.</h3>
             <p className="mt-2 leading-relaxed text-ink/85">
               The usual case for a product manager writing their own queries is efficiency, and efficiency is the weaker case. The schema is a map of how the business works, and the only reliable way to find where that map is wrong is to walk into the wrong part of it yourself.
             </p>
@@ -159,7 +156,7 @@ export default function About() {
         <p className="mt-8 text-pretty leading-relaxed text-muted">
           When I am arguing from experience rather than evidence, I say so out
           loud. Every belief here is held at the strength of the evidence
-          sitting under it. Bring me better evidence and I will move. Bring me a
+          behind it. Bring me better evidence and I will move. Bring me a
           healthier dashboard and I will ask what we are buying.
         </p>
       </div>

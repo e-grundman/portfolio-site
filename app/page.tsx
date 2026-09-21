@@ -109,7 +109,7 @@ export default function Home() {
         {/* Erich's intro, 2026-09-18. Written to stay true as tools are added. */}
         <p className="text-pretty text-lg leading-relaxed text-muted">
           Tools for the decisions shippers have to make, like where to put the
-          next warehouse or what packaging costs to ship. I build them with
+          next warehouse or what a box choice costs. I build them with
           Claude Code on synthetic data, so the math can be public.
         </p>
         <div className="mt-8 grid gap-6">
