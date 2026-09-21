@@ -1,9 +1,9 @@
 ---
 title: "Routing on averages, fixed with percentiles"
-summary: "A retailer's delivery window came with fees attached, and the routing logic was planning to an average. Percentiles fixed half of it. Asking the retailer a question fixed the other half."
+summary: "A retailer's delivery window came with fees attached, and the routing logic was planning to an average. Percentiles fixed the math. One question moved the constraint the math was working inside."
 role: "Product Manager, Shipping and Transportation"
 org: "ShipMonk"
-timeframe: "2026"
+timeframe: "Early 2026"
 domains: ["parcel", "data", "ops"]
 constraint: "The delivery window was assigned per order by the retailer and carried non-compliance fees, so the network had to meet the window rather than renegotiate the promise."
 metrics:
@@ -30,7 +30,7 @@ The window belonged to the retailer, and the fees for missing it were real money
 
 ## What I did
 
-The first change was statistical. We moved the target from the first day of the window to the middle of it, and set the ship date a number of business days ahead of that target, where the number is the 90th percentile of observed transit in business days, floored at UPS's own published delivery promise. Business days instead of calendar days removed the weekend error. The percentile replaced a coin flip with a number that is right nine times out of ten.
+The first change was statistical. We moved the target from the first day of the window to the middle of it, and set the ship date a number of business days ahead of that target, where the number is the 90th percentile of observed transit in business days, floored at UPS's own published delivery promise. Business days instead of calendar days removed the weekend error. The percentile replaced a coin flip with a ship date that runs late on about one lane in ten rather than on half of them.
 
 The 90th percentile is a choice, not a law, and it is the part of this worth arguing with. A higher percentile buys more certainty on the delivery end and pays for it by shipping earlier, which means holding inventory longer and giving up flexibility upstream. 90 was where that trade sat for this brand's window and this lane mix. Somebody with tighter warehouse capacity or looser windows should land somewhere else.
 

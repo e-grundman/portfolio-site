@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/about" },
   title: "About",
   description:
-    "Eight years across ecommerce fulfillment, parcel transportation, carrier performance, and logistics data products, starting in customer support.",
+    "Eleven years across ecommerce fulfillment, parcel transportation, carrier performance, and logistics data products, starting in customer support.",
 };
 
 export default function About() {

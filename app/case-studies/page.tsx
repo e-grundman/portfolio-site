@@ -28,8 +28,8 @@ export default function CaseStudyIndex() {
       </h1>
       <p className="mt-6 text-pretty text-lg leading-relaxed text-muted">
         Each one names the target, the constraint that could not move, what
-        changed, and how it was measured. Where an employer has published the
-        outcome, it is cited and linked.
+        changed, and how it was measured. Where the outcome was published
+        somewhere else, by an employer or by me, it is cited and linked.
       </p>
       <div className="mt-10">
         {work.map((entry) => (
