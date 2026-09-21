@@ -47,11 +47,7 @@ export default function Home() {
 
           <div className="p-4 sm:p-6">
             <p className="field-label text-xs text-muted">Contents</p>
-            {/* Erich's line, 2026-09-18. */}
             <p className="mt-2 text-pretty text-3xl leading-[1.15] font-semibold tracking-tight sm:text-4xl">
-              I build products that help operators save time and money and make better decisions about their business.
-            </p>
-            <p className="mt-5 text-pretty text-lg leading-relaxed text-muted">
               I work on parcel transportation and ecommerce fulfillment: what
               shipping costs, why it costs that, and which decisions change it.
             </p>
