@@ -38,9 +38,9 @@ export default function About() {
         </p>
         <p className="text-muted">
           Since support, I&apos;ve worked in Business Operations, Marketing, and
-          Operations Analytics before moving into Product. Each stop taught me
-          lessons that shaped how I think about building, running, and improving
-          products.
+          Operations Analytics, and I have been in product since 2024. Today
+          I am the senior product manager for shipping and transportation at
+          ShipMonk, in Tampa.
         </p>
         <p>
           The job has always been the same: find the problems nobody has
@@ -137,41 +137,10 @@ export default function About() {
           <p>
             These days it is Tampa, my wife, two golden retrievers named Leo and
             Mac, Bucs season tickets in the fall, and a boat whenever the
-            weather cooperates. Our son arrives this fall. It goes without
+            weather cooperates. Our son is due in the fall of 2026. It goes without
             saying that I have been told this will reorganize all of the above.
           </p>
         </div>
-      </div>
-
-      <div className="mt-14 border-t-2 border-line pt-10">
-        <h2 className="field-label text-sm">
-          Elsewhere
-        </h2>
-        <p className="mt-4 text-pretty leading-relaxed text-ink/85">
-          I write regularly on{" "}
-          <a
-            href={site.profiles.linkedin.href}
-            aria-label={site.profiles.linkedin.accessibleLabel}
-            target="_blank"
-            rel="noopener noreferrer me"
-            className="underline decoration-highlight decoration-[3px] underline-offset-2"
-          >
-            LinkedIn
-          </a>{" "}
-          about parcel economics and decision science, and the code behind this
-          site and its labs is public on{" "}
-          <a
-            href={site.profiles.github.href}
-            aria-label={site.profiles.github.accessibleLabel}
-            target="_blank"
-            rel="noopener noreferrer me"
-            className="underline decoration-highlight decoration-[3px] underline-offset-2"
-          >
-            GitHub
-          </a>
-          .
-        </p>
-        <ProfileLinks className="mt-6" withEmail />
       </div>
 
       <div className="mt-14 border-t-2 border-line pt-10">
@@ -184,15 +153,11 @@ export default function About() {
           the right inbox. Include the role and the problem it exists to solve,
           because a specific first message gets a specific answer.
         </p>
-        <p className="mt-6">
-          <a
-            href={`mailto:${site.email}`}
-            aria-label={`Email ${site.name}`}
-            className="font-mono text-sm"
-          >
-            {site.email}
-          </a>
+        <p className="mt-4 text-pretty leading-relaxed text-muted">
+          I write about parcel economics and decision science on LinkedIn, and
+          the code behind this site and its tools is public on GitHub.
         </p>
+        <ProfileLinks className="mt-6" withEmail />
       </div>
     </section>
   );
