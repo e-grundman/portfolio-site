@@ -189,7 +189,8 @@ export function CartonCalculator({ rule }: { rule: DimRule }) {
             contents push it past {breakEven} lb. At {weightLb} lb, the largest
             box that bills on actual weight is{" "}
             {maxCube.toLocaleString("en-US")} cubic inches, against{" "}
-            {selected.cubicInches.toLocaleString("en-US")} measured here.
+            {selected.cubicInches.toLocaleString("en-US")} as this rule
+            measures the box.
           </>
         ) : (
           <>
@@ -198,8 +199,9 @@ export function CartonCalculator({ rule }: { rule: DimRule }) {
             carrier starts charging for space.
           </>
         )}{" "}
-        The package density is {density.toFixed(1)} lb per cubic foot, against a
-        break even of {breakEvenDensity(rule).toFixed(1)}.
+        On its true outside dimensions the package is {density.toFixed(1)} lb
+        per cubic foot, against a break even of{" "}
+        {breakEvenDensity(rule).toFixed(1)}.
       </p>
       {overRateTable && (
         <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted">
