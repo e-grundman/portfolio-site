@@ -1,4 +1,4 @@
-// Card version 6. Next hashes this file, not lib/og.tsx, into the image URL,
+// Card version 7. Next hashes this file, not lib/og.tsx, into the image URL,
 // and LinkedIn caches by URL, including a failed fetch. Bump the number when
 // the card design changes so every platform fetches the new image.
 import { highlights } from "@/lib/highlights";
