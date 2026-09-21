@@ -45,9 +45,18 @@ export default function About() {
         <p className="text-muted">
           The surface is carrier integrations and launches, rating and routing,
           hazmat compliance, and the internal tools the transportation team runs
-          on. The work runs through engineering, operations, finance, and the
-          carrier account teams, and most of it starts as an argument about what
-          the data says before it is ever a roadmap item.
+          on. More than 90 percent of ShipMonk&apos;s parcel volume moves through
+          the rating and routing I own, across 13 carriers and three resellers of
+          those same carriers.
+        </p>
+        <p className="text-muted">
+          The team is four engineers, an engineering lead, and a QA, plus a
+          product manager who reports to me. Outside product and engineering my
+          standing partner is the Transportation team, which carries the merchant
+          experience, the operations, and the commercial sides of the same
+          problem. A change I ship can land on one merchant or on all of them,
+          and most of the work starts as an argument about what the data says
+          before it is ever a roadmap item.
         </p>
         <p>
           The job has always been the same: find the problems nobody has
