@@ -48,7 +48,7 @@ export const highlights: Highlight[] = [
     label: "Faster order to doorstep, at no added cost",
     href: "/case-studies/dr-squatch-click-to-delivery",
     detail:
-      "Click to delivery time cut in six months for a top ecommerce brand, through method mix, carrier selection, and warehouse routing.",
+      "Click to delivery time cut in half across 2024 for a top ecommerce brand, through method mix, carrier selection, and warehouse routing.",
   },
   {
     figure: "25%",
