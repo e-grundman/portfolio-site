@@ -67,6 +67,65 @@ export default function About() {
 
       <div className="mt-14 border-t-2 border-line pt-10">
         <h2 className="field-label text-sm">
+          Timeline
+        </h2>
+        <dl className="mt-6">
+          <div className="grid grid-cols-[4.5rem_1fr] gap-4 border-b border-rule py-2.5 last:border-b-0">
+            <dt className="font-mono text-sm text-muted">2026</dt>
+            <dd className="text-pretty">
+              Senior Product Manager, Shipping and Transportation <span className="text-muted">· ShipMonk</span>
+            </dd>
+          </div>
+          <div className="grid grid-cols-[4.5rem_1fr] gap-4 border-b border-rule py-2.5 last:border-b-0">
+            <dt className="font-mono text-sm text-muted">2024</dt>
+            <dd className="text-pretty">
+              Product Manager, Shipping and Transportation <span className="text-muted">· ShipMonk</span>
+            </dd>
+          </div>
+          <div className="grid grid-cols-[4.5rem_1fr] gap-4 border-b border-rule py-2.5 last:border-b-0">
+            <dt className="font-mono text-sm text-muted">2023</dt>
+            <dd className="text-pretty">
+              Senior Manager, Operations Analytics <span className="text-muted">· ShipMonk</span>
+            </dd>
+          </div>
+          <div className="grid grid-cols-[4.5rem_1fr] gap-4 border-b border-rule py-2.5 last:border-b-0">
+            <dt className="font-mono text-sm text-muted">2022</dt>
+            <dd className="text-pretty">
+              Product Marketing Manager <span className="text-muted">· ShipMonk</span>
+            </dd>
+          </div>
+          <div className="grid grid-cols-[4.5rem_1fr] gap-4 border-b border-rule py-2.5 last:border-b-0">
+            <dt className="font-mono text-sm text-muted">2021</dt>
+            <dd className="text-pretty">
+              Business Operations Manager <span className="text-muted">· ShipMonk</span>
+            </dd>
+          </div>
+          <div className="grid grid-cols-[4.5rem_1fr] gap-4 border-b border-rule py-2.5 last:border-b-0">
+            <dt className="font-mono text-sm text-muted">2019</dt>
+            <dd className="text-pretty">
+              Customer Success Operations Manager <span className="text-muted">· ShipMonk</span>
+            </dd>
+          </div>
+          <div className="grid grid-cols-[4.5rem_1fr] gap-4 border-b border-rule py-2.5 last:border-b-0">
+            <dt className="font-mono text-sm text-muted">2018</dt>
+            <dd className="text-pretty">
+              Customer Success Manager <span className="text-muted">· ShipMonk</span>
+            </dd>
+          </div>
+          <div className="grid grid-cols-[4.5rem_1fr] gap-4 border-b border-rule py-2.5 last:border-b-0">
+            <dt className="font-mono text-sm text-muted">2015</dt>
+            <dd className="text-pretty">
+              Customer Care, specialist then team lead <span className="text-muted">· Grubhub</span>
+            </dd>
+          </div>
+        </dl>
+        <p className="mt-4 field-label text-xs text-muted">
+          Start year of each role
+        </p>
+      </div>
+
+      <div className="mt-14 border-t-2 border-line pt-10">
+        <h2 className="field-label text-sm">
           Philosophy
         </h2>
         {/* Erich's tenets, trimmed 2026-09-20. Two carry the case behind
