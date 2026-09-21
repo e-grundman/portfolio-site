@@ -187,8 +187,7 @@ export default function About() {
           <p>
             These days it is Tampa, my wife, two golden retrievers named Leo and
             Mac, Bucs season tickets in the fall, and a boat whenever the
-            weather cooperates. Our son is due in the fall of 2026. It goes without
-            saying that I have been told this will reorganize all of the above.
+            weather cooperates.
           </p>
         </div>
       </div>
