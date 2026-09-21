@@ -4,14 +4,14 @@ import matter from "gray-matter";
 import { z } from "zod";
 import {
   portfolioSchema,
-  workSchema,
+  caseStudySchema,
   writingSchema,
   type PortfolioFrontmatter,
-  type WorkFrontmatter,
+  type CaseStudyFrontmatter,
   type WritingFrontmatter,
 } from "./schema";
 
-export type ContentType = "work" | "writing" | "portfolio";
+export type ContentType = "case-studies" | "writing" | "portfolio";
 
 export type Entry<T> = T & { slug: string };
 
@@ -19,7 +19,7 @@ export type Entry<T> = T & { slug: string };
 const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 const schemas = {
-  work: workSchema,
+  "case-studies": caseStudySchema,
   writing: writingSchema,
   portfolio: portfolioSchema,
 } satisfies Record<ContentType, z.ZodTypeAny>;
@@ -79,14 +79,14 @@ function byNewest<T extends { publishedAt: string }>(a: T, b: T): number {
   return b.publishedAt.localeCompare(a.publishedAt);
 }
 
-export function getWork(): Entry<WorkFrontmatter>[] {
+export function getCaseStudies(): Entry<CaseStudyFrontmatter>[] {
   return visible(
-    listSlugs("work").map((slug) => readFrontmatter("work", slug, schemas.work)),
+    listSlugs("case-studies").map((slug) => readFrontmatter("case-studies", slug, schemas["case-studies"])),
   ).sort(byNewest);
 }
 
-export function getWorkEntry(slug: string): Entry<WorkFrontmatter> {
-  return readFrontmatter("work", slug, schemas.work);
+export function getCaseStudyEntry(slug: string): Entry<CaseStudyFrontmatter> {
+  return readFrontmatter("case-studies", slug, schemas["case-studies"]);
 }
 
 export function getWriting(): Entry<WritingFrontmatter>[] {

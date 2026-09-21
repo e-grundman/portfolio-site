@@ -1,0 +1,56 @@
+---
+title: "Cutting click to delivery in half"
+summary: "Dr. Squatch asked for orders delivered in under four days on average, with fewer than 5% past seven. Half the delay was in the building and half was in carrier selection, and neither half could be fixed by spending more."
+role: "Product Manager, Shipping and Transportation"
+org: "ShipMonk"
+timeframe: "2024"
+domains: ["parcel", "fulfillment", "ops"]
+constraint: "ShipMonk absorbed the cost rather than passing it to the brand, so every hour had to come out at close to zero added spend."
+metrics:
+  - label: "click to delivery"
+    before: "7 to 8+ days"
+    after: "under 4 days"
+  - label: "create to ship"
+    before: "41 hours"
+    after: "under 30 hours"
+  - label: "ship to delivery"
+    before: "4 days"
+    after: "3 days"
+publishedAt: "2026-09-21"
+sourceUrl: "https://www.shipmonk.com/resources/case-studies/dr-squatch"
+featured: true
+---
+
+## Situation
+
+Dr. Squatch came to the account with two numbers rather than a complaint: average click to delivery under four calendar days, and a tail, meaning orders taking more than seven days, under 5 percent. They were explicit that they did not expect an immediate flip or a free one. They did expect urgency.
+
+Click to delivery is two problems wearing one number. Half of it is how long an order sits before it leaves the building, and half is how long the carrier takes once it has it. Both halves were slow, for unrelated reasons.
+
+In the building, order cutoffs meant packages finished after a threshold waited for the next day's induction. On the transportation side, the network leaned on a single carrier, and carrier selection did not weigh transit time at all. It optimized on cost alone, which meant that on some lanes we were choosing a carrier two to three days slower to save three cents on a package.
+
+## Constraint
+
+The cost of fixing it could not go to the brand. ShipMonk absorbed it, which made cost neutrality the real design constraint rather than a preference. Any change that bought a day by paying for a faster service was disqualified, because the version of that answer everyone already knows is to buy more air.
+
+That left the two levers that do not cost money: when the package leaves, and which carrier gets it for how much more.
+
+## What I did
+
+Work ran in two tracks with Operations, Transportation, Engineering, and Product together, trialing changes and keeping the ones that held.
+
+On the operations side, we moved the cutoffs so more volume made the same day's carrier induction rather than the next one. Create to ship went from 41 hours in Q1 2024 to under 30 hours by Q4.
+
+On the transportation side, we rebuilt how carriers were chosen. Instead of selecting on cost alone, we looked at performance by warehouse and destination ZIP together, because a carrier that is strong out of one building is not the same carrier out of another. Where the default choice was losing days on a lane, those orders moved to a faster carrier for a small increase in cost, which is the trade that a three cent decision had been quietly refusing. That work also started a broader reshaping of the network's carrier mix, beyond this one brand.
+
+Measurement was its own piece of the work. Click to delivery was measured in calendar days from order placed to order delivered, and we had dashboards segmenting every stage of the order flow, so each change could be attributed to the stage it moved instead of to the total.
+
+## Result
+
+Ship to delivery went from four calendar days on average to three. Combined with the hours taken out of the building, ShipMonk's published case study reports click to delivery falling from seven to eight days or more to under four, order accuracy consistently above 99.5 percent, and "where is my order" going from Dr. Squatch's top customer service issue to outside their top ten.
+
+The cost increase was small enough that ShipMonk absorbed it, which was the point. The days came out of decisions, not out of the shipping budget.
+
+## What I would do differently
+
+I would have gone after the selection rule before a brand had to ask. A rule that trades two to three days for three cents is not wrong for one account, it is wrong everywhere it runs, and we found it because a merchant with a specific target made us look. The general lesson I now apply is that a cost rule with no service term in it is a service decision nobody has made on purpose.

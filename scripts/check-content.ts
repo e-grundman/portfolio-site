@@ -9,12 +9,12 @@
  */
 import {
   getPortfolioEntry,
-  getWorkEntry,
+  getCaseStudyEntry,
   getWritingEntry,
   listSlugs,
   readBody,
 } from "../lib/content/loader";
-import { requiredWorkHeadings } from "../lib/content/schema";
+import { requiredCaseStudyHeadings } from "../lib/content/schema";
 
 const problems: string[] = [];
 
@@ -22,16 +22,16 @@ function record(error: unknown): void {
   problems.push(error instanceof Error ? error.message : String(error));
 }
 
-for (const slug of listSlugs("work")) {
+for (const slug of listSlugs("case-studies")) {
   try {
-    getWorkEntry(slug);
-    const body = readBody("work", slug);
-    const missing = requiredWorkHeadings.filter(
+    getCaseStudyEntry(slug);
+    const body = readBody("case-studies", slug);
+    const missing = requiredCaseStudyHeadings.filter(
       (heading) => !body.includes(heading),
     );
     if (missing.length > 0) {
       problems.push(
-        `content/work/${slug}.mdx is missing required sections:\n${missing
+        `content/case-studies/${slug}.mdx is missing required sections:\n${missing
           .map((heading) => `  ${heading}`)
           .join("\n")}`,
       );
@@ -69,7 +69,7 @@ if (problems.length > 0) {
   process.exit(1);
 }
 
-const counts = (["work", "writing", "portfolio"] as const)
+const counts = (["case-studies", "writing", "portfolio"] as const)
   .map((type) => `${listSlugs(type).length} ${type}`)
   .join(", ");
 console.log(`Content check passed: ${counts}.`);

@@ -13,7 +13,7 @@ import { sections, site } from "@/lib/site";
 const links = [
   { href: "/about", label: "About", section: "about" },
   { href: "/portfolio", label: "Portfolio", section: "portfolio" },
-  { href: "/work", label: "Work", section: "work" },
+  { href: "/case-studies", label: "Case studies", section: "caseStudies" },
   { href: "/writing", label: "Writing", section: "writing" },
 ] as const;
 

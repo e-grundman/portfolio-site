@@ -30,7 +30,7 @@ export const domainSchema = z.enum([
   "ops",
 ]);
 
-export const workSchema = z.object({
+export const caseStudySchema = z.object({
   title: z.string().min(1),
   summary: z.string().min(1),
   role: z.string().min(1),
@@ -76,12 +76,12 @@ export const portfolioSchema = z.object({
 });
 
 export type Metric = z.infer<typeof metricSchema>;
-export type WorkFrontmatter = z.infer<typeof workSchema>;
+export type CaseStudyFrontmatter = z.infer<typeof caseStudySchema>;
 export type WritingFrontmatter = z.infer<typeof writingSchema>;
 export type PortfolioFrontmatter = z.infer<typeof portfolioSchema>;
 
 /** Body headings a case study must carry, checked by pnpm content:check. */
-export const requiredWorkHeadings = [
+export const requiredCaseStudyHeadings = [
   "## Situation",
   "## Constraint",
   "## What I did",

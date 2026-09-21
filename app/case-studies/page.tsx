@@ -3,39 +3,39 @@ import { EntryRow } from "@/components/entry-row";
 import { Kicker } from "@/components/kicker";
 import { MetricFigure } from "@/components/metric";
 import { notFound } from "next/navigation";
-import { getWork } from "@/lib/content/loader";
+import { getCaseStudies } from "@/lib/content/loader";
 import { sections } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Work",
+  title: "Case studies",
   description:
     "Case studies in parcel transportation, ecommerce fulfillment, logistics billing, and data products.",
 };
 
 /**
- * Cut from navigation. The case studies stay in content/work, and turning
- * sections.work back on is the only step needed to publish them again.
+ * Long form proof behind the career highlights. Entries live in
+ * content/case-studies and are gated by sections.caseStudies.
  */
-export default function WorkIndex() {
-  if (!sections.work) notFound();
-  const work = getWork();
+export default function CaseStudyIndex() {
+  if (!sections.caseStudies) notFound();
+  const work = getCaseStudies();
 
   return (
     <section className="py-6">
-      <Kicker>Work</Kicker>
+      <Kicker>Case studies</Kicker>
       <h1 className="headline text-5xl sm:text-6xl">
-        Problems nobody had untangled yet.
+        The work behind the numbers
       </h1>
-      <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
-        Each case study names the constraint that could not move, what I did
-        inside it, and what I would do differently. Figures are operational
-        rather than financial, because the financial ones belong to an employer.
+      <p className="mt-6 text-pretty text-lg leading-relaxed text-muted">
+        Each one names the target, the constraint that could not move, what
+        changed, and how it was measured. Nothing here comes from an employer
+        system, and anything an employer has published is cited.
       </p>
       <div className="mt-10">
         {work.map((entry) => (
           <EntryRow
             key={entry.slug}
-            href={`/work/${entry.slug}`}
+            href={`/case-studies/${entry.slug}`}
             title={entry.title}
             summary={entry.summary}
             rail={<MetricFigure metric={entry.metrics[0]} />}

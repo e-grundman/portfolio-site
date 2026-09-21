@@ -3,15 +3,15 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Kicker } from "@/components/kicker";
 import { MetricList } from "@/components/metric";
-import { getWork, getWorkEntry } from "@/lib/content/loader";
+import { getCaseStudies, getCaseStudyEntry } from "@/lib/content/loader";
 import { sections } from "@/lib/site";
 import { formatMonthYear } from "@/lib/format";
 
 type Params = { slug: string };
 
 export function generateStaticParams(): Params[] {
-  if (!sections.work) return [];
-  return getWork().map((entry) => ({ slug: entry.slug }));
+  if (!sections.caseStudies) return [];
+  return getCaseStudies().map((entry) => ({ slug: entry.slug }));
 }
 
 export async function generateMetadata({
@@ -21,25 +21,25 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   try {
-    const entry = getWorkEntry(slug);
+    const entry = getCaseStudyEntry(slug);
     return { title: entry.title, description: entry.summary };
   } catch {
     return {};
   }
 }
 
-export default async function WorkDetail({
+export default async function CaseStudyDetail({
   params,
 }: {
   params: Promise<Params>;
 }) {
   const { slug } = await params;
-  if (!sections.work) notFound();
-  const known = getWork().some((entry) => entry.slug === slug);
+  if (!sections.caseStudies) notFound();
+  const known = getCaseStudies().some((entry) => entry.slug === slug);
   if (!known) notFound();
 
-  const entry = getWorkEntry(slug);
-  const { default: Body } = await import(`@/content/work/${slug}.mdx`);
+  const entry = getCaseStudyEntry(slug);
+  const { default: Body } = await import(`@/content/case-studies/${slug}.mdx`);
 
   return (
     <article className="py-6">
@@ -87,7 +87,7 @@ export default async function WorkDetail({
 
       <p className="mt-12 border-t-2 border-line pt-8">
         <Link
-          href="/work"
+          href="/case-studies"
           className="field-label text-xs"
         >
           ← All work

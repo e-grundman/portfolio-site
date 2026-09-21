@@ -11,6 +11,8 @@ export type Highlight = {
   figure: string;
   label: string;
   detail: string;
+  /** Set when a published case study tells the whole story. */
+  href?: string;
 };
 
 export const highlights: Highlight[] = [
@@ -44,6 +46,7 @@ export const highlights: Highlight[] = [
   {
     figure: "50%",
     label: "Faster order to doorstep, at no added cost",
+    href: "/case-studies/dr-squatch-click-to-delivery",
     detail:
       "Click to delivery time cut in six months for a top ecommerce brand, through method mix, carrier selection, and warehouse routing.",
   },

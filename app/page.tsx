@@ -98,6 +98,13 @@ export default function Home() {
                   <p className="mt-3 text-pretty text-[0.95rem] leading-relaxed text-ink/80">
                     {highlight.detail}
                   </p>
+                  {highlight.href && (
+                    <p className="mt-3">
+                      <Link href={highlight.href} className="field-label text-xs">
+                        Read the case study →
+                      </Link>
+                    </p>
+                  )}
                 </dd>
               </div>
             );

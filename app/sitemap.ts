@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import {
   getLocalWriting,
   getPortfolio,
-  getWork,
+  getCaseStudies,
 } from "@/lib/content/loader";
 import { sections, site } from "@/lib/site";
 
@@ -26,11 +26,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  if (sections.work) {
-    entries.push({ url: `${site.url}/work`, lastModified: new Date() });
-    for (const entry of getWork()) {
+  if (sections.caseStudies) {
+    entries.push({ url: `${site.url}/case-studies`, lastModified: new Date() });
+    for (const entry of getCaseStudies()) {
       entries.push({
-        url: `${site.url}/work/${entry.slug}`,
+        url: `${site.url}/case-studies/${entry.slug}`,
         lastModified: new Date(entry.publishedAt),
       });
     }
