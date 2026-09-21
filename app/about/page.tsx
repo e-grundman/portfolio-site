@@ -115,20 +115,30 @@ export default function About() {
         <h2 className="field-label text-sm">
           Off the clock
         </h2>
+        {/* Erich's copy, 2026-09-20. */}
         <div className="mt-6 text-pretty space-y-5 leading-relaxed text-ink/85">
           <p>
-            Chicago native, so Chicago&apos;s teams still hold my heart,
-            however as a Tampa transplant the Bucs have become a close second,
-            and Sundays in the fall are spent at Raymond James. My wife and I
-            are expecting a son.
+            Chicago, London, Singapore, Chicago again, Bainbridge Island, all
+            before I turned fifteen. Chicago is still home. The rest of it
+            turned into 34 countries and 33 states, and a working theory that
+            you can learn more about a place from an hour in one of its bars
+            than from a week of its museums.
           </p>
           <p>
-            My nerd hobby is points and miles, which, it turns out, is the same
-            game as parcel pricing with better destinations: a published rate, a
-            set of rules almost nobody reads, and real value hiding in the gap
-            between them. I fell for it planning our two-week honeymoon to
-            Singapore and Thailand almost entirely on points, including round
-            trip on Singapore Airlines in business class.
+            Most of that travel is funded by an unreasonable points and miles
+            habit. I read half a dozen blogs, I track transfer bonuses, and I
+            route essentially every dollar I spend toward a future redemption.
+            The best one so far was our honeymoon, Singapore Airlines business
+            class to Bangkok with a stop in Singapore, then hotels in Singapore,
+            Bangkok, Chiang Mai, and Phuket. Roughly $30,000 of travel, about 90
+            percent of it on points. My wife has no interest in how any of it
+            works, which I believe is the correct division of labor.
+          </p>
+          <p>
+            These days it is Tampa, my wife, two golden retrievers named Leo and
+            Mac, Bucs season tickets in the fall, and a boat whenever the
+            weather cooperates. Our son arrives this fall. It goes without
+            saying that I have been told this will reorganize all of the above.
           </p>
         </div>
       </div>
