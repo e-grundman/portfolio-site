@@ -9,7 +9,7 @@ import {
   RESIDENTIAL_SHARE,
   generateOrders,
 } from "@/lib/labs/zone-optimizer/orders";
-import { formatUsd } from "@/lib/format";
+import { formatUsd, wholePercents } from "@/lib/format";
 
 const seriesDot = ["bg-series-1", "bg-series-2", "bg-series-3"];
 const seriesText = ["text-series-1", "text-series-2", "text-series-3"];
@@ -225,14 +225,15 @@ export function ZoneOptimizer() {
                 Configuration {String.fromCharCode(65 + index)}
               </p>
               <ul className="mt-3 space-y-2">
-                {result.assignments.map((assignment) => (
+                {result.assignments.map((assignment, row) => (
                   <li key={assignment.node.id} className="text-sm">
                     <span className="flex items-baseline justify-between gap-3">
                       <span>
                         {assignment.node.city}, {assignment.node.state}
                       </span>
                       <span className="font-mono text-xs text-muted">
-                        {(assignment.share * 100).toFixed(0)}% · zone{" "}
+                        {wholePercents(result.assignments.map((a) => a.share))[row]}% ·
+                        zone{" "}
                         {assignment.averageZone.toFixed(2)}
                       </span>
                     </span>
