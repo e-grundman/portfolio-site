@@ -155,12 +155,11 @@ export async function renderHomeCard(headline: { figure: string; label: string }
                 justifyContent: "center",
                 background: color.highlight,
                 borderLeft: `${LINE}px solid ${color.ink}`,
-                fontSize: 84,
-                lineHeight: 0.9,
+                lineHeight: 0.95,
               }}
             >
-              <div>SR</div>
-              <div>PM</div>
+              <div style={{ fontSize: 46 }}>SENIOR</div>
+              <div style={{ fontSize: 84 }}>PM</div>
             </div>
           </div>
 

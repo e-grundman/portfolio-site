@@ -34,8 +34,9 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="flex w-20 flex-col items-center justify-center border-l-2 border-line bg-highlight text-on-highlight sm:w-32">
-              <span className="headline text-4xl sm:text-6xl">SR</span>
+            {/* Spelled out rather than SR PM, which a stranger has to decode. */}
+            <div className="flex w-20 flex-col items-center justify-center border-l-2 border-line bg-highlight px-2 text-on-highlight sm:w-32">
+              <span className="headline text-2xl sm:text-4xl">SENIOR</span>
               <span className="headline text-4xl sm:text-6xl">PM</span>
             </div>
           </div>
