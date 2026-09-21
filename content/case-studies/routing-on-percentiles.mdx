@@ -1,0 +1,47 @@
+---
+title: "Routing on averages, fixed with percentiles"
+summary: "A retailer's delivery window came with fees attached, and the routing logic was planning to an average. Percentiles fixed half of it. Asking the retailer a question fixed the other half."
+role: "Product Manager, Shipping and Transportation"
+org: "ShipMonk"
+timeframe: "2026"
+domains: ["parcel", "data", "ops"]
+constraint: "The delivery window was assigned per order by the retailer and carried non-compliance fees, so the network had to meet the window rather than renegotiate the promise."
+metrics:
+  - label: "on-time delivery"
+    before: "about 50%"
+    after: "over 90%"
+publishedAt: "2026-09-21"
+sourceUrl: "https://www.linkedin.com/posts/erich-grundman_most-transportation-teams-dont-have-a-routing-share-7490009484963172352-kUdO/"
+sourceLabel: "First published by"
+featured: true
+---
+
+## Situation
+
+A brand shipped restock orders to retailer intake facilities on UPS Ground, and every order carried a delivery window the retailer assigned. Miss the window and the brand paid non-compliance fees.
+
+The routing logic looked reasonable. It took the average time in transit between the shipping warehouse and the destination ZIP, then set the ship date that many days ahead of the window opening. In practice the brand was hitting the window about half the time.
+
+Two things were wrong, and only one of them was statistics. Build a ship date on an average and you have already accepted that a large share of shipments land after it. On top of that, the logic counted calendar days while the window ran Friday to Monday, so Saturday and Sunday were charged against transit even though Ground was not moving on either.
+
+## Constraint
+
+The window belonged to the retailer, and the fees for missing it were real money. None of that was ours to widen. The levers we owned were the ship date and the origin the order shipped from.
+
+## What I did
+
+The first change was statistical. We moved the target from the first day of the window to the middle of it, and set the ship date a number of business days ahead of that target, where the number is the 90th percentile of observed transit in business days, floored at UPS's own published delivery promise. Business days instead of calendar days removed the weekend error. The percentile replaced a coin flip with a number that is right nine times out of ten.
+
+The 90th percentile is a choice, not a law, and it is the part of this worth arguing with. A higher percentile buys more certainty on the delivery end and pays for it by shipping earlier, which means holding inventory longer and giving up flexibility upstream. 90 was where that trade sat for this brand's window and this lane mix. Somebody with tighter warehouse capacity or looser windows should land somewhere else.
+
+The second change was not technical at all. The brand asked the retailer to move the delivery window off the weekend and into the middle of the week, and the retailer said yes. It cost one question. The constraint everyone had been routing around turned out to be movable by asking.
+
+Engineering and Product carried this one between us, without a working group.
+
+## Result
+
+On-time delivery went from roughly 50 percent to over 90 percent against the same promise, without widening the window and without rewriting the routing service. The change that mattered was the selection rule. The change that unlocked it was a conversation.
+
+## What I would do differently
+
+I would have asked who owned the constraint before optimizing inside it. The statistics work was correct and it was necessary, and it was also a way of accepting a boundary nobody had tested. Now I list the inputs a model is not allowed to change, then ask who owns each one, before tuning anything.

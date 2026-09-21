@@ -40,6 +40,7 @@ export const highlights: Highlight[] = [
   {
     figure: "50% → 90%+",
     label: "On-time delivery, fixed by changing the math",
+    href: "/case-studies/routing-on-percentiles",
     detail:
       "Retail-compliance shipments missed their window half the time. Planning to 90th percentile transit, and getting the retailer to move the window off the weekend, fixed it.",
   },

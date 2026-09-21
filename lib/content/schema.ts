@@ -44,6 +44,8 @@ export const caseStudySchema = z.object({
   draft: z.boolean().optional().default(false),
   /** Set when the piece was first published somewhere else. */
   sourceUrl: z.url().optional(),
+  /** How to introduce that source, for example "Outcome figures published by". */
+  sourceLabel: z.string().optional(),
 });
 
 export const writingSchema = z.object({

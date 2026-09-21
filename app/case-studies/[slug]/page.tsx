@@ -68,7 +68,7 @@ export default async function CaseStudyDetail({
 
       {entry.sourceUrl && (
         <p className="mt-12 field-label text-xs text-muted">
-          Outcome figures published by{" "}
+          {entry.sourceLabel ?? "Outcome figures published by"}{" "}
           <a
             href={entry.sourceUrl}
             target="_blank"
