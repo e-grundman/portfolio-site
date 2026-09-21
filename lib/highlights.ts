@@ -49,7 +49,7 @@ export const highlights: Highlight[] = [
     label: "Faster order to doorstep, at no added cost to the brand",
     href: "/case-studies/dr-squatch-click-to-delivery",
     detail:
-      "Click to delivery for a top ecommerce brand went from 7.3 days at its worst to 3.6 at its best, through order cutoffs, carrier selection, and method mix. ShipMonk absorbed the cost.",
+      "Click to delivery for a top ecommerce brand fell from seven to eight days to under four, published by ShipMonk and matched by the brand's own reporting. Order cutoffs, carrier selection, and method mix, with ShipMonk absorbing the cost.",
   },
   {
     figure: "25%",
