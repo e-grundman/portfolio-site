@@ -66,6 +66,12 @@ export default function About() {
             them, with no employer, customer, carrier, or dollar figure. */}
         <div className="mt-6 text-pretty space-y-8">
           <div>
+            <h3 className="text-lg font-semibold">The business is the North Star, not the user.</h3>
+            <p className="mt-2 leading-relaxed text-ink/85">
+              I can do the very best thing in the world for a customer and still be a bad product manager, because if what I shipped is bad for the company paying me to make the call, I have done someone else&apos;s job. That is not permission to optimize the quarter either. Some calls cost money now and are still the only defensible ones.
+            </p>
+          </div>
+          <div>
             <h3 className="text-lg font-semibold">Understand the machinery, not the abstraction sitting on top of it.</h3>
             <p className="mt-2 leading-relaxed text-ink/85">
               The usual case for a product manager writing their own queries is efficiency, and efficiency is the weaker case. The schema is a map of how the business works, and the only reliable way to find where that map is wrong is to walk into the wrong part of it yourself.
@@ -75,12 +81,6 @@ export default function About() {
             <h3 className="text-lg font-semibold">Ask what the money is buying.</h3>
             <p className="mt-2 leading-relaxed text-ink/85">
               I once spent six weeks refusing a recurring weekly premium meant to move volume off an underperforming carrier, because the transit data put the alternative within a quarter of a day of the incumbent. It would have bought a healthier metric and nothing else. The same spend was right months later, at a third of the size, once it bought leverage instead.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold">A bet gets the evidence its size and reversibility deserve.</h3>
-            <p className="mt-2 leading-relaxed text-ink/85">
-              I once piloted a feature on an aggregate that did not hold at the account level, and I could have simulated that failure in an afternoon. Running it was still right, because it taught me the shape of the problem faster than any simulation would have. Cheap reversible bets can run on directional assumptions, recurring commitments cannot, and calling a pilot a pilot, out loud, is what preserves the relationship on the day you roll it back.
             </p>
           </div>
           <div>
