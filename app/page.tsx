@@ -65,6 +65,10 @@ export default function Home() {
 
       <section className="pb-20">
         <Kicker>Career highlights</Kicker>
+        <p className="mb-8 text-pretty text-lg leading-relaxed text-muted">
+          All six are product work at ShipMonk, a third-party logistics provider
+          that will ship more than 27 million packages this year.
+        </p>
         <dl className="label-panel grid sm:grid-cols-2">
           {highlights.map((highlight, index) => {
             // Two columns of label fields. With an odd count the last field
