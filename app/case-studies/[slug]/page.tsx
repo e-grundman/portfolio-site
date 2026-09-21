@@ -68,14 +68,14 @@ export default async function CaseStudyDetail({
 
       {entry.sourceUrl && (
         <p className="mt-12 field-label text-xs text-muted">
-          First published{" "}
+          Outcome figures published by{" "}
           <a
             href={entry.sourceUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="underline decoration-highlight decoration-[3px] underline-offset-2"
           >
-            on LinkedIn ↗
+            {new URL(entry.sourceUrl).hostname.replace(/^www\./, "")} ↗
           </a>{" "}
           · {formatMonthYear(entry.publishedAt)}
         </p>
@@ -86,7 +86,7 @@ export default async function CaseStudyDetail({
           href="/case-studies"
           className="field-label text-xs"
         >
-          ← All work
+          ← All case studies
         </Link>
       </p>
     </article>
