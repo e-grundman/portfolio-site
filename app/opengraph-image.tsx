@@ -5,7 +5,7 @@ import { highlights } from "@/lib/highlights";
 import { ogContentType, ogSize, renderHomeCard } from "@/lib/og";
 import { site } from "@/lib/site";
 
-export const alt = `${site.name}, . I build products that help operators save time and money and make better decisions about their business.`;
+export const alt = `${site.name}, ${site.role}. I build products that help operators save time and money and make better decisions about their business.`;
 export const size = ogSize;
 export const contentType = ogContentType;
 
