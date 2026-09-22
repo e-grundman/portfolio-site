@@ -174,6 +174,16 @@ export default function About() {
         </h2>
         {/* Erich's copy, 2026-09-20. */}
         <div className="mt-6 text-pretty space-y-5 leading-relaxed text-ink/85">
+          {/* Floats the other way from the portrait above, so the two photos
+              do not stack down one edge of the page. */}
+          <Image
+            src="/off-the-clock.jpg"
+            alt="Erich Grundman and his wife at a Buccaneers game"
+            width={900}
+            height={1200}
+            sizes="(min-width: 640px) 260px, 100vw"
+            className="mb-2 w-full border-2 border-line object-cover sm:float-left sm:mt-1 sm:mr-8 sm:mb-4 sm:w-[260px]"
+          />
           <p>
             Chicago, London, Singapore, Chicago again, Bainbridge Island, all
             before I turned fifteen. Chicago is still home. The rest of it
@@ -199,7 +209,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="mt-14 border-t-2 border-line pt-10">
+      <div className="mt-14 clear-both border-t-2 border-line pt-10">
         <h2 className="field-label text-sm">
           Get in touch
         </h2>
