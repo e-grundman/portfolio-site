@@ -1,11 +1,17 @@
 /**
  * Career highlights on the home page, ordered by weight: money, then scale,
- * then the software proof, then service results. Six, so the two column grid
- * closes evenly.
+ * then the software proof, then service results. Five, so the last field spans
+ * the bottom row, which suits the longest detail text on the page.
  *
  * Sourced from the resume and the LinkedIn profile rework. Dollar figures are
  * shown here by Erich's call on 2026-09-17, a deliberate difference from
  * LinkedIn, which keeps none. No customer or carrier is named.
+ *
+ * The $2M+ merchant highlight was cut 2026-09-22 during the resume rebuild. It
+ * described no mechanism and is flagged unverified in verified-claims.md, which
+ * put it below the standard the other four set by publishing their own error
+ * bars. The scope it used to occupy moved into the section intro on the home
+ * page. Restore it only with a mechanism sentence and a savings method.
  */
 export type Highlight = {
   figure: string;
@@ -51,11 +57,5 @@ export const highlights: Highlight[] = [
     href: "/case-studies/dr-squatch-click-to-delivery",
     detail:
       "Click to delivery for Dr. Squatch fell from seven to eight days to under four on economy orders, as ShipMonk published it. My own series, January to November 2024, shows closer to 40 percent. Order cutoffs, carrier selection, and method mix, with ShipMonk absorbing the cost.",
-  },
-  {
-    figure: "25%",
-    label: "Faster warehouse to doorstep, $2M+ saved",
-    detail:
-      "A customized shipping solution for a key merchant that cut ship to delivery time 25% and delivered $2M+ in transportation savings.",
   },
 ];

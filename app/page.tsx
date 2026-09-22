@@ -65,7 +65,8 @@ export default function Home() {
         <p className="mb-8 text-pretty text-lg leading-relaxed text-muted">
           Results from the shipping and transportation product surface at
           ShipMonk, a third-party logistics provider whose network ships tens of
-          millions of packages a year.
+          millions of packages a year. More than 90 percent of that volume moves
+          through the rating and routing I own.
         </p>
         <dl className="label-panel grid sm:grid-cols-2">
           {highlights.map((highlight, index) => {
