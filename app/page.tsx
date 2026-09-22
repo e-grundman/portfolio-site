@@ -70,29 +70,55 @@ export default function Home() {
         </p>
         <dl className="label-panel grid sm:grid-cols-2">
           {highlights.map((highlight, index) => {
-            // Two columns of label fields. With an odd count the last field
-            // spans the row; with an even count the last two sit on the
-            // bottom edge on wide screens and need no rule under them.
+            // The first field is the hero: it spans both columns and carries
+            // the biggest number. Everything after it falls into two columns
+            // beneath, so the parity checks run on the position under the
+            // hero rather than on the raw index. With an odd remainder the
+            // final field spans the row the way the hero does.
             const count = highlights.length;
             const last = index === count - 1;
-            const spansRow = last && count % 2 === 1;
-            const bottomPair = count % 2 === 0 && index === count - 2;
+            const hero = index === 0;
+            const pos = index - 1;
+            const remainder = count - 1;
+            const oddTail = remainder % 2 === 1 && pos === remainder - 1;
+            const finalRowStart =
+              remainder % 2 === 1 ? remainder - 1 : remainder - 2;
+            // Fields in the bottom row sit on the panel edge and need no rule
+            // under them on wide screens.
+            const inFinalRow = !hero && pos >= finalRowStart;
+            const leftColumn = !hero && !oddTail && pos % 2 === 0;
             return (
               <div
                 key={highlight.label}
                 className={[
                   "border-line p-4 sm:p-6",
                   last ? "" : "border-b-2",
-                  bottomPair ? "sm:border-b-0" : "",
-                  spansRow ? "sm:col-span-2" : index % 2 === 0 ? "sm:border-r-2" : "",
+                  inFinalRow && !last ? "sm:border-b-0" : "",
+                  hero || oddTail
+                    ? "sm:col-span-2"
+                    : leftColumn
+                      ? "sm:border-r-2"
+                      : "",
                 ].join(" ")}
               >
                 <dt className="field-label text-sm">{highlight.label}</dt>
                 <dd>
-                  <p className="headline mt-3 text-5xl sm:text-6xl">
+                  <p
+                    className={[
+                      "headline mt-3",
+                      hero ? "text-6xl sm:text-8xl" : "text-5xl sm:text-6xl",
+                    ].join(" ")}
+                  >
                     {highlight.figure}
                   </p>
-                  <p className="mt-3 text-pretty text-[0.95rem] leading-relaxed text-ink/80">
+                  {/* The hero runs the full panel width, so its detail needs a
+                      measure or the line length outruns the eye. */}
+                  <p
+                    className={[
+                      "mt-3 text-pretty text-[0.95rem] leading-relaxed text-ink/80",
+                      hero ? "sm:max-w-2xl" : "",
+                    ].join(" ")}
+                  >
                     {highlight.detail}
                   </p>
                   {highlight.href && (
