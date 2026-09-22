@@ -34,6 +34,7 @@ export const highlights: Highlight[] = [
   {
     figure: "4,000+",
     label: "Hours of manual work eliminated a year",
+    href: "/case-studies/internal-apps",
     detail:
       "Three production internal apps, built and shipped as a non-engineer, that centralized the Transportation team's operations, carrier management, and financial reporting.",
   },
