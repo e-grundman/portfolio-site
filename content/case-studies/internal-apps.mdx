@@ -67,6 +67,13 @@ The count is bottom-up, volume times a per-task time base, not a before-and-afte
 - 583 automation config edits, at 10 minutes each
 - the remainder in recurring operational and scorecard runs
 
+<Figure
+  src="/ts-dashboard-margin-bridge.png"
+  alt="A margin bridge in ts-dashboard-v2, walking from a baseline margin through method mix, merchant mix, zone mix, weight mix, and rate changes to the period actual."
+  caption="ts-dashboard-v2, the weekly margin bridge. It walks from one period's margin to the next through method mix, merchant mix, zone mix, weight mix, and rate change, and marks the transitional rows that only mean anything in the cumulative column. This is the run that used to take an analyst a day and a half. Every figure here is illustrative and replaced; the drivers, the signs, and the arithmetic between them are the real structure."
+  height={770}
+/>
+
 The volumes are hard counts out of the application database. The minute bases are my estimates, and I set them low on purpose. Pulling the old gaylord report took more than a minute before anyone looked at a single gaylord, so 1 minute per gaylord is conservative. At 2 minutes, which I think is closer to the truth, the same arithmetic gives roughly 6,900 hours a year. I quote the lower one.
 
 Two things are excluded deliberately. Anything the tools do that nobody did before earns zero hours, because zero hours were being spent, and that is a meaningful share of the value. And there is no software cost-avoidance figure, because the no-code platform these displaced was on a plan sized for far more than my automations and was never cancelled.
