@@ -36,7 +36,7 @@ export const highlights: Highlight[] = [
     label: "Hours of manual work eliminated a year",
     href: "/case-studies/internal-apps",
     detail:
-      "Three production internal apps, built and shipped as a non-engineer, that centralized the Transportation team's operations, carrier management, and financial reporting.",
+      "Three production internal apps, built and shipped as a non-engineer, that centralized the Transportation team's operations, carrier management, and financial reporting. The count behind the hours is bottom-up and ranges from 2,200 to 4,400 a year, and the case study shows the arithmetic.",
   },
   {
     figure: "50% → 90%+",
