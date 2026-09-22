@@ -43,6 +43,12 @@ Three applications, all Next.js on Vercel with Neon behind them, all written wit
 
 **ts-dashboard-v2** carries carrier cost, margin, on-time delivery, service exceptions, and the weekly margin bridge in one place on scheduled refreshes. It is used by me, my product manager, and the four Transportation lane owners.
 
+<Figure
+  src="/ts-dashboard-carrier-mgmt.png"
+  alt="A follow-up queue in ts-dashboard-v2. Each row is a ZIP handed to a carrier, with a disposition, an owner, a then and now figure, and a read."
+  caption="ts-dashboard-v2, carrier management. Every ZIP handed to a carrier carries a disposition, an owner, and a read two weeks later: clear it, hold, or escalate. The row in red got worse, from 7.34x to 21.10x, which is the case the queue exists to surface. Carrier names and owners are replaced, the notes column is masked, and the ZIPs are truncated in the application itself."
+/>
+
 **carrier-scheduling** tracks scheduled pickups against what carriers actually do, detects freight sitting on the dock too long, and opens the escalation ticket itself. Warehouse operations uses it daily, and lane owners use it when a carrier in their lane surfaces.
 
 **manual-label-creation** produces a shipping label outside the normal order flow when the standard path cannot. It runs on the production carrier account.

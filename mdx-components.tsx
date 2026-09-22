@@ -1,4 +1,5 @@
 import type { MDXComponents } from "mdx/types";
+import Image from "next/image";
 
 /**
  * Global MDX element mapping. Required by @next/mdx in the App Router.
@@ -9,14 +10,14 @@ import type { MDXComponents } from "mdx/types";
 const components: MDXComponents = {
   h2: ({ children, ...props }) => (
     <h2
-      className="mt-14 mb-4 font-mono text-xs uppercase tracking-[0.2em] text-muted"
+      className="mt-14 mb-4 field-label text-sm"
       {...props}
     >
       {children}
     </h2>
   ),
   h3: ({ children, ...props }) => (
-    <h3 className="mt-10 mb-3 font-serif text-2xl tracking-tight" {...props}>
+    <h3 className="mt-10 mb-3 headline text-2xl" {...props}>
       {children}
     </h3>
   ),
@@ -40,7 +41,7 @@ const components: MDXComponents = {
     return (
       <a
         href={href}
-        className="text-accent underline decoration-rule underline-offset-4 transition-colors hover:decoration-accent"
+        className="underline decoration-highlight decoration-[3px] underline-offset-2"
         {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
         {...props}
       >
@@ -55,7 +56,7 @@ const components: MDXComponents = {
   ),
   blockquote: ({ children, ...props }) => (
     <blockquote
-      className="mt-6 border-l-2 border-accent pl-5 font-serif text-lg italic text-muted"
+      className="mt-6 border-l-4 border-highlight pl-5 text-lg text-muted"
       {...props}
     >
       {children}
@@ -84,11 +85,41 @@ const components: MDXComponents = {
   ),
   th: ({ children, ...props }) => (
     <th
-      className="border-b border-rule py-2 pr-4 text-left font-mono text-xs uppercase tracking-[0.12em] text-muted"
+      className="border-b border-rule py-2 pr-4 text-left field-label text-xs text-muted"
       {...props}
     >
       {children}
     </th>
+  ),
+  /**
+   * A screenshot with its caption. Used where a case study needs an exhibit,
+   * and the caption is where the masking gets declared.
+   */
+  Figure: ({
+    src,
+    alt,
+    caption,
+    width = 1600,
+    height = 1049,
+  }: {
+    src: string;
+    alt: string;
+    caption: string;
+    width?: number;
+    height?: number;
+  }) => (
+    <figure className="mt-8 xl:-mx-24">
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        className="w-full border-2 border-line"
+      />
+      <figcaption className="mt-3 text-sm leading-relaxed text-muted">
+        {caption}
+      </figcaption>
+    </figure>
   ),
   td: ({ children, ...props }) => (
     <td className="border-b border-rule py-2 pr-4 align-top leading-relaxed" {...props}>
