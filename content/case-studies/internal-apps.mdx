@@ -51,6 +51,13 @@ Three applications, all Next.js on Vercel with Neon behind them, all written wit
 
 **carrier-scheduling** tracks scheduled pickups against what carriers actually do, detects freight sitting on the dock too long, and opens the escalation ticket itself. Warehouse operations uses it daily, and lane owners use it when a carrier in their lane surfaces.
 
+<Figure
+  src="/carrier-scheduling-dwell.png"
+  alt="The active dwell view in carrier-scheduling: every gaylord on the dock with its age, package count, how many have stopped scanning, and the truck it belongs to."
+  caption="carrier-scheduling, active dwell. Every gaylord on the dock, with how long it has been sitting, how many packages are inside, and how many of them have stopped scanning. Rows past the escalation age open a ticket on their own. Carrier names, barcodes, and sort codes are replaced, and the exposed cart value is illustrative. Warehouses, counts, ages, and percentages are as captured."
+  height={879}
+/>
+
 **manual-label-creation** produces a shipping label outside the normal order flow when the standard path cannot. It runs on the production carrier account.
 
 The no-code versions were not a false start. They were phase one of the same work, and they are the reason the applications knew what to build: the Sheets and the Zapier flows had already found the edge cases.
