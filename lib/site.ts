@@ -7,7 +7,7 @@
 export const site = {
   name: "Erich Grundman",
   role: "Senior Product Manager",
-  headline: "Senior Product Manager | Ecommerce Fulfillment & Parcel Economics",
+  headline: "Senior Product Manager | Parcel Transportation & Ecommerce Fulfillment",
   headshot: "/headshot.jpg",
   tagline: "Senior Product Manager, Parcel and Fulfillment",
   description:

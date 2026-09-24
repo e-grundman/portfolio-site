@@ -33,3 +33,12 @@ Deferred on purpose. Each line says why, so a future session does not relitigate
 | Order count and seed controls in the lab UI | The model already takes both as arguments. Exposing them is a UI decision worth making after watching someone use the tool. |
 | Real population weighting for demand | Census population by ZCTA now needs an API key. Revisit with a keyless public source. |
 | Transit time alongside zone | Zone drives both cost and transit, and showing days would make the service argument as well as the cost one. Needs a transit matrix with its own provenance. |
+
+## Candidates from the 2026-09-24 resume sync
+
+| Item | Why deferred |
+|---|---|
+| Case study on the carrier rollout limited to zips where delivery performance matched the incumbent network | Blocked until the method is recorded in `verified-claims.md`; see the claim section there. It is the only trade-off story in the portfolio with no number in it, which is why it belongs here once it is backed. |
+| The Operations Analytics era (12 sites, cost models, labor planning) | No presence on the site. Blocked for the same reason: cleared for the resume only, method not documented. |
+| Resume Selected Work line ("three case studies and two decision tools") | When either draft case study publishes, the resume line and this site both change. Whoever publishes a draft updates `resume.md` the same day. |
+| README Sections paragraph says "Work and Writing are off today" | Stale. Case studies are on in `lib/site.ts`; only Writing is off. Found during the sync, outside its scope. |

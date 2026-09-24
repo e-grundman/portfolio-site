@@ -21,7 +21,7 @@ Content is MDX on disk. Adding a case study, a post, or a lab is one file, with 
 | Directory | What it holds |
 |---|---|
 | `content/portfolio/` | Portfolio entries. Metadata, provenance, and the explainer body shown above each tool. |
-| `content/work/` | Case studies. Fixed frontmatter plus five required body sections. Section currently switched off. |
+| `content/case-studies/` | Case studies. Fixed frontmatter plus five required body sections. Drafts stay hidden in production. |
 | `content/writing/` | Long form posts. Section currently switched off, holding one draft template. |
 
 ### Sections

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/about" },
   title: "About",
   description:
-    "Eleven years across ecommerce fulfillment, parcel transportation, carrier performance, and logistics data products, starting in customer support.",
+    "Eight years in ecommerce fulfillment and parcel transportation at ShipMonk, after two in customer care at Grubhub. Senior product manager for shipping and transportation, in Tampa.",
 };
 
 export default function About() {
@@ -120,9 +120,15 @@ export default function About() {
             </dd>
           </div>
           <div className="grid grid-cols-[7rem_1fr] gap-4 border-b border-rule py-2.5 last:border-b-0">
-            <dt className="font-mono text-sm text-muted">2015 – 2017</dt>
+            <dt className="font-mono text-sm text-muted">2016 – 2017</dt>
             <dd className="text-pretty">
-              Customer Care, specialist then team lead <span className="text-muted">· Grubhub</span>
+              Customer Care Team Lead <span className="text-muted">· Grubhub</span>
+            </dd>
+          </div>
+          <div className="grid grid-cols-[7rem_1fr] gap-4 border-b border-rule py-2.5 last:border-b-0">
+            <dt className="font-mono text-sm text-muted">2015 – 2016</dt>
+            <dd className="text-pretty">
+              Customer Care Specialist <span className="text-muted">· Grubhub</span>
             </dd>
           </div>
         </dl>
@@ -144,7 +150,7 @@ export default function About() {
           <div>
             <h3 className="text-lg font-semibold">Walk the machinery yourself.</h3>
             <p className="mt-2 leading-relaxed text-ink/85">
-              The usual case for a product manager writing their own queries is efficiency, and efficiency is the weaker case. The schema is a map of how the business works, and the only reliable way to find where that map is wrong is to walk into the wrong part of it yourself.
+              The usual case for a product manager writing their own queries is efficiency, and efficiency is the weaker case. The schema is a map of how the business works, and the only reliable way to find where that map is wrong is to walk into the wrong part of it yourself. Day to day that means SQL in Snowflake and Metabase, Tableau for the parts other teams read, and Claude Code for the software I ship myself.
             </p>
           </div>
           <div>
