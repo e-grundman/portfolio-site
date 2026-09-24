@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/about" },
   title: "About",
   description:
-    "Eleven years across ecommerce fulfillment, parcel transportation, carrier performance, and logistics data products, starting in customer support.",
+    "Eight years in ecommerce fulfillment and parcel transportation at ShipMonk, after two in customer care at Grubhub. Senior product manager for shipping and transportation, in Tampa.",
 };
 
 export default function About() {
