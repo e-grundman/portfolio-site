@@ -1,8 +1,11 @@
 # Plan: sync erichgrundman.com to the 2026-09-24 resume
 
-Status: ready to execute. Written 2026-09-24 by Claude Fable for an Opus session
-to carry out. Erich approves the pull request at the end; nothing here merges to
-`main` on its own.
+Status: executed 2026-09-24, merged as PR #1. Steps 1 to 4 and 6 are done.
+Step 5 (host the resume PDF) is on hold by Erich's call; run it only when he
+puts the PDF in `public/`. The headline was also changed to match the resume,
+by his call, overriding the "Do not do" line below.
+
+Written 2026-09-24 by Claude Fable for an Opus session to carry out.
 
 ## Why this exists
 
