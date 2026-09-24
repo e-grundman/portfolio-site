@@ -150,7 +150,7 @@ export default function About() {
           <div>
             <h3 className="text-lg font-semibold">Walk the machinery yourself.</h3>
             <p className="mt-2 leading-relaxed text-ink/85">
-              The usual case for a product manager writing their own queries is efficiency, and efficiency is the weaker case. The schema is a map of how the business works, and the only reliable way to find where that map is wrong is to walk into the wrong part of it yourself.
+              The usual case for a product manager writing their own queries is efficiency, and efficiency is the weaker case. The schema is a map of how the business works, and the only reliable way to find where that map is wrong is to walk into the wrong part of it yourself. Day to day that means SQL in Snowflake and Metabase, Tableau for the parts other teams read, and Claude Code for the software I ship myself.
             </p>
           </div>
           <div>
