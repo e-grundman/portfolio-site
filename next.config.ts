@@ -7,6 +7,25 @@ const nextConfig: NextConfig = {
   // so that a future file-based MDX route does not require a config change.
   pageExtensions: ["ts", "tsx", "md", "mdx"],
 
+  // Vercel sets HSTS on its own. The rest a static site can afford: no MIME
+  // sniffing, no framing by other sites, a referrer that stops at the origin
+  // when leaving, and no device permissions the site never asks for. No
+  // Content-Security-Policy, because Next's inline scripts would need a
+  // nonce on every request and the site is static.
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
+        ],
+      },
+    ];
+  },
+
   // Labs was renamed to Portfolio after the section had already deployed.
   // These keep the old URLs working for anything that linked them.
   async redirects() {

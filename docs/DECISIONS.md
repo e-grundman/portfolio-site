@@ -109,3 +109,21 @@ Architectural choices and the reasoning behind them. Newest first.
 **Decision.** The writing schema carries `externalOnly`. An entry with that flag appears in the index, links out to where it was published, and generates no local page.
 
 **Why.** Four LinkedIn posts already exist and belong in the index today. Rewriting them as site pages was not required, and a placeholder body would have been worse than an honest outbound link. Flipping the flag and pasting the body later moves a post onto the site with no other change.
+
+## 2026-09-24, case studies before the portfolio in the nav
+
+**Decision.** Primary navigation reads About, Case studies, Portfolio. The order lives in `lib/site.ts` as `navLinks` and the 404 page reads the same list.
+
+**Why.** Erich's call after the site review. The audience is recruiters and hiring managers, and the case studies are the proof they came for. The tools are the second thing.
+
+## 2026-09-24, case studies carry their own share cards
+
+**Decision.** `app/case-studies/[slug]/opengraph-image.tsx` renders one card per published study, leading with the study's first metric. Rendered at build through its own `generateStaticParams`.
+
+**Why.** Case study links are the ones that get shared. Before this they carried the home card and its $10M+ figure, which is the least supported number on the site, on every share. The arrow between before and after is drawn from boxes because the latin font subsets Satori loads do not carry the arrow glyph.
+
+## 2026-09-24, outbound clicks are tracked as events
+
+**Decision.** `components/tracked-link.tsx` wraps the email, LinkedIn, GitHub, and "Read the case study" links and sends two Vercel Analytics events: `outbound` with the destination, and `case_study_open` with the slug and where it was opened from.
+
+**Why.** Pageviews say which pages open. These say what a reader does next, which is the question a portfolio for recruiters has to answer. Custom events may need the Pro plan to appear in the dashboard; `track()` is a no-op otherwise, so the code costs nothing if they do not.

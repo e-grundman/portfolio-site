@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { sections, site } from "@/lib/site";
+import { navLinks, sections, site } from "@/lib/site";
+import { TrackedAnchor } from "./tracked-link";
 
 /**
  * Navigation follows the section flags in lib/site.ts. A disabled section is
@@ -10,16 +11,10 @@ import { sections, site } from "@/lib/site";
  * than two places to keep in agreement. Profile links follow the sections and
  * leave the site, so they carry the outbound arrow.
  */
-const links = [
-  { href: "/about", label: "About", section: "about" },
-  { href: "/portfolio", label: "Portfolio", section: "portfolio" },
-  { href: "/case-studies", label: "Case studies", section: "caseStudies" },
-  { href: "/writing", label: "Writing", section: "writing" },
-] as const;
 
 export function SiteNav() {
   const pathname = usePathname();
-  const visible = links.filter((link) => sections[link.section]);
+  const visible = navLinks.filter((link) => sections[link.section]);
 
   return (
     <nav aria-label="Primary">
@@ -43,7 +38,9 @@ export function SiteNav() {
         })}
         {Object.entries(site.profiles).map(([key, profile]) => (
           <li key={key}>
-            <a
+            <TrackedAnchor
+              event="outbound"
+              data={{ to: key }}
               href={profile.href}
               aria-label={profile.accessibleLabel}
               target="_blank"
@@ -52,7 +49,7 @@ export function SiteNav() {
             >
               {profile.label}
               <span aria-hidden="true"> ↗</span>
-            </a>
+            </TrackedAnchor>
           </li>
         ))}
       </ul>

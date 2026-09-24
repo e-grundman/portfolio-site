@@ -264,6 +264,132 @@ export async function renderEntryCard(entry: { title: string; summary: string })
 }
 
 /**
+ * A right arrow drawn from boxes. The latin font subsets Satori loads do not
+ * carry U+2192, so the glyph the site uses in text would render as a blank
+ * on the card.
+ */
+function Arrow({ size }: { size: number }) {
+  const stroke = Math.round(size / 8);
+  // Satori centers on the text box, which carries ascender space above the
+  // digits, so the arrow sits a little below center to line up with them.
+  return (
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        width: size,
+        height: size,
+        marginTop: size * 0.28,
+      }}
+    >
+      <div style={{ width: size * 0.8, height: stroke, background: color.ink }} />
+      <div
+        style={{
+          width: size * 0.42,
+          height: size * 0.42,
+          borderTop: `${stroke}px solid ${color.ink}`,
+          borderRight: `${stroke}px solid ${color.ink}`,
+          transform: "rotate(45deg)",
+          marginLeft: -size * 0.36,
+        }}
+      />
+    </div>
+  );
+}
+
+/**
+ * A case study, as a label that leads with its first metric. Shared links to
+ * case studies are the ones that travel, so the card carries the study's own
+ * number rather than the home page's.
+ */
+export async function renderCaseStudyCard(entry: {
+  title: string;
+  metric: { label: string; before?: string; after?: string; value?: string; unit?: string };
+}) {
+  const fonts = await loadFonts();
+  const { metric } = entry;
+  const figureSize = 96;
+
+  return toJpeg(
+    new ImageResponse(
+      (
+        <Label>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              padding: "14px 28px",
+              background: color.ink,
+              color: color.paper,
+              fontSize: 26,
+              textTransform: "uppercase",
+            }}
+          >
+            <div>Case study</div>
+            <div>{site.name}</div>
+          </div>
+
+          <div
+            style={{
+              flex: 1,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              padding: "0 28px",
+              gap: 30,
+            }}
+          >
+            <div style={{ fontSize: 72, lineHeight: 0.98, textTransform: "uppercase", maxWidth: 1080 }}>
+              {entry.title}
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 26, fontSize: figureSize, lineHeight: 1 }}>
+                {metric.before ? (
+                  <>
+                    <div>{metric.before}</div>
+                    <Arrow size={figureSize * 0.72} />
+                    <div>{metric.after}</div>
+                  </>
+                ) : (
+                  <>
+                    <div>{metric.value}</div>
+                    {metric.unit && (
+                      <div style={{ fontSize: 34, color: color.muted, textTransform: "uppercase" }}>
+                        {metric.unit}
+                      </div>
+                    )}
+                  </>
+                )}
+              </div>
+              <div style={{ ...fieldLabel, fontSize: 26 }}>{metric.label}</div>
+            </div>
+          </div>
+
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 28,
+              padding: "18px 28px",
+              borderTop: `${LINE}px solid ${color.ink}`,
+            }}
+          >
+            <div style={{ display: "flex", width: 420 }}>
+              <Barcode value={entry.title} height={52} />
+            </div>
+            <div style={{ fontFamily: "Mono", fontSize: 22, letterSpacing: "0.3em" }}>
+              ERICHGRUNDMAN.COM
+            </div>
+          </div>
+        </Label>
+      ),
+      { ...ogSize, fonts },
+    ),
+  );
+}
+
+/**
  * The browser tab icon: EG in condensed caps, ink on safety yellow, the same
  * yellow as the SR PM box on the home page.
  */

@@ -54,3 +54,19 @@ export const sections = {
 } as const;
 
 export type SectionKey = keyof typeof sections;
+
+/**
+ * Primary navigation, filtered by the section flags wherever it renders.
+ *
+ * Order: case studies before the portfolio, by Erich's call on 2026-09-24.
+ * The audience is recruiters and hiring managers, and the case studies are
+ * the proof they came for; the tools are the second thing. Lives here rather
+ * than in the nav component so server components (the 404 page) can read it
+ * without importing a client module.
+ */
+export const navLinks = [
+  { href: "/about", label: "About", section: "about" },
+  { href: "/case-studies", label: "Case studies", section: "caseStudies" },
+  { href: "/portfolio", label: "Portfolio", section: "portfolio" },
+  { href: "/writing", label: "Writing", section: "writing" },
+] as const satisfies readonly { href: string; label: string; section: SectionKey }[];

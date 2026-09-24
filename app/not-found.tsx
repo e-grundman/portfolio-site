@@ -1,7 +1,12 @@
 import Link from "next/link";
 import { Kicker } from "@/components/kicker";
+import { navLinks, sections } from "@/lib/site";
 
 export default function NotFound() {
+  // The same sections the header offers, in the same order, so a dead link
+  // lands on every live way in rather than a hand-picked two.
+  const links = navLinks.filter((link) => sections[link.section]);
+
   return (
     <section className="py-6">
       <Kicker>404</Kicker>
@@ -9,14 +14,10 @@ export default function NotFound() {
         That page is not here.
       </h1>
       <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
-        The link is wrong, or the page moved. The about page and the portfolio
-        are both one click away.
+        The link is wrong, or the page moved. Every section is one click away.
       </p>
       <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 field-label text-xs">
-        {[
-          { href: "/about", label: "About" },
-          { href: "/portfolio", label: "Portfolio" },
-        ].map((link) => (
+        {links.map((link) => (
           <li key={link.href}>
             <Link
               href={link.href}

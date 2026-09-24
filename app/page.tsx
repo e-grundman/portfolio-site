@@ -3,9 +3,27 @@ import Link from "next/link";
 import { Barcode } from "@/components/barcode";
 import { Kicker } from "@/components/kicker";
 import { PackageCard } from "@/components/package-card";
+import { TrackedAnchor, TrackedLink } from "@/components/tracked-link";
 import { getPortfolio } from "@/lib/content/loader";
 import { highlights } from "@/lib/highlights";
 import { site } from "@/lib/site";
+
+/**
+ * Structured data for a name search. Ties the name to the title, the photo,
+ * and the LinkedIn and GitHub profiles so a search engine treats the three
+ * as one person. Only what the page already shows; no email, no address.
+ */
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: site.name,
+  jobTitle: site.role,
+  description: site.description,
+  url: site.url,
+  image: `${site.url}${site.headshot}`,
+  sameAs: Object.values(site.profiles).map((profile) => profile.href),
+  worksFor: { "@type": "Organization", name: "ShipMonk" },
+};
 
 export default function Home() {
   const entries = getPortfolio();
@@ -14,6 +32,10 @@ export default function Home() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
       <section className="pt-4 pb-20">
         <div className="label-panel">
           <div className="grid grid-cols-[1fr_auto] border-b-2 border-line">
@@ -123,9 +145,14 @@ export default function Home() {
                   </p>
                   {highlight.href && (
                     <p className="mt-3">
-                      <Link href={highlight.href} className="field-label text-xs">
+                      <TrackedLink
+                        event="case_study_open"
+                        data={{ slug: highlight.href.split("/").pop() ?? "", from: "highlight" }}
+                        href={highlight.href}
+                        className="field-label text-xs"
+                      >
                         Read the case study →
-                      </Link>
+                      </TrackedLink>
                     </p>
                   )}
                 </dd>
@@ -184,9 +211,14 @@ export default function Home() {
             <p className="mt-6">
               {/* No aria-label: the address is the accessible name, and a
                   label that omits the visible text fails the name check. */}
-              <a href={`mailto:${site.email}`} className="font-mono text-lg">
+              <TrackedAnchor
+                event="outbound"
+                data={{ to: "email" }}
+                href={`mailto:${site.email}`}
+                className="font-mono text-lg"
+              >
                 {site.email}
-              </a>
+              </TrackedAnchor>
             </p>
           </div>
         </div>

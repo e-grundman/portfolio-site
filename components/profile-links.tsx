@@ -1,4 +1,5 @@
 import { site } from "@/lib/site";
+import { TrackedAnchor } from "./tracked-link";
 
 /**
  * Profile links, everywhere they appear. Real anchors with visible text and an
@@ -16,7 +17,9 @@ export function ProfileLinks({
     <ul className={`flex flex-wrap gap-x-6 gap-y-2 ${className}`}>
       {Object.entries(site.profiles).map(([key, profile]) => (
         <li key={key}>
-          <a
+          <TrackedAnchor
+            event="outbound"
+            data={{ to: key }}
             href={profile.href}
             aria-label={profile.accessibleLabel}
             target="_blank"
@@ -25,16 +28,21 @@ export function ProfileLinks({
           >
             {profile.label}
             <span aria-hidden="true"> ↗</span>
-          </a>
+          </TrackedAnchor>
         </li>
       ))}
       {withEmail && (
         <li>
           {/* The visible address is the accessible name. An aria-label that
               does not contain it fails the label-in-name check. */}
-          <a href={`mailto:${site.email}`} className="font-mono text-sm">
+          <TrackedAnchor
+            event="outbound"
+            data={{ to: "email" }}
+            href={`mailto:${site.email}`}
+            className="font-mono text-sm"
+          >
             {site.email}
-          </a>
+          </TrackedAnchor>
         </li>
       )}
     </ul>
