@@ -212,3 +212,54 @@ export function ruleMatrix(
     };
   });
 }
+
+/** Every nth item goes on the chart. The tables use the whole book. */
+export const CHART_SAMPLE_STEP = 25;
+
+/**
+ * Everything the lab shows for the whole order book, computed once.
+ *
+ * The page is static, so this runs at build time in the server component and
+ * reaches the browser as props. Before this existed the client component ran
+ * the full book on every visit during hydration: 20,000 items under three
+ * programs and four rule sets, which blocked a phone's main thread for about
+ * a second before the first tap did anything. Only the chart sample is priced
+ * in the browser, and only when a toggle changes it.
+ *
+ * Plain objects throughout, because props cross the server boundary as JSON.
+ */
+export type OrderBook = {
+  orderCount: number;
+  /** compareStrategies for each rule, keyed by rule id. */
+  comparisonsByRule: Record<string, StrategyComparison[]>;
+  matrix: RuleMatrixRow[];
+  /** One item in every CHART_SAMPLE_STEP, in book order. */
+  chartItems: SyntheticItem[];
+};
+
+export function precomputeOrderBook(
+  items: SyntheticItem[] = generateItems(),
+  chartSampleStep: number = CHART_SAMPLE_STEP,
+): OrderBook {
+  const comparisonsByRule = Object.fromEntries(
+    dimRules.map((rule) => [rule.id, compareStrategies(rule.id, items)]),
+  );
+  // The matrix is the same evaluations read the other way, so it is derived
+  // rather than priced a second time.
+  const matrix: RuleMatrixRow[] = strategies.map((strategy, index) => ({
+    strategy: strategy.id,
+    label: strategy.label,
+    costPerOrder: dimRules.map(
+      (rule) => comparisonsByRule[rule.id][index].costPerOrder,
+    ),
+    dimBilledShare: dimRules.map(
+      (rule) => comparisonsByRule[rule.id][index].dimBilledShare,
+    ),
+  }));
+  return {
+    orderCount: items.length,
+    comparisonsByRule,
+    matrix,
+    chartItems: items.filter((_, i) => i % chartSampleStep === 0),
+  };
+}

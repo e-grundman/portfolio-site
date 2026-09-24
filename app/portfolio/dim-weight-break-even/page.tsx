@@ -3,6 +3,7 @@ import Link from "next/link";
 import { DimWeightLab } from "@/components/labs/dim-weight/dim-weight-lab";
 import { Kicker } from "@/components/kicker";
 import { getPortfolioEntry } from "@/lib/content/loader";
+import { precomputeOrderBook } from "@/lib/labs/dim-weight/model";
 import { pageMetadata } from "@/lib/metadata";
 import { rateDataProvenance } from "@/lib/rates";
 import { itemDataProvenance } from "@/lib/labs/dim-weight/products";
@@ -10,6 +11,9 @@ import { ruleProvenance } from "@/lib/labs/dim-weight/rules";
 import Explainer from "@/content/portfolio/dim-weight-break-even.mdx";
 
 const entry = getPortfolioEntry("dim-weight-break-even");
+// Priced once at build. The page is static, so every visitor gets the same
+// book without their browser running the model on load.
+const book = precomputeOrderBook();
 
 export const metadata: Metadata = pageMetadata({
   title: entry.title,
@@ -40,7 +44,7 @@ export default function DimWeightBreakEvenPage() {
       {/* The tool leads and gets more width than the reading column, so the
           tables and charts are not squeezed on a laptop screen. */}
       <div className="xl:-mx-24">
-        <DimWeightLab />
+        <DimWeightLab book={book} />
       </div>
 
       <div id="how-it-works" className="mt-12 scroll-mt-8 border-t-2 border-line pt-8">

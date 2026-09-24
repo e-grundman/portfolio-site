@@ -7,9 +7,10 @@
 export const site = {
   name: "Erich Grundman",
   role: "Senior Product Manager",
+  // Under the name on the home page, and in the browser title and share
+  // card title, so the three never drift. Matches the resume.
   headline: "Senior Product Manager | Parcel Transportation & Ecommerce Fulfillment",
   headshot: "/headshot.jpg",
-  tagline: "Senior Product Manager, Parcel and Fulfillment",
   description:
     "Senior product manager working where operations meet software: parcel transportation, ecommerce fulfillment, decision science, and applied AI.",
   // The custom domain, registered 2026-09-18. NEXT_PUBLIC_SITE_URL in the

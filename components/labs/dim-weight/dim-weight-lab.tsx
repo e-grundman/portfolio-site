@@ -5,16 +5,15 @@ import { BreakEvenChart } from "./break-even-chart";
 import { CartonCalculator } from "./carton-calculator";
 import { breakEvenDensity } from "@/lib/labs/dim-weight/billing";
 import {
-  compareStrategies,
+  CHART_SAMPLE_STEP,
   priceItems,
-  ruleMatrix,
+  type OrderBook,
 } from "@/lib/labs/dim-weight/model";
 import { strategies, type StrategyId } from "@/lib/labs/dim-weight/packaging";
 import {
   DEFAULT_ITEM_COUNT,
   ORIGIN_LABEL,
   categories,
-  generateItems,
 } from "@/lib/labs/dim-weight/products";
 import {
   DEFAULT_RULE_ID,
@@ -24,8 +23,6 @@ import {
 import { formatUsd } from "@/lib/format";
 
 const seriesDot = ["bg-series-1", "bg-series-2", "bg-series-3"];
-/** Every nth item goes on the chart. The tables use the whole book. */
-const CHART_SAMPLE_STEP = 25;
 
 const th =
   "border-b border-rule py-2 pr-4 field-label text-xs text-muted";
@@ -73,18 +70,19 @@ const pctChange = (before: number, after: number) =>
 const signedUsd = (value: number) =>
   `${value > 0 ? "+" : value < 0 ? "−" : ""}${formatUsd(Math.abs(value))}`;
 
-export function DimWeightLab() {
+/**
+ * The order book arrives precomputed from the server component, so switching
+ * a rule set is a lookup. The only pricing that happens in the browser is the
+ * chart sample, a few hundred items, when a toggle changes it.
+ */
+export function DimWeightLab({ book }: { book: OrderBook }) {
   const [ruleId, setRuleId] = useState(DEFAULT_RULE_ID);
   const [chartStrategy, setChartStrategy] = useState<StrategyId>("stock");
   const rule = dimRulesById.get(ruleId)!;
 
-  const items = useMemo(() => generateItems(DEFAULT_ITEM_COUNT), []);
-  const results = useMemo(() => compareStrategies(ruleId, items), [ruleId, items]);
-  const matrix = useMemo(() => ruleMatrix(items), [items]);
-  const chartItems = useMemo(
-    () => items.filter((_, index) => index % CHART_SAMPLE_STEP === 0),
-    [items],
-  );
+  const results = book.comparisonsByRule[ruleId];
+  const matrix = book.matrix;
+  const chartItems = book.chartItems;
   const priced = useMemo(
     () => priceItems(chartStrategy, ruleId, chartItems),
     [chartStrategy, ruleId, chartItems],

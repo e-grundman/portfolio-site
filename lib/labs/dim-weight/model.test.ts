@@ -6,7 +6,13 @@ import {
   maxCubicInchesAtWeight,
   roundSide,
 } from "./billing";
-import { compareStrategies, evaluateStrategy, ruleMatrix } from "./model";
+import {
+  CHART_SAMPLE_STEP,
+  compareStrategies,
+  evaluateStrategy,
+  precomputeOrderBook,
+  ruleMatrix,
+} from "./model";
 import {
   fitsCatalog,
   packItem,
@@ -179,5 +185,20 @@ describe("strategy model", () => {
 
   it("covers every strategy", () => {
     expect(ruleMatrix(items)).toHaveLength(strategies.length);
+  });
+
+  it("precomputes the same figures the live functions produce", () => {
+    const book = precomputeOrderBook(items);
+    expect(book.orderCount).toBe(items.length);
+    expect(book.matrix).toEqual(ruleMatrix(items));
+    for (const rule of dimRules) {
+      expect(book.comparisonsByRule[rule.id]).toEqual(
+        compareStrategies(rule.id, items),
+      );
+    }
+    expect(book.chartItems).toHaveLength(
+      Math.ceil(items.length / CHART_SAMPLE_STEP),
+    );
+    expect(book.chartItems[1]).toBe(items[CHART_SAMPLE_STEP]);
   });
 });
