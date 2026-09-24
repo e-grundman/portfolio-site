@@ -4,13 +4,15 @@ import { Kicker } from "@/components/kicker";
 import { MetricFigure } from "@/components/metric";
 import { notFound } from "next/navigation";
 import { getCaseStudies } from "@/lib/content/loader";
+import { pageMetadata } from "@/lib/metadata";
 import { sections } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Case studies",
   description:
     "Case studies in parcel transportation, ecommerce fulfillment, logistics billing, and data products.",
-};
+  path: "/case-studies",
+});
 
 /**
  * Long form proof behind the career highlights. Entries live in

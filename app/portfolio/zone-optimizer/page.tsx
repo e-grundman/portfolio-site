@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ZoneOptimizer } from "@/components/labs/zone-optimizer/zone-optimizer";
 import { Kicker } from "@/components/kicker";
 import { getPortfolioEntry } from "@/lib/content/loader";
+import { pageMetadata } from "@/lib/metadata";
 import { rateDataProvenance } from "@/lib/rates";
 import { zoneDataProvenance } from "@/lib/zones";
 import { orderDataProvenance } from "@/lib/labs/zone-optimizer/orders";
@@ -10,11 +11,11 @@ import Explainer from "@/content/portfolio/zone-optimizer.mdx";
 
 const entry = getPortfolioEntry("zone-optimizer");
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: entry.title,
   description: entry.summary,
-  alternates: { canonical: entry.route },
-};
+  path: entry.route,
+});
 
 export default function ZoneOptimizerPage() {
   return (

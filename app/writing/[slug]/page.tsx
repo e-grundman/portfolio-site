@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Kicker } from "@/components/kicker";
 import { getLocalWriting, getWritingEntry } from "@/lib/content/loader";
+import { pageMetadata } from "@/lib/metadata";
 import { sections } from "@/lib/site";
 import { formatLongDate } from "@/lib/format";
 
@@ -25,11 +26,16 @@ export async function generateMetadata({
   const { slug } = await params;
   try {
     const post = getWritingEntry(slug);
-    return {
+    const meta = pageMetadata({
       title: post.title,
       description: post.summary,
-      alternates: post.canonical ? { canonical: post.canonical } : undefined,
-    };
+      path: `/writing/${slug}`,
+      type: "article",
+    });
+    // A piece first published elsewhere points its canonical there.
+    return post.canonical
+      ? { ...meta, alternates: { canonical: post.canonical } }
+      : meta;
   } catch {
     return {};
   }

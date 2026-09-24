@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Kicker } from "@/components/kicker";
 import { getPortfolio, getPortfolioEntry } from "@/lib/content/loader";
+import { pageMetadata } from "@/lib/metadata";
 
 type Params = { slug: string };
 
@@ -25,7 +26,11 @@ export async function generateMetadata({
   const { slug } = await params;
   try {
     const entry = getPortfolioEntry(slug);
-    return { title: entry.title, description: entry.summary };
+    return pageMetadata({
+      title: entry.title,
+      description: entry.summary,
+      path: entry.route,
+    });
   } catch {
     return {};
   }

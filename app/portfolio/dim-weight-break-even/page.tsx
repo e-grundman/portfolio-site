@@ -3,6 +3,7 @@ import Link from "next/link";
 import { DimWeightLab } from "@/components/labs/dim-weight/dim-weight-lab";
 import { Kicker } from "@/components/kicker";
 import { getPortfolioEntry } from "@/lib/content/loader";
+import { pageMetadata } from "@/lib/metadata";
 import { rateDataProvenance } from "@/lib/rates";
 import { itemDataProvenance } from "@/lib/labs/dim-weight/products";
 import { ruleProvenance } from "@/lib/labs/dim-weight/rules";
@@ -10,11 +11,11 @@ import Explainer from "@/content/portfolio/dim-weight-break-even.mdx";
 
 const entry = getPortfolioEntry("dim-weight-break-even");
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: entry.title,
   description: entry.summary,
-  alternates: { canonical: entry.route },
-};
+  path: entry.route,
+});
 
 export default function DimWeightBreakEvenPage() {
   return (

@@ -154,6 +154,7 @@ export default function Home() {
               index={index + 1}
               total={live.length}
               kind="Decision tool"
+              headingLevel="h2"
             />
           ))}
         </div>
@@ -181,11 +182,9 @@ export default function Home() {
               a specific answer.
             </p>
             <p className="mt-6">
-              <a
-                href={`mailto:${site.email}`}
-                aria-label={`Email ${site.name}`}
-                className="font-mono text-lg"
-              >
+              {/* No aria-label: the address is the accessible name, and a
+                  label that omits the visible text fails the name check. */}
+              <a href={`mailto:${site.email}`} className="font-mono text-lg">
                 {site.email}
               </a>
             </p>

@@ -2,14 +2,15 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Kicker } from "@/components/kicker";
 import { ProfileLinks } from "@/components/profile-links";
+import { pageMetadata } from "@/lib/metadata";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
-  alternates: { canonical: "/about" },
+export const metadata: Metadata = pageMetadata({
   title: "About",
   description:
     "Eight years in ecommerce fulfillment and parcel transportation at ShipMonk, after two in customer care at Grubhub. Senior product manager for shipping and transportation, in Tampa.",
-};
+  path: "/about",
+});
 
 export default function About() {
   return (

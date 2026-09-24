@@ -27,8 +27,10 @@ export const metadata: Metadata = {
     template: `%s · ${site.name}`,
   },
   description: site.description,
-  // Home only. Every other public page sets its own canonical path, because
-  // a relative value here would resolve to the root for every route.
+  // Home only. Every other public page goes through pageMetadata in
+  // lib/metadata.ts, which writes its own canonical and Open Graph set. A
+  // page that skips it inherits this canonical and this openGraph block
+  // wholesale, so it would share and index as the home page.
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",

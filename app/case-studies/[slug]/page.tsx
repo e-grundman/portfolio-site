@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Kicker } from "@/components/kicker";
 import { MetricList } from "@/components/metric";
 import { getCaseStudies, getCaseStudyEntry } from "@/lib/content/loader";
+import { pageMetadata } from "@/lib/metadata";
 import { sections } from "@/lib/site";
 import { formatMonthYear } from "@/lib/format";
 
@@ -22,7 +23,12 @@ export async function generateMetadata({
   const { slug } = await params;
   try {
     const entry = getCaseStudyEntry(slug);
-    return { title: entry.title, description: entry.summary };
+    return pageMetadata({
+      title: entry.title,
+      description: entry.summary,
+      path: `/case-studies/${slug}`,
+      type: "article",
+    });
   } catch {
     return {};
   }

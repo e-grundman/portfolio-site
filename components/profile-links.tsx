@@ -30,11 +30,9 @@ export function ProfileLinks({
       ))}
       {withEmail && (
         <li>
-          <a
-            href={`mailto:${site.email}`}
-            aria-label={`Email ${site.name}`}
-            className="font-mono text-sm"
-          >
+          {/* The visible address is the accessible name. An aria-label that
+              does not contain it fails the label-in-name check. */}
+          <a href={`mailto:${site.email}`} className="font-mono text-sm">
             {site.email}
           </a>
         </li>

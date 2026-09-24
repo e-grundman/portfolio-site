@@ -3,14 +3,16 @@ import Link from "next/link";
 import { Kicker } from "@/components/kicker";
 import { notFound } from "next/navigation";
 import { getWriting } from "@/lib/content/loader";
+import { pageMetadata } from "@/lib/metadata";
 import { sections } from "@/lib/site";
 import { formatMonthYear } from "@/lib/format";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Writing",
   description:
     "Long form writing on parcel economics, carrier pricing, fulfillment operations, and building data products that change decisions.",
-};
+  path: "/writing",
+});
 
 /**
  * Held back until there are long form pieces worth a page of their own. The

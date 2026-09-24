@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import { Kicker } from "@/components/kicker";
 import { PackageCard } from "@/components/package-card";
 import { getPortfolio } from "@/lib/content/loader";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  alternates: { canonical: "/portfolio" },
+export const metadata: Metadata = pageMetadata({
   title: "Portfolio",
   description:
     "Tools for the decisions shippers have to make, built with Claude Code on synthetic data: warehouse placement, packaging, and the mechanics behind shipping cost.",
-};
+  path: "/portfolio",
+});
 
 const statusOrder = ["live", "prototype", "planned"] as const;
 const statusCopy: Record<(typeof statusOrder)[number], string> = {
