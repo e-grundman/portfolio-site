@@ -120,9 +120,15 @@ export default function About() {
             </dd>
           </div>
           <div className="grid grid-cols-[7rem_1fr] gap-4 border-b border-rule py-2.5 last:border-b-0">
-            <dt className="font-mono text-sm text-muted">2015 – 2017</dt>
+            <dt className="font-mono text-sm text-muted">2016 – 2017</dt>
             <dd className="text-pretty">
-              Customer Care, specialist then team lead <span className="text-muted">· Grubhub</span>
+              Customer Care Team Lead <span className="text-muted">· Grubhub</span>
+            </dd>
+          </div>
+          <div className="grid grid-cols-[7rem_1fr] gap-4 border-b border-rule py-2.5 last:border-b-0">
+            <dt className="font-mono text-sm text-muted">2015 – 2016</dt>
+            <dd className="text-pretty">
+              Customer Care Specialist <span className="text-muted">· Grubhub</span>
             </dd>
           </div>
         </dl>
