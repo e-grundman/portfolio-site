@@ -40,5 +40,11 @@ Deferred on purpose. Each line says why, so a future session does not relitigate
 |---|---|
 | Case study on the carrier rollout limited to zips where delivery performance matched the incumbent network | Blocked until the method is recorded in `verified-claims.md`; see the claim section there. It is the only trade-off story in the portfolio with no number in it, which is why it belongs here once it is backed. |
 | The Operations Analytics era (12 sites, cost models, labor planning) | No presence on the site. Blocked for the same reason: cleared for the resume only, method not documented. |
-| Resume Selected Work line ("three case studies and two decision tools") | When either draft case study publishes, the resume line and this site both change. Whoever publishes a draft updates `resume.md` the same day. |
+| Resume Selected Work line (case study count) | `resume.md` says four as of 2026-09-24, when the hazmat study published. The shipped resume PDF (v5) still says three; it changes at the next PDF export. Whoever publishes another study updates `resume.md` the same day. |
 | README Sections paragraph says "Work and Writing are off today" | Stale. Case studies are on in `lib/site.ts`; only Writing is off. Found during the sync, outside its scope. |
+
+## Waiting on the employer
+
+| Item | Why deferred |
+|---|---|
+| Citation for the $10M+ carrier savings highlight | Waiting on an employer publication. When it is live, add `href` on the highlight and cite the employer page, as the Dr. Squatch study does. The method stays off the site by Erich's call, 2026-09-24. |

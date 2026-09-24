@@ -34,6 +34,7 @@ export const highlights: Highlight[] = [
     // orders the service line ships.
     figure: "~9×",
     label: "Hazmat order volume, 3 carriers to 6, same margin",
+    href: "/case-studies/hazmat-from-a-flag-to-a-rulebook",
     detail:
       "I identified the flaws in the existing setup, designed the solution, and worked with engineering and operations to implement it. Volume grew almost ninefold, with margin held and carrier violations sharply down.",
   },

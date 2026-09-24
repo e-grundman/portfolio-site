@@ -1,0 +1,54 @@
+---
+title: "Hazmat, from a flag to a rulebook"
+summary: "Carriers were threatening to stop picking up and merchants were getting product back. The fix was to replace one boolean with a rulebook per carrier, ship over-restricted, then earn the exceptions back one at a time."
+role: "Product Manager, Shipping and Transportation"
+org: "ShipMonk"
+timeframe: "2024 to 2026"
+domains: ["parcel", "fulfillment", "ops"]
+constraint: "The shipping could not stop. Every hazmat order in the network kept moving while the rules underneath it were rebuilt, so the fix had to work on live volume from the first day."
+metrics:
+  - label: "hazmat order volume, against March 2024"
+    value: "~9×"
+  - label: "carriers carrying hazmat"
+    before: "3"
+    after: "6"
+  - label: "carrier violations"
+    before: "weekly"
+    after: "quarterly"
+  - label: "shipping margin"
+    value: "held"
+publishedAt: "2026-09-24"
+featured: true
+---
+
+## Situation
+
+This was the first project I took on in shipping and transportation product, in 2024. Hazmat at the time was a boolean on the product record. A product either was or was not, and the instruction to the packer was a static field that said how to label the box. Weight limits, quantity limits, and which carrier and method the package could travel with were not part of the model at all, because the model had one bit of information to work with.
+
+The carriers had more than one bit. There are overarching regulations for lithium batteries, aerosols, perfume, and cosmetics, and then each carrier has its own rules on top of them: this method takes the package up to 5.5 pounds, that one up to 11, another up to 66, this one caps the quantity, that one does not, above this quantity the box always carries a label, and on this carrier it carries two. None of that lived anywhere our routing could read it.
+
+So violations arrived weekly. Carriers were threatening to stop picking up. Merchants with hazmat products were escalating because their shipments were coming back return to sender, and when they asked what they were allowed to ship and how, we could not give them a clear answer, because we did not have one.
+
+## Constraint
+
+We could not stop shipping and regroup. The volume was live, the merchants were live, and the carrier relationships were the thing at risk, so the plane had to be fixed while it flew. Every change had to be safe on the first order it touched, and the carriers had to see the change before they saw the next violation.
+
+## What I did
+
+I identified the flaws in the existing setup, designed the solution, and worked with engineering, operations, and carrier management to implement it.
+
+The first job was classification. We reviewed every hazmat product in the catalog and classified it properly, then went carrier by carrier and wrote down what each one actually allowed for each class, method by method. That rulebook became routing logic: an order containing this class can travel with this set of carriers, on these methods, under this weight, under this quantity, with these labels. The packer instruction stopped being a static field and became a function of the order and the carrier it was going with. We also restricted who could pack these shipments, so the people at those stations had the training the labels assumed.
+
+Then we shipped it over-restricted on purpose. Labels went on even where they were not required. International was off. Air was off. For the first few weeks operations supervisors signed off on every single hazmat package by hand. That was the price of moving fast on live volume, and it bought the thing we needed most, which was carriers seeing a clean run. Within a few weeks the violations were mostly gone. Within a couple of months the manual sign-off was relaxed, and from there we started earning the exceptions back: using the exemptions the regulations actually allow, adding carriers, opening air, opening international, and widening the product categories we would accept.
+
+The decision that mattered most was knowing where to stop. The original scope put the whole hazmat process inside the application, from product acceptance and document sharing through product and method configuration. We did not build that. The rules stayed as back-end configuration, which means engineering commits a little time now and then to add a product type or a new scenario. In exchange we shipped months earlier and kept the ability to pivot every time a carrier changed a rule, which they do. A self-serve configuration surface would have been a product nobody had asked for, built on rules that were still moving.
+
+## Result
+
+Hazmat order volume grew 55 percent from March 2024 to March 2025, with overall network volume flat year over year, so the growth was capability rather than tide. By March 2026 the monthly volume was six times March 2024, and it peaked at roughly nine times this summer. Three carriers became six. Shipping margin on the volume held, which is the part I would check first, because volume bought with rate is not a result.
+
+Violations went from weekly to quarterly, and there has not been a threat to stop picking up since.
+
+## What I would do differently
+
+I would have forced a scan confirmation of the hazmat label at the pack station and put it in the original scope. The variable instructions are far better than the static field they replaced, and I am convinced the label step is still the number one driver of the violations that do occur. It has not been prioritized since, because higher return work keeps beating it, which is exactly why it belonged in the MVP, where nothing had to beat it.
