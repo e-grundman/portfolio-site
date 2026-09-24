@@ -43,6 +43,12 @@ Deferred on purpose. Each line says why, so a future session does not relitigate
 | Resume Selected Work line (case study count) | `resume.md` says four as of 2026-09-24, when the hazmat study published. The shipped resume PDF (v5) still says three; it changes at the next PDF export. Whoever publishes another study updates `resume.md` the same day. |
 | README Sections paragraph says "Work and Writing are off today" | Stale. Case studies are on in `lib/site.ts`; only Writing is off. Found during the sync, outside its scope. |
 
+## Waiting on Erich
+
+| Item | Why deferred |
+|---|---|
+| Second line under the home page hero sentence, saying he builds the software himself | The hero sentence covers domain and decisions; the build proof arrives at the Portfolio section. Erich writes this line. He deferred it 2026-09-24 rather than force it: the claim is on the resume and in the highlights. Revisit only when he brings a line. |
+
 ## Waiting on the employer
 
 | Item | Why deferred |
