@@ -13,9 +13,11 @@
     "zones:centroids": "tsx scripts/generate-zip3-centroids.ts",
     "rates:generate": "tsx scripts/generate-rate-table.ts",
     "icons:generate": "tsx scripts/generate-favicon.ts",
-    "banner:generate": "tsx scripts/generate-banner.ts"
+    "banner:generate": "tsx scripts/generate-banner.ts",
+    "audit:precompute": "tsx scripts/precompute-invoice-audit.ts"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "0.128.0",
     "@mdx-js/loader": "^3.1.1",
     "@mdx-js/react": "^3.1.1",
     "@next/mdx": "^16.3.5",

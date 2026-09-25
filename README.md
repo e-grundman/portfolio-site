@@ -48,7 +48,19 @@ pnpm typecheck       # tsc --noEmit
 pnpm test            # model unit tests
 pnpm content:check   # validate every content file
 pnpm zones:generate  # regenerate the ZIP3 zone matrix from centroids and bands
+pnpm audit:precompute # record one invoice audit run into lib/labs/invoice-audit/recorded-run.json
 ```
+
+## Environment
+
+The site runs with no secrets. One feature needs one:
+
+| Variable | Where | What it does |
+|---|---|---|
+| `ANTHROPIC_API_KEY` | `.env.local` for `pnpm audit:precompute`; Vercel project env for the live button | Lets the invoice audit agent call Claude. Without it the page still renders the recorded run, and the live button answers "not configured". |
+| `INVOICE_AUDIT_LIVE=off` | Vercel project env | Kill switch for live runs. |
+
+`.env*` is ignored by git. Never commit a key.
 
 ## Docs
 

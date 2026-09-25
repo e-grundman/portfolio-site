@@ -2,6 +2,20 @@
 
 Architectural choices and the reasoning behind them. Newest first.
 
+## 2026-09-25, invoice audit agent: recorded run by default, live run fenced
+
+**Decision.** The third lab is an agent, not a calculator. `lib/labs/invoice-audit/` holds the published FedEx 2026 rules, a seeded synthetic invoice with eight planted errors, deterministic checks that prove the errors are findable, and the agent itself: Claude Opus 5 through the SDK tool runner, with tools that answer factual questions (rule text, published amount by zone, billable weight, trigger checks, contract rate) and one tool that submits findings. The page ships with a recorded run stored in `recorded-run.json`, produced by `pnpm audit:precompute`, and a "Run it live" button that streams a fresh run from `app/api/invoice-audit/route.ts` as NDJSON.
+
+**Why an agent.** The site's brand claim is translating operations into software and improving economics through decisions. An invoice audit is the cleanest case: the arithmetic is a formula, and the decision (dispute, question, or leave alone) is judgment that has to cite a rule. Splitting the two across tools and model shows the split, and the planted answer key makes the run scorable, so the page reports catches, misses, and false positives rather than a vendor's recovery number.
+
+**Why recorded by default.** The site had no server surface, and every live run costs money and one to three minutes. A stored run means the page works at zero cost, indexes as static HTML, and survives the key being revoked. The live path exists to prove the recorded run is not staged.
+
+**Fencing.** Same-origin only, three runs an hour per address, forty a day per instance, `INVOICE_AUDIT_LIVE=off` as a kill switch, `max_iterations` on the loop, and a 300 second route limit. The limits are in memory, so they reset per serverless instance. That is accepted for a demo; a durable store is a backlog item.
+
+**Data policy kept.** The invoice is synthetic. The rules are public documents, cited by page. The rate table is the same synthetic one the other labs use, standing in for a contract.
+
+**Model.** `claude-opus-5` at default effort. A cheaper model would cut cost per run several times over; not tried yet, because the false positive rate is the number that matters and it has not been measured across models.
+
 ## 2026-09-18, shipping label design system
 
 **Decision.** The editorial look (cream paper, rust accent, Newsreader serif, tracked mono micro labels, an italic accent word, a thin rule between every section) is replaced by a shipping label system: paper and ink, one heavy line weight, Archivo condensed bold caps for headlines and field names, IBM Plex Mono for figures, and safety yellow used only as a fill behind ink. The home page is a label: ship to, an SR PM priority box, a barcode, and a contents field. Highlights are label fields, portfolio pieces are package cards, and share cards and the icon follow the same system.
