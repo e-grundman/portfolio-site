@@ -1,7 +1,8 @@
 /**
- * Career highlights on the home page, ordered by weight: money, then scale,
- * then the software proof, then service results. Five, so the last field spans
- * the bottom row, which suits the longest detail text on the page.
+ * Career highlights on the home page. Money leads, then on-time delivery, the
+ * software proof, hazmat scale, and speed. Hazmat and on-time delivery swapped
+ * on 2026-09-24 by Erich's call. Five, so the last field spans the bottom row,
+ * which suits the longest detail text on the page.
  *
  * Sourced from the resume and the LinkedIn profile rework. Dollar figures are
  * shown here by Erich's call on 2026-09-17, a deliberate difference from
@@ -29,6 +30,20 @@ export const highlights: Highlight[] = [
       "6 new carriers, 3 expansions, and 1 relaunch, all API integrations. Product lead on each, and on several the full launch, from negotiation data to rollout.",
   },
   {
+    figure: "50% → 90%+",
+    label: "On-time delivery, fixed by changing the math",
+    href: "/case-studies/routing-on-percentiles",
+    detail:
+      "Retail-compliance shipments missed their window half the time. Planning to 90th percentile transit, and getting the retailer to move the window off the weekend, fixed it.",
+  },
+  {
+    figure: "4,000+",
+    label: "Hours of manual work eliminated a year",
+    href: "/case-studies/internal-apps",
+    detail:
+      "Three production internal apps, built and shipped as a non-engineer, that centralized the Transportation team's operations, carrier management, and financial reporting.",
+  },
+  {
     // A growth multiple rather than monthly volume, by Erich's call on
     // 2026-09-18: the multiple tells the story without publishing how many
     // orders the service line ships.
@@ -39,24 +54,10 @@ export const highlights: Highlight[] = [
       "I identified the flaws in the existing setup, designed the solution, and worked with engineering and operations to implement it. Volume grew almost ninefold, with margin held and carrier violations sharply down.",
   },
   {
-    figure: "4,000+",
-    label: "Hours of manual work eliminated a year",
-    href: "/case-studies/internal-apps",
-    detail:
-      "Three production internal apps, built and shipped as a non-engineer, that centralized the Transportation team's operations, carrier management, and financial reporting. The count behind the hours is bottom-up and ranges from 2,200 to 4,400 a year, and the case study shows the arithmetic.",
-  },
-  {
-    figure: "50% → 90%+",
-    label: "On-time delivery, fixed by changing the math",
-    href: "/case-studies/routing-on-percentiles",
-    detail:
-      "Retail-compliance shipments missed their window half the time. Planning to 90th percentile transit, and getting the retailer to move the window off the weekend, fixed it.",
-  },
-  {
     figure: "50%",
     label: "Faster order to doorstep, at no added cost to the brand",
     href: "/case-studies/dr-squatch-click-to-delivery",
     detail:
-      "Click to delivery for Dr. Squatch fell from seven to eight days to under four on economy orders, as ShipMonk published it. My own series, January to November 2024, shows closer to 40 percent. Order cutoffs, carrier selection, and method mix, with ShipMonk absorbing the cost.",
+      "Cut click to delivery for ShipMonk merchant Dr. Squatch from 7-8 days to under 4 on economy orders, through order cutoffs, carrier selection, and method mix.",
   },
 ];
