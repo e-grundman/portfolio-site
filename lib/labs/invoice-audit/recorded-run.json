@@ -1,0 +1,2142 @@
+{
+  "recordedAt": "2026-09-25T18:56:08.287Z",
+  "events": [
+    {
+      "type": "started",
+      "model": "claude-opus-5",
+      "seed": 20260925,
+      "invoice": {
+        "number": "FX-260925-01",
+        "carrier": "FedEx",
+        "periodStart": "2026-09-14",
+        "periodEnd": "2026-09-20",
+        "fuelPct": 0.165,
+        "originZip3": "660",
+        "originLabel": "Kansas City, KS (ZIP3 660)",
+        "packages": [
+          {
+            "tracking": "701708901788",
+            "service": "FedEx Ground",
+            "shipDate": "2026-09-17",
+            "originZip3": "660",
+            "destZip3": "456",
+            "destAddressType": "commercial",
+            "dasTier": "none",
+            "signatureRequested": "adult",
+            "dimsIn": {
+              "l": 13.09,
+              "w": 10.81,
+              "h": 6.69
+            },
+            "actualLb": 1.62,
+            "zone": 5,
+            "billedLb": 8,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Ground, zone 5, 8 lb",
+                "amount": 7.95
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 1.31
+              },
+              {
+                "code": "SIGNATURE_ADULT",
+                "description": "Adult Signature Required",
+                "amount": 10
+              }
+            ]
+          },
+          {
+            "tracking": "702506781856",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-19",
+            "originZip3": "660",
+            "destZip3": "059",
+            "destAddressType": "residential",
+            "dasTier": "none",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 18.04,
+              "w": 13,
+              "h": 12.27
+            },
+            "actualLb": 11.72,
+            "zone": 7,
+            "billedLb": 24,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 7, 24 lb",
+                "amount": 15.39
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 3.6
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              }
+            ]
+          },
+          {
+            "tracking": "703478409309",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-18",
+            "originZip3": "660",
+            "destZip3": "778",
+            "destAddressType": "residential",
+            "dasTier": "none",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 11.72,
+              "w": 10.87,
+              "h": 6.79
+            },
+            "actualLb": 1.64,
+            "zone": 5,
+            "billedLb": 7,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 5, 7 lb",
+                "amount": 7.64
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 2.32
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              }
+            ]
+          },
+          {
+            "tracking": "704023948099",
+            "service": "FedEx Ground",
+            "shipDate": "2026-09-18",
+            "originZip3": "660",
+            "destZip3": "763",
+            "destAddressType": "commercial",
+            "dasTier": "none",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 14.05,
+              "w": 15.39,
+              "h": 11.83
+            },
+            "actualLb": 8.47,
+            "zone": 4,
+            "billedLb": 21,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Ground, zone 4, 21 lb",
+                "amount": 10.66
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 2.82
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              }
+            ]
+          },
+          {
+            "tracking": "705963818864",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-17",
+            "originZip3": "660",
+            "destZip3": "387",
+            "destAddressType": "residential",
+            "dasTier": "none",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 27.98,
+              "w": 20.48,
+              "h": 18.15
+            },
+            "actualLb": 8.36,
+            "zone": 4,
+            "billedLb": 81,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 4, 81 lb",
+                "amount": 22.68
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 10.21
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              },
+              {
+                "code": "AHS_DIMENSION",
+                "description": "Additional Handling Surcharge, Dimension",
+                "amount": 32.75
+              }
+            ]
+          },
+          {
+            "tracking": "706991388893",
+            "service": "FedEx Ground",
+            "shipDate": "2026-09-17",
+            "originZip3": "660",
+            "destZip3": "498",
+            "destAddressType": "commercial",
+            "dasTier": "none",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 15.28,
+              "w": 15.78,
+              "h": 12.78
+            },
+            "actualLb": 9.01,
+            "zone": 5,
+            "billedLb": 24,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Ground, zone 5, 24 lb",
+                "amount": 12.72
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 2.1
+              }
+            ]
+          },
+          {
+            "tracking": "707458669666",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-16",
+            "originZip3": "660",
+            "destZip3": "420",
+            "destAddressType": "residential",
+            "dasTier": "none",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 18.61,
+              "w": 12.48,
+              "h": 12.73
+            },
+            "actualLb": 11.26,
+            "zone": 4,
+            "billedLb": 24,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 4, 24 lb",
+                "amount": 11.44
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 2.95
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              }
+            ]
+          },
+          {
+            "tracking": "708513135406",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-19",
+            "originZip3": "660",
+            "destZip3": "994",
+            "destAddressType": "residential",
+            "dasTier": "none",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 17.83,
+              "w": 13.48,
+              "h": 11.72
+            },
+            "actualLb": 8.07,
+            "zone": 7,
+            "billedLb": 22,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 7, 22 lb",
+                "amount": 14.69
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 3.57
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.95
+              }
+            ]
+          },
+          {
+            "tracking": "709142298124",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-18",
+            "originZip3": "660",
+            "destZip3": "723",
+            "destAddressType": "residential",
+            "dasTier": "extended",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 11.82,
+              "w": 9.94,
+              "h": 4.32
+            },
+            "actualLb": 4.74,
+            "zone": 4,
+            "billedLb": 5,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 4, 5 lb",
+                "amount": 6.32
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 3.56
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              },
+              {
+                "code": "DAS_EXTENDED",
+                "description": "Delivery Area Surcharge, extended",
+                "amount": 8.8
+              }
+            ]
+          },
+          {
+            "tracking": "710155407582",
+            "service": "FedEx Ground",
+            "shipDate": "2026-09-18",
+            "originZip3": "660",
+            "destZip3": "778",
+            "destAddressType": "commercial",
+            "dasTier": "none",
+            "signatureRequested": "direct",
+            "dimsIn": {
+              "l": 11.14,
+              "w": 8.24,
+              "h": 4.16
+            },
+            "actualLb": 5.03,
+            "zone": 5,
+            "billedLb": 6,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Ground, zone 5, 6 lb",
+                "amount": 7.32
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 1.21
+              },
+              {
+                "code": "SIGNATURE_DIRECT",
+                "description": "Direct Signature Required",
+                "amount": 7.6
+              }
+            ]
+          },
+          {
+            "tracking": "711275589710",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-17",
+            "originZip3": "660",
+            "destZip3": "991",
+            "destAddressType": "residential",
+            "dasTier": "none",
+            "signatureRequested": "direct",
+            "dimsIn": {
+              "l": 22.03,
+              "w": 20.31,
+              "h": 14.86
+            },
+            "actualLb": 19.2,
+            "zone": 7,
+            "billedLb": 53,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 7, 53 lb",
+                "amount": 25.12
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 5.21
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              },
+              {
+                "code": "SIGNATURE_DIRECT",
+                "description": "Direct Signature Required",
+                "amount": 7.6
+              }
+            ]
+          },
+          {
+            "tracking": "712578716716",
+            "service": "FedEx Ground",
+            "shipDate": "2026-09-18",
+            "originZip3": "660",
+            "destZip3": "743",
+            "destAddressType": "commercial",
+            "dasTier": "none",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 46,
+              "w": 14,
+              "h": 10
+            },
+            "actualLb": 12.4,
+            "zone": 3,
+            "billedLb": 47,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Ground, zone 3, 47 lb",
+                "amount": 15.28
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 7.92
+              },
+              {
+                "code": "AHS_DIMENSION",
+                "description": "Additional Handling Surcharge, Dimension",
+                "amount": 32.75
+              }
+            ]
+          },
+          {
+            "tracking": "713392225005",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-14",
+            "originZip3": "660",
+            "destZip3": "050",
+            "destAddressType": "residential",
+            "dasTier": "none",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 11.32,
+              "w": 8.65,
+              "h": 4.27
+            },
+            "actualLb": 1.02,
+            "zone": 7,
+            "billedLb": 4,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 7, 4 lb",
+                "amount": 8.06
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 2.39
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              }
+            ]
+          },
+          {
+            "tracking": "714963469980",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-14",
+            "originZip3": "660",
+            "destZip3": "087",
+            "destAddressType": "residential",
+            "dasTier": "extended",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 16.75,
+              "w": 14.77,
+              "h": 10.99
+            },
+            "actualLb": 4.94,
+            "zone": 6,
+            "billedLb": 21,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 6, 21 lb",
+                "amount": 13.08
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 4.67
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              },
+              {
+                "code": "DAS_EXTENDED",
+                "description": "Delivery Area Surcharge, extended",
+                "amount": 8.8
+              }
+            ]
+          },
+          {
+            "tracking": "715067743418",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-18",
+            "originZip3": "660",
+            "destZip3": "334",
+            "destAddressType": "residential",
+            "dasTier": "none",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 19.85,
+              "w": 13.75,
+              "h": 9.12
+            },
+            "actualLb": 5.56,
+            "zone": 7,
+            "billedLb": 21,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 7, 21 lb",
+                "amount": 14.34
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 3.43
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              }
+            ]
+          },
+          {
+            "tracking": "716904962453",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-16",
+            "originZip3": "660",
+            "destZip3": "516",
+            "destAddressType": "residential",
+            "dasTier": "none",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 52,
+              "w": 12,
+              "h": 10
+            },
+            "actualLb": 9,
+            "zone": 2,
+            "billedLb": 45,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 2, 45 lb",
+                "amount": 13.13
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 8.63
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              },
+              {
+                "code": "AHS_DIMENSION",
+                "description": "Additional Handling Surcharge, Dimension",
+                "amount": 32.75
+              }
+            ]
+          },
+          {
+            "tracking": "717839840466",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-14",
+            "originZip3": "660",
+            "destZip3": "634",
+            "destAddressType": "residential",
+            "dasTier": "none",
+            "signatureRequested": "direct",
+            "dimsIn": {
+              "l": 11.69,
+              "w": 8.94,
+              "h": 5.63
+            },
+            "actualLb": 2.63,
+            "zone": 3,
+            "billedLb": 5,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 3, 5 lb",
+                "amount": 5.71
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 2.01
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              },
+              {
+                "code": "SIGNATURE_DIRECT",
+                "description": "Direct Signature Required",
+                "amount": 7.6
+              }
+            ]
+          },
+          {
+            "tracking": "718101271127",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-15",
+            "originZip3": "660",
+            "destZip3": "637",
+            "destAddressType": "residential",
+            "dasTier": "das",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 17.52,
+              "w": 13.43,
+              "h": 10.97
+            },
+            "actualLb": 50.33,
+            "zone": 4,
+            "billedLb": 51,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 4, 51 lb",
+                "amount": 18.14
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 13.44
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              },
+              {
+                "code": "DAS",
+                "description": "Delivery Area Surcharge, das",
+                "amount": 6.6
+              },
+              {
+                "code": "AHS_WEIGHT",
+                "description": "Additional Handling Surcharge, Weight",
+                "amount": 50.25
+              }
+            ]
+          },
+          {
+            "tracking": "719108889594",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-15",
+            "originZip3": "660",
+            "destZip3": "980",
+            "destAddressType": "residential",
+            "dasTier": "none",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 12.09,
+              "w": 8.16,
+              "h": 6.2
+            },
+            "actualLb": 5.38,
+            "zone": 7,
+            "billedLb": 6,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 7, 6 lb",
+                "amount": 8.85
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 2.52
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              }
+            ]
+          },
+          {
+            "tracking": "720564905121",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-17",
+            "originZip3": "660",
+            "destZip3": "787",
+            "destAddressType": "residential",
+            "dasTier": "none",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 12,
+              "w": 12,
+              "h": 12
+            },
+            "actualLb": 9,
+            "zone": 5,
+            "billedLb": 18,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 5, 18 lb",
+                "amount": 10.97
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 2.87
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              }
+            ]
+          },
+          {
+            "tracking": "721642477532",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-17",
+            "originZip3": "660",
+            "destZip3": "729",
+            "destAddressType": "residential",
+            "dasTier": "none",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 11.91,
+              "w": 9,
+              "h": 6.04
+            },
+            "actualLb": 2.39,
+            "zone": 3,
+            "billedLb": 6,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 3, 6 lb",
+                "amount": 5.96
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 2.05
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              }
+            ]
+          },
+          {
+            "tracking": "722508964189",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-16",
+            "originZip3": "660",
+            "destZip3": "107",
+            "destAddressType": "residential",
+            "dasTier": "none",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 17.08,
+              "w": 15.34,
+              "h": 12.48
+            },
+            "actualLb": 6.48,
+            "zone": 6,
+            "billedLb": 27,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 6, 27 lb",
+                "amount": 14.98
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 3.54
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              }
+            ]
+          },
+          {
+            "tracking": "723833568720",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-19",
+            "originZip3": "660",
+            "destZip3": "162",
+            "destAddressType": "residential",
+            "dasTier": "none",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 28.29,
+              "w": 21.62,
+              "h": 16.97
+            },
+            "actualLb": 18.85,
+            "zone": 5,
+            "billedLb": 79,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 5, 79 lb",
+                "amount": 25.28
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 11.59
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              },
+              {
+                "code": "AHS_DIMENSION",
+                "description": "Additional Handling Surcharge, Dimension",
+                "amount": 38.5
+              }
+            ]
+          },
+          {
+            "tracking": "724827804451",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-15",
+            "originZip3": "660",
+            "destZip3": "933",
+            "destAddressType": "residential",
+            "dasTier": "das",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 11.84,
+              "w": 8.82,
+              "h": 4.28
+            },
+            "actualLb": 2.61,
+            "zone": 7,
+            "billedLb": 4,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 7, 4 lb",
+                "amount": 8.06
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 4.57
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              },
+              {
+                "code": "DAS",
+                "description": "Delivery Area Surcharge, das",
+                "amount": 6.6
+              },
+              {
+                "code": "DAS",
+                "description": "Delivery Area Surcharge",
+                "amount": 6.6
+              }
+            ]
+          },
+          {
+            "tracking": "725468577224",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-14",
+            "originZip3": "660",
+            "destZip3": "666",
+            "destAddressType": "residential",
+            "dasTier": "none",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 16.97,
+              "w": 13.6,
+              "h": 13.46
+            },
+            "actualLb": 7.01,
+            "zone": 2,
+            "billedLb": 24,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 2, 24 lb",
+                "amount": 9.12
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 2.57
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              }
+            ]
+          },
+          {
+            "tracking": "726850537759",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-15",
+            "originZip3": "660",
+            "destZip3": "983",
+            "destAddressType": "residential",
+            "dasTier": "none",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 11.07,
+              "w": 9.81,
+              "h": 5.47
+            },
+            "actualLb": 5.45,
+            "zone": 7,
+            "billedLb": 6,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 7, 6 lb",
+                "amount": 8.85
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 2.52
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              }
+            ]
+          },
+          {
+            "tracking": "727059903528",
+            "service": "FedEx Ground",
+            "shipDate": "2026-09-18",
+            "originZip3": "660",
+            "destZip3": "636",
+            "destAddressType": "commercial",
+            "dasTier": "none",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 13.89,
+              "w": 10.61,
+              "h": 4.59
+            },
+            "actualLb": 4.42,
+            "zone": 4,
+            "billedLb": 6,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Ground, zone 4, 6 lb",
+                "amount": 6.61
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 1.09
+              }
+            ]
+          },
+          {
+            "tracking": "728021438452",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-15",
+            "originZip3": "660",
+            "destZip3": "737",
+            "destAddressType": "residential",
+            "dasTier": "none",
+            "signatureRequested": "direct",
+            "dimsIn": {
+              "l": 60,
+              "w": 18,
+              "h": 16
+            },
+            "actualLb": 22,
+            "zone": 3,
+            "billedLb": 125,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 3, 125 lb",
+                "amount": 20.13
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 49.76
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              },
+              {
+                "code": "OVERSIZE",
+                "description": "Oversize Charge",
+                "amount": 275
+              },
+              {
+                "code": "SIGNATURE_DIRECT",
+                "description": "Direct Signature Required",
+                "amount": 7.6
+              }
+            ]
+          },
+          {
+            "tracking": "729766543647",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-18",
+            "originZip3": "660",
+            "destZip3": "613",
+            "destAddressType": "residential",
+            "dasTier": "none",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 10.34,
+              "w": 8.19,
+              "h": 5.66
+            },
+            "actualLb": 4.88,
+            "zone": 4,
+            "billedLb": 5,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 4, 5 lb",
+                "amount": 6.32
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 2.11
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              }
+            ]
+          },
+          {
+            "tracking": "730788259247",
+            "service": "FedEx Ground",
+            "shipDate": "2026-09-17",
+            "originZip3": "660",
+            "destZip3": "416",
+            "destAddressType": "commercial",
+            "dasTier": "das",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 10.77,
+              "w": 8.01,
+              "h": 5.97
+            },
+            "actualLb": 5.26,
+            "zone": 5,
+            "billedLb": 6,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Ground, zone 5, 6 lb",
+                "amount": 7.32
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 1.94
+              },
+              {
+                "code": "DAS",
+                "description": "Delivery Area Surcharge, das",
+                "amount": 4.45
+              }
+            ]
+          },
+          {
+            "tracking": "731031650625",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-17",
+            "originZip3": "660",
+            "destZip3": "159",
+            "destAddressType": "residential",
+            "dasTier": "das",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 11.39,
+              "w": 8.88,
+              "h": 6.77
+            },
+            "actualLb": 2.47,
+            "zone": 6,
+            "billedLb": 6,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 6, 6 lb",
+                "amount": 8.07
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 3.48
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              },
+              {
+                "code": "DAS",
+                "description": "Delivery Area Surcharge, das",
+                "amount": 6.6
+              }
+            ]
+          },
+          {
+            "tracking": "732239346926",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-18",
+            "originZip3": "660",
+            "destZip3": "072",
+            "destAddressType": "residential",
+            "dasTier": "none",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 14.43,
+              "w": 12.1,
+              "h": 8.05
+            },
+            "actualLb": 10.35,
+            "zone": 6,
+            "billedLb": 13,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 6, 13 lb",
+                "amount": 10.47
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 3.13
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              }
+            ]
+          },
+          {
+            "tracking": "733666356553",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-14",
+            "originZip3": "660",
+            "destZip3": "074",
+            "destAddressType": "residential",
+            "dasTier": "none",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 16.96,
+              "w": 12.93,
+              "h": 11.05
+            },
+            "actualLb": 6.14,
+            "zone": 6,
+            "billedLb": 20,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 6, 20 lb",
+                "amount": 12.76
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 3.17
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              }
+            ]
+          },
+          {
+            "tracking": "734533919100",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-18",
+            "originZip3": "660",
+            "destZip3": "405",
+            "destAddressType": "residential",
+            "dasTier": "none",
+            "signatureRequested": "direct",
+            "dimsIn": {
+              "l": 13.35,
+              "w": 10.5,
+              "h": 5.99
+            },
+            "actualLb": 5.01,
+            "zone": 5,
+            "billedLb": 7,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 5, 7 lb",
+                "amount": 7.64
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 2.32
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              },
+              {
+                "code": "SIGNATURE_DIRECT",
+                "description": "Direct Signature Required",
+                "amount": 7.6
+              }
+            ]
+          },
+          {
+            "tracking": "735324743066",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-15",
+            "originZip3": "660",
+            "destZip3": "443",
+            "destAddressType": "residential",
+            "dasTier": "das",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 18.91,
+              "w": 15.49,
+              "h": 11.36
+            },
+            "actualLb": 9.06,
+            "zone": 5,
+            "billedLb": 27,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 5, 27 lb",
+                "amount": 13.57
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 4.39
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              },
+              {
+                "code": "DAS",
+                "description": "Delivery Area Surcharge, das",
+                "amount": 6.6
+              }
+            ]
+          },
+          {
+            "tracking": "736361440136",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-14",
+            "originZip3": "660",
+            "destZip3": "157",
+            "destAddressType": "residential",
+            "dasTier": "none",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 29.3,
+              "w": 16.1,
+              "h": 16.32
+            },
+            "actualLb": 12.9,
+            "zone": 6,
+            "billedLb": 63,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 6, 63 lb",
+                "amount": 25.88
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 5.33
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              }
+            ]
+          },
+          {
+            "tracking": "737970239329",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-19",
+            "originZip3": "660",
+            "destZip3": "834",
+            "destAddressType": "residential",
+            "dasTier": "none",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 26.29,
+              "w": 16.55,
+              "h": 13.56
+            },
+            "actualLb": 16.64,
+            "zone": 6,
+            "billedLb": 47,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 6, 47 lb",
+                "amount": 21.12
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 4.55
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              }
+            ]
+          },
+          {
+            "tracking": "738748080059",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-18",
+            "originZip3": "660",
+            "destZip3": "572",
+            "destAddressType": "residential",
+            "dasTier": "none",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 18.12,
+              "w": 14.85,
+              "h": 9.44
+            },
+            "actualLb": 7.23,
+            "zone": 4,
+            "billedLb": 21,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 4, 21 lb",
+                "amount": 10.66
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 2.82
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              }
+            ]
+          },
+          {
+            "tracking": "739010139003",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-18",
+            "originZip3": "660",
+            "destZip3": "228",
+            "destAddressType": "residential",
+            "dasTier": "das",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 10.92,
+              "w": 9.59,
+              "h": 5.4
+            },
+            "actualLb": 4.1,
+            "zone": 6,
+            "billedLb": 5,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 6, 5 lb",
+                "amount": 7.71
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 3.43
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              },
+              {
+                "code": "DAS",
+                "description": "Delivery Area Surcharge, das",
+                "amount": 6.6
+              }
+            ]
+          },
+          {
+            "tracking": "740540458101",
+            "service": "FedEx Home Delivery",
+            "shipDate": "2026-09-17",
+            "originZip3": "660",
+            "destZip3": "828",
+            "destAddressType": "residential",
+            "dasTier": "none",
+            "signatureRequested": "none",
+            "dimsIn": {
+              "l": 13.78,
+              "w": 10.11,
+              "h": 6.44
+            },
+            "actualLb": 3.19,
+            "zone": 5,
+            "billedLb": 8,
+            "charges": [
+              {
+                "code": "TRANSPORTATION",
+                "description": "FedEx Home Delivery, zone 5, 8 lb",
+                "amount": 7.95
+              },
+              {
+                "code": "FUEL",
+                "description": "Fuel surcharge, 16.5%",
+                "amount": 2.38
+              },
+              {
+                "code": "RESIDENTIAL",
+                "description": "Residential Delivery Charge",
+                "amount": 6.45
+              }
+            ]
+          }
+        ],
+        "total": 1482.88
+      },
+      "at": "2026-09-25T18:53:25.930Z"
+    },
+    {
+      "type": "assistant",
+      "text": "I'll start by pulling the full invoice."
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_01QWDftj3nKuG8AyXo2YKLXo",
+      "name": "list_packages",
+      "input": {},
+      "result": "Invoice FX-260925-01, FedEx, period 2026-09-14 to 2026-09-20, origin Kansas City, KS (ZIP3 660), fuel surcharge for the period 16.5%, 40 packages, invoice total $1482.88.\n\ntracking | service | ship_date | dest_zip3 | zone | address_type | dims_in (LxWxH) | actual_lb | billed_lb | charges (code=amount) | line_total\n701708901788 | FedEx Ground | 2026-09-17 | 456 | 5 | commercial | 13.09x10.81x6.69 | 1.62 | 8 | TRANSPORTATION=7.95 FUEL=1.31 SIGNATURE_ADULT=10.00 | 19.26\n702506781856 | FedEx Home Delivery | 2026-09-19 | 059 | 7 | residential | 18.04x13x12.27 | 11.72 | 24 | TRANSPORTATION=15.39 FUEL=3.60 RESIDENTIAL=6.45 | 25.44\n703478409309 | FedEx Home Delivery | 2026-09-18 | 778 | 5 | residential | 11.72x10.87x6.79 | 1.64 | 7 | TRANSPORTATION=7.64 FUEL=2.32 RESIDENTIAL=6.45 | 16.41\n704023948099 | FedEx Ground | 2026-09-18 | 763 | 4 | commercial | 14.05x15.39x11.83 | 8.47 | 21 | TRANSPORTAT…",
+      "truncated": true
+    },
+    {
+      "type": "assistant",
+      "text": "Let me pull the key rules and check the suspicious cartons."
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_01NAkT6mWhGDkbu6THwcwbKx",
+      "name": "get_rule",
+      "input": {
+        "rule_id": "FUEL"
+      },
+      "result": "Fuel surcharge\nThe fuel percentage for the invoice period is stated in the invoice header. Assumption for this audit: the percentage applies to the transportation charge plus the residential, delivery area, additional handling, and oversize surcharges, and not to signature or address correction fees. FedEx publishes the percentage weekly and the applicable base on fedex.com; neither is in the documents this audit holds.\nSource: Stated assumption, not read from a FedEx document (assumption).",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_01WomR4AdxAxtaXUzaGCzoDq",
+      "name": "get_rule",
+      "input": {
+        "rule_id": "AHS_DIMENSION"
+      },
+      "result": "Additional Handling Surcharge, Dimension\nApplies to any package that measures greater than 48 inches along its longest side, or greater than 30 inches along its second-longest side, or greater than 105 inches in length and girth (length plus two times the height plus two times the width), or greater than 10,368 cubic inches. Rating is based on the greater of actual rounded weight or dimensional weight, subject to a 40-lb. minimum billable weight. 2026 U.S. amounts by zone: Zone 2 $29.50, Zones 3-4 $32.75, Zones 5-6 $38.50, Zones 7+ $40.75.\nSource: FedEx Service Guide, effective January 5, 2026, updated September 11, 2026, Non-standard shipment fees, Additional Handling Surcharge (document read).",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_01BVzZkxSbeoeJoocS5SG4N4",
+      "name": "get_rule",
+      "input": {
+        "rule_id": "OVERSIZE"
+      },
+      "result": "Oversize Charge\nApplies to any package that measures greater than 96 inches along its longest side, or greater than 130 inches in length and girth, or greater than 17,280 cubic inches, or has an actual weight greater than 110 lbs. Rating is based on the greater of actual rounded weight or dimensional weight, subject to a 90-lb. minimum billable weight. When the Oversize Charge applies, the Additional Handling Surcharge does not also apply. 2026 U.S. amounts by zone: Zone 2 $255, Zones 3-4 $275, Zones 5-6 $320, Zones 7+ $330.\nSource: FedEx Service Guide, effective January 5, 2026, updated September 11, 2026, Non-standard shipment fees, Oversize Charge (document read).",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_01DtUXR6bbkZyDshMdbxLgmQ",
+      "name": "get_rule",
+      "input": {
+        "rule_id": "DAS"
+      },
+      "result": "Delivery Area Surcharge\nApplies per package to ZIP codes FedEx designates as delivery area, extended delivery area, or remote. 2026, U.S. Package Services: Residential $6.60, Extended Residential $8.80, Commercial $4.45, Extended Commercial $5.55, Remote Commercial or Remote Residential $16.75. One surcharge per package. Whether a ZIP is on the list is set by FedEx's published DAS ZIP tables, which this audit does not hold, so eligibility cannot be verified here and only the amount and the count can.\nSource: 2026 changes to FedEx surcharges & fees, fedex.com, Delivery Area Surcharge (document read).",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_01GFiYDc5ZJ9yBYQnPzjXHYJ",
+      "name": "get_rule",
+      "input": {
+        "rule_id": "RESIDENTIAL"
+      },
+      "result": "Residential Delivery Charge\nApplies to shipments delivered to a home or private residence. 2026: $6.95 per package for U.S. Package Services (Express). $6.45 per package for FedEx Ground, FedEx Home Delivery, and FedEx International Ground shipments. A commercial address does not carry the charge.\nSource: 2026 changes to FedEx surcharges & fees, fedex.com, Residential Delivery Charge (document read).",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_01TBCNVJDA1acEaqfEynU9G2",
+      "name": "get_rule",
+      "input": {
+        "rule_id": "SIGNATURE"
+      },
+      "result": "Delivery Signature Options\nCharged only when the shipper selects the option. 2026 U.S. Package Services: Adult Signature Required $10 per package; Direct Signature Required and Indirect Signature Required $7.60 per package.\nSource: 2026 changes to FedEx surcharges & fees, fedex.com, FedEx Delivery Signature Options (document read).",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_01GYGyWMZCcUDj43gXo1TK7A",
+      "name": "check_triggers",
+      "input": {
+        "length_in": 46,
+        "width_in": 14,
+        "height_in": 10,
+        "actual_lb": 12.4
+      },
+      "result": "Longest side 46 in. Second-longest 14 in. Length plus girth 94 in. Cubic volume (rounded sides) 6440 cubic in. Actual weight 12.4 lb.\nAdditional Handling, Dimension: longest > 48 (false), second-longest > 30 (false), length plus girth > 105 (false), cubic > 10368 (false).\nAdditional Handling, Weight: actual > 50 lb (false).\nOversize: longest > 96 (false), length plus girth > 130 (false), cubic > 17280 (false), actual > 110 lb (false).\nGround Unauthorized: longest > 108 (false), length plus girth > 165 (false), actual > 150 lb (false).\nWhen Oversize applies, Additional Handling does not also apply.",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_01HMqm1G4neR8kbQJ3dBeXCj",
+      "name": "check_triggers",
+      "input": {
+        "length_in": 60,
+        "width_in": 18,
+        "height_in": 16,
+        "actual_lb": 22
+      },
+      "result": "Longest side 60 in. Second-longest 18 in. Length plus girth 128 in. Cubic volume (rounded sides) 17280 cubic in. Actual weight 22 lb.\nAdditional Handling, Dimension: longest > 48 (true), second-longest > 30 (false), length plus girth > 105 (true), cubic > 10368 (true).\nAdditional Handling, Weight: actual > 50 lb (false).\nOversize: longest > 96 (false), length plus girth > 130 (false), cubic > 17280 (false), actual > 110 lb (false).\nGround Unauthorized: longest > 108 (false), length plus girth > 165 (false), actual > 150 lb (false).\nWhen Oversize applies, Additional Handling does not also apply.",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_017Riw27arhG9mTDH4ioFwsw",
+      "name": "check_triggers",
+      "input": {
+        "length_in": 52,
+        "width_in": 12,
+        "height_in": 10,
+        "actual_lb": 9
+      },
+      "result": "Longest side 52 in. Second-longest 12 in. Length plus girth 96 in. Cubic volume (rounded sides) 6240 cubic in. Actual weight 9 lb.\nAdditional Handling, Dimension: longest > 48 (true), second-longest > 30 (false), length plus girth > 105 (false), cubic > 10368 (false).\nAdditional Handling, Weight: actual > 50 lb (false).\nOversize: longest > 96 (false), length plus girth > 130 (false), cubic > 17280 (false), actual > 110 lb (false).\nGround Unauthorized: longest > 108 (false), length plus girth > 165 (false), actual > 150 lb (false).\nWhen Oversize applies, Additional Handling does not also apply.",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_01L753JnbXur5BHfZHDfn6de",
+      "name": "check_triggers",
+      "input": {
+        "length_in": 27.98,
+        "width_in": 20.48,
+        "height_in": 18.15,
+        "actual_lb": 8.36
+      },
+      "result": "Longest side 27.98 in. Second-longest 20.48 in. Length plus girth 105.24 in. Cubic volume (rounded sides) 11172 cubic in. Actual weight 8.36 lb.\nAdditional Handling, Dimension: longest > 48 (false), second-longest > 30 (false), length plus girth > 105 (true), cubic > 10368 (true).\nAdditional Handling, Weight: actual > 50 lb (false).\nOversize: longest > 96 (false), length plus girth > 130 (false), cubic > 17280 (false), actual > 110 lb (false).\nGround Unauthorized: longest > 108 (false), length plus girth > 165 (false), actual > 150 lb (false).\nWhen Oversize applies, Additional Handling does not also apply.",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_01UQZYJz938vXFLdtqABYQuE",
+      "name": "check_triggers",
+      "input": {
+        "length_in": 28.29,
+        "width_in": 21.62,
+        "height_in": 16.97,
+        "actual_lb": 18.85
+      },
+      "result": "Longest side 28.29 in. Second-longest 21.62 in. Length plus girth 105.47 in. Cubic volume (rounded sides) 10846 cubic in. Actual weight 18.85 lb.\nAdditional Handling, Dimension: longest > 48 (false), second-longest > 30 (false), length plus girth > 105 (true), cubic > 10368 (true).\nAdditional Handling, Weight: actual > 50 lb (false).\nOversize: longest > 96 (false), length plus girth > 130 (false), cubic > 17280 (false), actual > 110 lb (false).\nGround Unauthorized: longest > 108 (false), length plus girth > 165 (false), actual > 150 lb (false).\nWhen Oversize applies, Additional Handling does not also apply.",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_014Wy4By7AP74ByuX5DUu3x1",
+      "name": "check_triggers",
+      "input": {
+        "length_in": 17.52,
+        "width_in": 13.43,
+        "height_in": 10.97,
+        "actual_lb": 50.33
+      },
+      "result": "Longest side 17.52 in. Second-longest 13.43 in. Length plus girth 66.32 in. Cubic volume (rounded sides) 2772 cubic in. Actual weight 50.33 lb.\nAdditional Handling, Dimension: longest > 48 (false), second-longest > 30 (false), length plus girth > 105 (false), cubic > 10368 (false).\nAdditional Handling, Weight: actual > 50 lb (true).\nOversize: longest > 96 (false), length plus girth > 130 (false), cubic > 17280 (false), actual > 110 lb (false).\nGround Unauthorized: longest > 108 (false), length plus girth > 165 (false), actual > 150 lb (false).\nWhen Oversize applies, Additional Handling does not also apply.",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_01UxZvwJBMFPkjA33jW8aEn8",
+      "name": "surcharge_amount",
+      "input": {
+        "surcharge": "AHS_WEIGHT",
+        "zone": 4
+      },
+      "result": "AHS_WEIGHT at zone 4 (Zones 3-4): $50.25 per package. Full table: Zone 2 $46, Zones 3-4 $50.25, Zones 5-6 $56.25, Zones 7+ $58.75.",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_01784NfBRS7a1WQ1mpgq21Ly",
+      "name": "surcharge_amount",
+      "input": {
+        "surcharge": "AHS_DIMENSION",
+        "zone": 2
+      },
+      "result": "AHS_DIMENSION at zone 2 (Zone 2): $29.50 per package. Full table: Zone 2 $29.5, Zones 3-4 $32.75, Zones 5-6 $38.5, Zones 7+ $40.75.",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_01TXEURqdpxCe9o59qQqJBVU",
+      "name": "surcharge_amount",
+      "input": {
+        "surcharge": "AHS_DIMENSION",
+        "zone": 3
+      },
+      "result": "AHS_DIMENSION at zone 3 (Zones 3-4): $32.75 per package. Full table: Zone 2 $29.5, Zones 3-4 $32.75, Zones 5-6 $38.5, Zones 7+ $40.75.",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_01Atw8BPX9mFfymFZp4zkdzW",
+      "name": "billable_weight",
+      "input": {
+        "length_in": 12,
+        "width_in": 12,
+        "height_in": 12,
+        "actual_lb": 9
+      },
+      "result": "Rounded dims 12x12x12 in = 1728 cubic in. Dimensional weight 1728 / 139 = 12.43, rounds up to 13 lb. Actual 9 lb rounds up to 9 lb. Billable weight 13 lb.",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_01T9rzhXfbE8vVbKhbACTehq",
+      "name": "transportation_rate",
+      "input": {
+        "zone": 5,
+        "billable_lb": 13
+      },
+      "result": "Zone 5, 13 lb: $9.49.",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_018YPBkkexRSdED5hD3YhYyZ",
+      "name": "transportation_rate",
+      "input": {
+        "zone": 5,
+        "billable_lb": 18
+      },
+      "result": "Zone 5, 18 lb: $10.97.",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_016EYDshwx5o6CcaGvzeELxD",
+      "name": "transportation_rate",
+      "input": {
+        "zone": 3,
+        "billable_lb": 125
+      },
+      "result": "Zone 3, 125 lb: $20.13.",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_01UmLLKWAsijXbYoT8gjACPc",
+      "name": "transportation_rate",
+      "input": {
+        "zone": 3,
+        "billable_lb": 47
+      },
+      "result": "Zone 3, 47 lb: $15.28.",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_012xRcNG3YP9hgj6XrrQ8QEo",
+      "name": "transportation_rate",
+      "input": {
+        "zone": 6,
+        "billable_lb": 13
+      },
+      "result": "Zone 6, 13 lb: $10.47.",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_01EGFBUKK3u74utwUR8ybxZq",
+      "name": "get_package",
+      "input": {
+        "tracking": "732239346926"
+      },
+      "result": "{\n  \"tracking\": \"732239346926\",\n  \"service\": \"FedEx Home Delivery\",\n  \"shipDate\": \"2026-09-18\",\n  \"originZip3\": \"660\",\n  \"destZip3\": \"072\",\n  \"destAddressType\": \"residential\",\n  \"dasTier\": \"none\",\n  \"signatureRequested\": \"none\",\n  \"dimsIn\": {\n    \"l\": 14.43,\n    \"w\": 12.1,\n    \"h\": 8.05\n  },\n  \"actualLb\": 10.35,\n  \"zone\": 6,\n  \"billedLb\": 13,\n  \"charges\": [\n    {\n      \"code\": \"TRANSPORTATION\",\n      \"description\": \"FedEx Home Delivery, zone 6, 13 lb\",\n      \"amount\": 10.47\n    },\n    {\n      \"code\": \"FUEL\",\n      \"description\": \"Fuel surcharge, 16.5%\",\n      \"amount\": 3.13\n    },\n    {\n      \"code\": \"RESIDENTIAL\",\n      \"description\": \"Residential Delivery Charge\",\n      \"amount\": 6.45\n    }\n  ],\n  \"lineTotal\": 20.05\n}",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_01KzCTeKSTKg8r5Tr8JexuXY",
+      "name": "get_package",
+      "input": {
+        "tracking": "724827804451"
+      },
+      "result": "{\n  \"tracking\": \"724827804451\",\n  \"service\": \"FedEx Home Delivery\",\n  \"shipDate\": \"2026-09-15\",\n  \"originZip3\": \"660\",\n  \"destZip3\": \"933\",\n  \"destAddressType\": \"residential\",\n  \"dasTier\": \"das\",\n  \"signatureRequested\": \"none\",\n  \"dimsIn\": {\n    \"l\": 11.84,\n    \"w\": 8.82,\n    \"h\": 4.28\n  },\n  \"actualLb\": 2.61,\n  \"zone\": 7,\n  \"billedLb\": 4,\n  \"charges\": [\n    {\n      \"code\": \"TRANSPORTATION\",\n      \"description\": \"FedEx Home Delivery, zone 7, 4 lb\",\n      \"amount\": 8.06\n    },\n    {\n      \"code\": \"FUEL\",\n      \"description\": \"Fuel surcharge, 16.5%\",\n      \"amount\": 4.57\n    },\n    {\n      \"code\": \"RESIDENTIAL\",\n      \"description\": \"Residential Delivery Charge\",\n      \"amount\": 6.45\n    },\n    {\n      \"code\": \"DAS\",\n      \"description\": \"Delivery Area Surcharge, das\",\n      \"amount\": 6.6\n    },\n    {\n      \"code\": \"DAS\",\n      \"description\": \"Delivery Area Surcharge\",\n      \"amount\": 6.6\n…",
+      "truncated": true
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_01Jw5eTNcqA581JeT3S4PeQY",
+      "name": "get_package",
+      "input": {
+        "tracking": "704023948099"
+      },
+      "result": "{\n  \"tracking\": \"704023948099\",\n  \"service\": \"FedEx Ground\",\n  \"shipDate\": \"2026-09-18\",\n  \"originZip3\": \"660\",\n  \"destZip3\": \"763\",\n  \"destAddressType\": \"commercial\",\n  \"dasTier\": \"none\",\n  \"signatureRequested\": \"none\",\n  \"dimsIn\": {\n    \"l\": 14.05,\n    \"w\": 15.39,\n    \"h\": 11.83\n  },\n  \"actualLb\": 8.47,\n  \"zone\": 4,\n  \"billedLb\": 21,\n  \"charges\": [\n    {\n      \"code\": \"TRANSPORTATION\",\n      \"description\": \"FedEx Ground, zone 4, 21 lb\",\n      \"amount\": 10.66\n    },\n    {\n      \"code\": \"FUEL\",\n      \"description\": \"Fuel surcharge, 16.5%\",\n      \"amount\": 2.82\n    },\n    {\n      \"code\": \"RESIDENTIAL\",\n      \"description\": \"Residential Delivery Charge\",\n      \"amount\": 6.45\n    }\n  ],\n  \"lineTotal\": 19.93\n}",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_01MnDJxsBu1aQNVBwYk9hdKk",
+      "name": "get_package",
+      "input": {
+        "tracking": "701708901788"
+      },
+      "result": "{\n  \"tracking\": \"701708901788\",\n  \"service\": \"FedEx Ground\",\n  \"shipDate\": \"2026-09-17\",\n  \"originZip3\": \"660\",\n  \"destZip3\": \"456\",\n  \"destAddressType\": \"commercial\",\n  \"dasTier\": \"none\",\n  \"signatureRequested\": \"adult\",\n  \"dimsIn\": {\n    \"l\": 13.09,\n    \"w\": 10.81,\n    \"h\": 6.69\n  },\n  \"actualLb\": 1.62,\n  \"zone\": 5,\n  \"billedLb\": 8,\n  \"charges\": [\n    {\n      \"code\": \"TRANSPORTATION\",\n      \"description\": \"FedEx Ground, zone 5, 8 lb\",\n      \"amount\": 7.95\n    },\n    {\n      \"code\": \"FUEL\",\n      \"description\": \"Fuel surcharge, 16.5%\",\n      \"amount\": 1.31\n    },\n    {\n      \"code\": \"SIGNATURE_ADULT\",\n      \"description\": \"Adult Signature Required\",\n      \"amount\": 10\n    }\n  ],\n  \"lineTotal\": 19.26\n}",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_01GjFL58eCmA5mijaRm9Cshc",
+      "name": "get_package",
+      "input": {
+        "tracking": "710155407582"
+      },
+      "result": "{\n  \"tracking\": \"710155407582\",\n  \"service\": \"FedEx Ground\",\n  \"shipDate\": \"2026-09-18\",\n  \"originZip3\": \"660\",\n  \"destZip3\": \"778\",\n  \"destAddressType\": \"commercial\",\n  \"dasTier\": \"none\",\n  \"signatureRequested\": \"direct\",\n  \"dimsIn\": {\n    \"l\": 11.14,\n    \"w\": 8.24,\n    \"h\": 4.16\n  },\n  \"actualLb\": 5.03,\n  \"zone\": 5,\n  \"billedLb\": 6,\n  \"charges\": [\n    {\n      \"code\": \"TRANSPORTATION\",\n      \"description\": \"FedEx Ground, zone 5, 6 lb\",\n      \"amount\": 7.32\n    },\n    {\n      \"code\": \"FUEL\",\n      \"description\": \"Fuel surcharge, 16.5%\",\n      \"amount\": 1.21\n    },\n    {\n      \"code\": \"SIGNATURE_DIRECT\",\n      \"description\": \"Direct Signature Required\",\n      \"amount\": 7.6\n    }\n  ],\n  \"lineTotal\": 16.13\n}",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_01CAuzKQ1paenm2uiVVtoZdh",
+      "name": "get_package",
+      "input": {
+        "tracking": "711275589710"
+      },
+      "result": "{\n  \"tracking\": \"711275589710\",\n  \"service\": \"FedEx Home Delivery\",\n  \"shipDate\": \"2026-09-17\",\n  \"originZip3\": \"660\",\n  \"destZip3\": \"991\",\n  \"destAddressType\": \"residential\",\n  \"dasTier\": \"none\",\n  \"signatureRequested\": \"direct\",\n  \"dimsIn\": {\n    \"l\": 22.03,\n    \"w\": 20.31,\n    \"h\": 14.86\n  },\n  \"actualLb\": 19.2,\n  \"zone\": 7,\n  \"billedLb\": 53,\n  \"charges\": [\n    {\n      \"code\": \"TRANSPORTATION\",\n      \"description\": \"FedEx Home Delivery, zone 7, 53 lb\",\n      \"amount\": 25.12\n    },\n    {\n      \"code\": \"FUEL\",\n      \"description\": \"Fuel surcharge, 16.5%\",\n      \"amount\": 5.21\n    },\n    {\n      \"code\": \"RESIDENTIAL\",\n      \"description\": \"Residential Delivery Charge\",\n      \"amount\": 6.45\n    },\n    {\n      \"code\": \"SIGNATURE_DIRECT\",\n      \"description\": \"Direct Signature Required\",\n      \"amount\": 7.6\n    }\n  ],\n  \"lineTotal\": 44.38\n}",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_01CEW9mFsfooWH8xAdVi85E6",
+      "name": "get_package",
+      "input": {
+        "tracking": "717839840466"
+      },
+      "result": "{\n  \"tracking\": \"717839840466\",\n  \"service\": \"FedEx Home Delivery\",\n  \"shipDate\": \"2026-09-14\",\n  \"originZip3\": \"660\",\n  \"destZip3\": \"634\",\n  \"destAddressType\": \"residential\",\n  \"dasTier\": \"none\",\n  \"signatureRequested\": \"direct\",\n  \"dimsIn\": {\n    \"l\": 11.69,\n    \"w\": 8.94,\n    \"h\": 5.63\n  },\n  \"actualLb\": 2.63,\n  \"zone\": 3,\n  \"billedLb\": 5,\n  \"charges\": [\n    {\n      \"code\": \"TRANSPORTATION\",\n      \"description\": \"FedEx Home Delivery, zone 3, 5 lb\",\n      \"amount\": 5.71\n    },\n    {\n      \"code\": \"FUEL\",\n      \"description\": \"Fuel surcharge, 16.5%\",\n      \"amount\": 2.01\n    },\n    {\n      \"code\": \"RESIDENTIAL\",\n      \"description\": \"Residential Delivery Charge\",\n      \"amount\": 6.45\n    },\n    {\n      \"code\": \"SIGNATURE_DIRECT\",\n      \"description\": \"Direct Signature Required\",\n      \"amount\": 7.6\n    }\n  ],\n  \"lineTotal\": 21.77\n}",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_012bFayRwqhrygqSFkgdSPsN",
+      "name": "get_package",
+      "input": {
+        "tracking": "728021438452"
+      },
+      "result": "{\n  \"tracking\": \"728021438452\",\n  \"service\": \"FedEx Home Delivery\",\n  \"shipDate\": \"2026-09-15\",\n  \"originZip3\": \"660\",\n  \"destZip3\": \"737\",\n  \"destAddressType\": \"residential\",\n  \"dasTier\": \"none\",\n  \"signatureRequested\": \"direct\",\n  \"dimsIn\": {\n    \"l\": 60,\n    \"w\": 18,\n    \"h\": 16\n  },\n  \"actualLb\": 22,\n  \"zone\": 3,\n  \"billedLb\": 125,\n  \"charges\": [\n    {\n      \"code\": \"TRANSPORTATION\",\n      \"description\": \"FedEx Home Delivery, zone 3, 125 lb\",\n      \"amount\": 20.13\n    },\n    {\n      \"code\": \"FUEL\",\n      \"description\": \"Fuel surcharge, 16.5%\",\n      \"amount\": 49.76\n    },\n    {\n      \"code\": \"RESIDENTIAL\",\n      \"description\": \"Residential Delivery Charge\",\n      \"amount\": 6.45\n    },\n    {\n      \"code\": \"OVERSIZE\",\n      \"description\": \"Oversize Charge\",\n      \"amount\": 275\n    },\n    {\n      \"code\": \"SIGNATURE_DIRECT\",\n      \"description\": \"Direct Signature Required\",\n      \"amount…",
+      "truncated": true
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_0111A5qZveeAtsUesbCcGboP",
+      "name": "get_package",
+      "input": {
+        "tracking": "734533919100"
+      },
+      "result": "{\n  \"tracking\": \"734533919100\",\n  \"service\": \"FedEx Home Delivery\",\n  \"shipDate\": \"2026-09-18\",\n  \"originZip3\": \"660\",\n  \"destZip3\": \"405\",\n  \"destAddressType\": \"residential\",\n  \"dasTier\": \"none\",\n  \"signatureRequested\": \"direct\",\n  \"dimsIn\": {\n    \"l\": 13.35,\n    \"w\": 10.5,\n    \"h\": 5.99\n  },\n  \"actualLb\": 5.01,\n  \"zone\": 5,\n  \"billedLb\": 7,\n  \"charges\": [\n    {\n      \"code\": \"TRANSPORTATION\",\n      \"description\": \"FedEx Home Delivery, zone 5, 7 lb\",\n      \"amount\": 7.64\n    },\n    {\n      \"code\": \"FUEL\",\n      \"description\": \"Fuel surcharge, 16.5%\",\n      \"amount\": 2.32\n    },\n    {\n      \"code\": \"RESIDENTIAL\",\n      \"description\": \"Residential Delivery Charge\",\n      \"amount\": 6.45\n    },\n    {\n      \"code\": \"SIGNATURE_DIRECT\",\n      \"description\": \"Direct Signature Required\",\n      \"amount\": 7.6\n    }\n  ],\n  \"lineTotal\": 24.01\n}",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_01N1QTVfHZDz6GKUQe8x8FVB",
+      "name": "get_package",
+      "input": {
+        "tracking": "709142298124"
+      },
+      "result": "{\n  \"tracking\": \"709142298124\",\n  \"service\": \"FedEx Home Delivery\",\n  \"shipDate\": \"2026-09-18\",\n  \"originZip3\": \"660\",\n  \"destZip3\": \"723\",\n  \"destAddressType\": \"residential\",\n  \"dasTier\": \"extended\",\n  \"signatureRequested\": \"none\",\n  \"dimsIn\": {\n    \"l\": 11.82,\n    \"w\": 9.94,\n    \"h\": 4.32\n  },\n  \"actualLb\": 4.74,\n  \"zone\": 4,\n  \"billedLb\": 5,\n  \"charges\": [\n    {\n      \"code\": \"TRANSPORTATION\",\n      \"description\": \"FedEx Home Delivery, zone 4, 5 lb\",\n      \"amount\": 6.32\n    },\n    {\n      \"code\": \"FUEL\",\n      \"description\": \"Fuel surcharge, 16.5%\",\n      \"amount\": 3.56\n    },\n    {\n      \"code\": \"RESIDENTIAL\",\n      \"description\": \"Residential Delivery Charge\",\n      \"amount\": 6.45\n    },\n    {\n      \"code\": \"DAS_EXTENDED\",\n      \"description\": \"Delivery Area Surcharge, extended\",\n      \"amount\": 8.8\n    }\n  ],\n  \"lineTotal\": 25.13\n}",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_01SQTwrX3fQMpXxofgNHa7iU",
+      "name": "get_package",
+      "input": {
+        "tracking": "714963469980"
+      },
+      "result": "{\n  \"tracking\": \"714963469980\",\n  \"service\": \"FedEx Home Delivery\",\n  \"shipDate\": \"2026-09-14\",\n  \"originZip3\": \"660\",\n  \"destZip3\": \"087\",\n  \"destAddressType\": \"residential\",\n  \"dasTier\": \"extended\",\n  \"signatureRequested\": \"none\",\n  \"dimsIn\": {\n    \"l\": 16.75,\n    \"w\": 14.77,\n    \"h\": 10.99\n  },\n  \"actualLb\": 4.94,\n  \"zone\": 6,\n  \"billedLb\": 21,\n  \"charges\": [\n    {\n      \"code\": \"TRANSPORTATION\",\n      \"description\": \"FedEx Home Delivery, zone 6, 21 lb\",\n      \"amount\": 13.08\n    },\n    {\n      \"code\": \"FUEL\",\n      \"description\": \"Fuel surcharge, 16.5%\",\n      \"amount\": 4.67\n    },\n    {\n      \"code\": \"RESIDENTIAL\",\n      \"description\": \"Residential Delivery Charge\",\n      \"amount\": 6.45\n    },\n    {\n      \"code\": \"DAS_EXTENDED\",\n      \"description\": \"Delivery Area Surcharge, extended\",\n      \"amount\": 8.8\n    }\n  ],\n  \"lineTotal\": 33\n}",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_01BSfNExvLFNtb1wP6jhjUab",
+      "name": "get_package",
+      "input": {
+        "tracking": "718101271127"
+      },
+      "result": "{\n  \"tracking\": \"718101271127\",\n  \"service\": \"FedEx Home Delivery\",\n  \"shipDate\": \"2026-09-15\",\n  \"originZip3\": \"660\",\n  \"destZip3\": \"637\",\n  \"destAddressType\": \"residential\",\n  \"dasTier\": \"das\",\n  \"signatureRequested\": \"none\",\n  \"dimsIn\": {\n    \"l\": 17.52,\n    \"w\": 13.43,\n    \"h\": 10.97\n  },\n  \"actualLb\": 50.33,\n  \"zone\": 4,\n  \"billedLb\": 51,\n  \"charges\": [\n    {\n      \"code\": \"TRANSPORTATION\",\n      \"description\": \"FedEx Home Delivery, zone 4, 51 lb\",\n      \"amount\": 18.14\n    },\n    {\n      \"code\": \"FUEL\",\n      \"description\": \"Fuel surcharge, 16.5%\",\n      \"amount\": 13.44\n    },\n    {\n      \"code\": \"RESIDENTIAL\",\n      \"description\": \"Residential Delivery Charge\",\n      \"amount\": 6.45\n    },\n    {\n      \"code\": \"DAS\",\n      \"description\": \"Delivery Area Surcharge, das\",\n      \"amount\": 6.6\n    },\n    {\n      \"code\": \"AHS_WEIGHT\",\n      \"description\": \"Additional Handling Surcharge, W…",
+      "truncated": true
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_013eLBdXNnWfjut1B7Qmbtyy",
+      "name": "get_package",
+      "input": {
+        "tracking": "730788259247"
+      },
+      "result": "{\n  \"tracking\": \"730788259247\",\n  \"service\": \"FedEx Ground\",\n  \"shipDate\": \"2026-09-17\",\n  \"originZip3\": \"660\",\n  \"destZip3\": \"416\",\n  \"destAddressType\": \"commercial\",\n  \"dasTier\": \"das\",\n  \"signatureRequested\": \"none\",\n  \"dimsIn\": {\n    \"l\": 10.77,\n    \"w\": 8.01,\n    \"h\": 5.97\n  },\n  \"actualLb\": 5.26,\n  \"zone\": 5,\n  \"billedLb\": 6,\n  \"charges\": [\n    {\n      \"code\": \"TRANSPORTATION\",\n      \"description\": \"FedEx Ground, zone 5, 6 lb\",\n      \"amount\": 7.32\n    },\n    {\n      \"code\": \"FUEL\",\n      \"description\": \"Fuel surcharge, 16.5%\",\n      \"amount\": 1.94\n    },\n    {\n      \"code\": \"DAS\",\n      \"description\": \"Delivery Area Surcharge, das\",\n      \"amount\": 4.45\n    }\n  ],\n  \"lineTotal\": 13.71\n}",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_01N4nLQzACG5rw2BwNuxTn1X",
+      "name": "get_package",
+      "input": {
+        "tracking": "731031650625"
+      },
+      "result": "{\n  \"tracking\": \"731031650625\",\n  \"service\": \"FedEx Home Delivery\",\n  \"shipDate\": \"2026-09-17\",\n  \"originZip3\": \"660\",\n  \"destZip3\": \"159\",\n  \"destAddressType\": \"residential\",\n  \"dasTier\": \"das\",\n  \"signatureRequested\": \"none\",\n  \"dimsIn\": {\n    \"l\": 11.39,\n    \"w\": 8.88,\n    \"h\": 6.77\n  },\n  \"actualLb\": 2.47,\n  \"zone\": 6,\n  \"billedLb\": 6,\n  \"charges\": [\n    {\n      \"code\": \"TRANSPORTATION\",\n      \"description\": \"FedEx Home Delivery, zone 6, 6 lb\",\n      \"amount\": 8.07\n    },\n    {\n      \"code\": \"FUEL\",\n      \"description\": \"Fuel surcharge, 16.5%\",\n      \"amount\": 3.48\n    },\n    {\n      \"code\": \"RESIDENTIAL\",\n      \"description\": \"Residential Delivery Charge\",\n      \"amount\": 6.45\n    },\n    {\n      \"code\": \"DAS\",\n      \"description\": \"Delivery Area Surcharge, das\",\n      \"amount\": 6.6\n    }\n  ],\n  \"lineTotal\": 24.6\n}",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_01Wcg4uaHPxU8LMeT9RCKkL7",
+      "name": "get_package",
+      "input": {
+        "tracking": "735324743066"
+      },
+      "result": "{\n  \"tracking\": \"735324743066\",\n  \"service\": \"FedEx Home Delivery\",\n  \"shipDate\": \"2026-09-15\",\n  \"originZip3\": \"660\",\n  \"destZip3\": \"443\",\n  \"destAddressType\": \"residential\",\n  \"dasTier\": \"das\",\n  \"signatureRequested\": \"none\",\n  \"dimsIn\": {\n    \"l\": 18.91,\n    \"w\": 15.49,\n    \"h\": 11.36\n  },\n  \"actualLb\": 9.06,\n  \"zone\": 5,\n  \"billedLb\": 27,\n  \"charges\": [\n    {\n      \"code\": \"TRANSPORTATION\",\n      \"description\": \"FedEx Home Delivery, zone 5, 27 lb\",\n      \"amount\": 13.57\n    },\n    {\n      \"code\": \"FUEL\",\n      \"description\": \"Fuel surcharge, 16.5%\",\n      \"amount\": 4.39\n    },\n    {\n      \"code\": \"RESIDENTIAL\",\n      \"description\": \"Residential Delivery Charge\",\n      \"amount\": 6.45\n    },\n    {\n      \"code\": \"DAS\",\n      \"description\": \"Delivery Area Surcharge, das\",\n      \"amount\": 6.6\n    }\n  ],\n  \"lineTotal\": 31.01\n}",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_01KddzAZuN3hNi7QR7MHkXGZ",
+      "name": "get_package",
+      "input": {
+        "tracking": "739010139003"
+      },
+      "result": "{\n  \"tracking\": \"739010139003\",\n  \"service\": \"FedEx Home Delivery\",\n  \"shipDate\": \"2026-09-18\",\n  \"originZip3\": \"660\",\n  \"destZip3\": \"228\",\n  \"destAddressType\": \"residential\",\n  \"dasTier\": \"das\",\n  \"signatureRequested\": \"none\",\n  \"dimsIn\": {\n    \"l\": 10.92,\n    \"w\": 9.59,\n    \"h\": 5.4\n  },\n  \"actualLb\": 4.1,\n  \"zone\": 6,\n  \"billedLb\": 5,\n  \"charges\": [\n    {\n      \"code\": \"TRANSPORTATION\",\n      \"description\": \"FedEx Home Delivery, zone 6, 5 lb\",\n      \"amount\": 7.71\n    },\n    {\n      \"code\": \"FUEL\",\n      \"description\": \"Fuel surcharge, 16.5%\",\n      \"amount\": 3.43\n    },\n    {\n      \"code\": \"RESIDENTIAL\",\n      \"description\": \"Residential Delivery Charge\",\n      \"amount\": 6.45\n    },\n    {\n      \"code\": \"DAS\",\n      \"description\": \"Delivery Area Surcharge, das\",\n      \"amount\": 6.6\n    }\n  ],\n  \"lineTotal\": 24.19\n}",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_01TsJeSZD1ZTfnepHxTnzXKf",
+      "name": "get_package",
+      "input": {
+        "tracking": "708513135406"
+      },
+      "result": "{\n  \"tracking\": \"708513135406\",\n  \"service\": \"FedEx Home Delivery\",\n  \"shipDate\": \"2026-09-19\",\n  \"originZip3\": \"660\",\n  \"destZip3\": \"994\",\n  \"destAddressType\": \"residential\",\n  \"dasTier\": \"none\",\n  \"signatureRequested\": \"none\",\n  \"dimsIn\": {\n    \"l\": 17.83,\n    \"w\": 13.48,\n    \"h\": 11.72\n  },\n  \"actualLb\": 8.07,\n  \"zone\": 7,\n  \"billedLb\": 22,\n  \"charges\": [\n    {\n      \"code\": \"TRANSPORTATION\",\n      \"description\": \"FedEx Home Delivery, zone 7, 22 lb\",\n      \"amount\": 14.69\n    },\n    {\n      \"code\": \"FUEL\",\n      \"description\": \"Fuel surcharge, 16.5%\",\n      \"amount\": 3.57\n    },\n    {\n      \"code\": \"RESIDENTIAL\",\n      \"description\": \"Residential Delivery Charge\",\n      \"amount\": 6.95\n    }\n  ],\n  \"lineTotal\": 25.21\n}",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_01YRNoAKP6AQy69jchVJA9bC",
+      "name": "get_package",
+      "input": {
+        "tracking": "720564905121"
+      },
+      "result": "{\n  \"tracking\": \"720564905121\",\n  \"service\": \"FedEx Home Delivery\",\n  \"shipDate\": \"2026-09-17\",\n  \"originZip3\": \"660\",\n  \"destZip3\": \"787\",\n  \"destAddressType\": \"residential\",\n  \"dasTier\": \"none\",\n  \"signatureRequested\": \"none\",\n  \"dimsIn\": {\n    \"l\": 12,\n    \"w\": 12,\n    \"h\": 12\n  },\n  \"actualLb\": 9,\n  \"zone\": 5,\n  \"billedLb\": 18,\n  \"charges\": [\n    {\n      \"code\": \"TRANSPORTATION\",\n      \"description\": \"FedEx Home Delivery, zone 5, 18 lb\",\n      \"amount\": 10.97\n    },\n    {\n      \"code\": \"FUEL\",\n      \"description\": \"Fuel surcharge, 16.5%\",\n      \"amount\": 2.87\n    },\n    {\n      \"code\": \"RESIDENTIAL\",\n      \"description\": \"Residential Delivery Charge\",\n      \"amount\": 6.45\n    }\n  ],\n  \"lineTotal\": 20.29\n}",
+      "truncated": false
+    },
+    {
+      "type": "tool_call",
+      "id": "toolu_015eTapnjLNyYXnTfGPTWYWn",
+      "name": "submit_findings",
+      "input": {
+        "count": 8
+      },
+      "result": "Recorded 8 findings.",
+      "truncated": false
+    },
+    {
+      "type": "assistant",
+      "text": "I disputed eight lines across the 40-package invoice, totaling $342.00 recoverable including fuel.\n\nThe big one is tracking 728021438452: a $275 Oversize charge on a 60x18x16 carton that clears no Oversize trigger, longest side 60 inches, length plus girth 128 inches, and cubic volume of exactly 17,280 which is not greater than the 17,280 threshold. It does qualify for Additional Handling by dimension, so I claimed the difference net of the $32.75 that is properly due, $282.22 with fuel. Package 712578716716 was charged $32.75 Additional Handling with no trigger at all, and 716904962453 was charged the zone 3-4 rate on a zone 2 movement. Two residential charges were wrong: one on a commercial FedEx Ground delivery, and one billed at the $6.95 Express rate instead of the $6.45 Ground rate. Package 720564905121 was rated at 18 lb when its dimensional weight is 13 lb, 724827804451 carries the delivery area surcharge twice, and 732239346926 has fuel of $3.13 against a base that supports $2.79.\n\nWhat I could not verify is whether the destination ZIPs are actually on FedEx's delivery area lists, since those tables are not in this document set; every DAS amount and tier did match the shipper's own records, so I left them alone apart from the duplicate. Signature fees all matched a shipper request and the published amounts, and the remaining billed weights all reconciled to the dimensional or actual weight."
+    },
+    {
+      "type": "findings",
+      "findings": [
+        {
+          "tracking": "704023948099",
+          "charge_code": "RESIDENTIAL",
+          "issue": "NOT_APPLICABLE",
+          "billed": 6.45,
+          "expected": 0,
+          "recoverable": 7.51,
+          "rule_id": "RESIDENTIAL",
+          "explanation": "The Residential Delivery Charge applies only to deliveries to a home or private residence; the shipper's order record shows this FedEx Ground shipment to ZIP3 763 as a commercial address. The $6.45 charge should be removed along with the 16.5% fuel billed on it ($1.06), for $7.51 total.",
+          "confidence": "high"
+        },
+        {
+          "tracking": "708513135406",
+          "charge_code": "RESIDENTIAL",
+          "issue": "WRONG_AMOUNT",
+          "billed": 6.95,
+          "expected": 6.45,
+          "recoverable": 0.58,
+          "rule_id": "RESIDENTIAL",
+          "explanation": "The 2026 Residential Delivery Charge is $6.95 only for U.S. Package Services (Express); FedEx Ground and FedEx Home Delivery are $6.45. This package moved on FedEx Home Delivery, so it was billed at the wrong service tier: $0.50 plus $0.08 fuel.",
+          "confidence": "high"
+        },
+        {
+          "tracking": "712578716716",
+          "charge_code": "AHS_DIMENSION",
+          "issue": "NOT_APPLICABLE",
+          "billed": 32.75,
+          "expected": 0,
+          "recoverable": 38.15,
+          "rule_id": "AHS_DIMENSION",
+          "explanation": "The 46x14x10 in carton meets no Additional Handling dimension trigger: longest side 46 in (not >48), second-longest 14 in (not >30), length plus girth 94 in (not >105), cubic volume 6,440 in3 (not >10,368). The $32.75 surcharge and the $5.40 fuel charged on it should be credited.",
+          "confidence": "high"
+        },
+        {
+          "tracking": "716904962453",
+          "charge_code": "AHS_DIMENSION",
+          "issue": "WRONG_AMOUNT",
+          "billed": 32.75,
+          "expected": 29.5,
+          "recoverable": 3.79,
+          "rule_id": "AHS_DIMENSION",
+          "explanation": "Additional Handling does apply (longest side 52 in exceeds 48 in), but this is a zone 2 movement and the 2026 published zone 2 amount is $29.50, not the $32.75 zone 3-4 amount billed. Credit $3.25 plus $0.54 fuel.",
+          "confidence": "high"
+        },
+        {
+          "tracking": "720564905121",
+          "charge_code": "TRANSPORTATION",
+          "issue": "WEIGHT_OVERSTATED",
+          "billed": 10.97,
+          "expected": 9.49,
+          "recoverable": 1.72,
+          "rule_id": "DIM_WEIGHT",
+          "explanation": "The 12x12x12 in carton is 1,728 cubic in / 139 = 12.43, rounding up to a 13 lb dimensional weight, against a 9 lb actual weight, so billable weight is 13 lb, not the 18 lb billed. Zone 5 at 13 lb rates $9.49 rather than $10.97; credit $1.48 plus $0.24 of fuel.",
+          "confidence": "high"
+        },
+        {
+          "tracking": "724827804451",
+          "charge_code": "DAS",
+          "issue": "DUPLICATE",
+          "billed": 13.2,
+          "expected": 6.6,
+          "recoverable": 7.69,
+          "rule_id": "DAS",
+          "explanation": "The Delivery Area Surcharge is one per package, and this package carries two $6.60 residential DAS lines. The shipper record shows a single 'das' tier destination, so the second line is a duplicate: credit $6.60 plus $1.09 fuel.",
+          "confidence": "high"
+        },
+        {
+          "tracking": "728021438452",
+          "charge_code": "OVERSIZE",
+          "issue": "NOT_APPLICABLE",
+          "billed": 275,
+          "expected": 0,
+          "recoverable": 282.22,
+          "rule_id": "OVERSIZE",
+          "explanation": "The 60x18x16 in carton meets no Oversize trigger: longest side 60 in (not >96), length plus girth 128 in (not >130), cubic volume exactly 17,280 in3 (not greater than 17,280), actual weight 22 lb (not >110). It does qualify for Additional Handling-Dimension, which at zone 3 is $32.75, so the correct claim is $275.00 less $32.75 rebilled, plus the 16.5% fuel overbilled on that difference: $282.22 net. Billable weight of 125 lb is unaffected.",
+          "confidence": "high"
+        },
+        {
+          "tracking": "732239346926",
+          "charge_code": "FUEL",
+          "issue": "FUEL_MISCALCULATED",
+          "billed": 3.13,
+          "expected": 2.79,
+          "recoverable": 0.34,
+          "rule_id": "FUEL",
+          "explanation": "At the header rate of 16.5% on transportation plus residential ($10.47 + $6.45 = $16.92), fuel should be $2.79; $3.13 implies a base of $18.97 that does not correspond to any charge on this package. Every other line on the invoice computes fuel on this same base, so this one line is miscalculated by $0.34.",
+          "confidence": "high"
+        }
+      ],
+      "summary": "I audited all 40 packages against the shipper's carton and address records and the 2026 FedEx rules, and found eight billing errors worth $342.00 including fuel. The largest is a $275 Oversize charge on tracking 728021438452, a 60x18x16 in carton that meets no Oversize trigger (exactly 17,280 cubic inches, 128 in length plus girth) and should have carried only the $32.75 Additional Handling charge. Delivery area surcharge eligibility itself cannot be checked from the invoice because the FedEx DAS ZIP tables are not in hand, but every DAS amount and tier matched the shipper's own records, so none are disputed other than the duplicate on 724827804451."
+    },
+    {
+      "type": "done",
+      "iterations": 9,
+      "elapsedMs": 162360,
+      "usage": {
+        "input": 139466,
+        "output": 14684,
+        "cacheRead": 27800,
+        "cacheWrite": 3475
+      },
+      "score": {
+        "planted": 8,
+        "caught": [
+          {
+            "kind": "RESIDENTIAL_ON_COMMERCIAL",
+            "tracking": "704023948099",
+            "code": "RESIDENTIAL",
+            "ruleId": "RESIDENTIAL",
+            "billed": 6.45,
+            "expected": 0,
+            "recoverable": 7.51,
+            "note": "Shipper's order record says commercial. The carrier billed the residential charge, and fuel on top of it."
+          },
+          {
+            "kind": "RESIDENTIAL_EXPRESS_RATE",
+            "tracking": "708513135406",
+            "code": "RESIDENTIAL",
+            "ruleId": "RESIDENTIAL",
+            "billed": 6.95,
+            "expected": 6.45,
+            "recoverable": 0.58,
+            "note": "The $6.95 figure is the Express rate. Ground and Home Delivery carry $6.45."
+          },
+          {
+            "kind": "AHS_NO_TRIGGER",
+            "tracking": "712578716716",
+            "code": "AHS_DIMENSION",
+            "ruleId": "AHS_DIMENSION",
+            "billed": 32.75,
+            "expected": 0,
+            "recoverable": 38.15,
+            "note": "Longest side 46 in, second 14 in, length plus girth 94 in, 6,440 cubic in. None of the four triggers is met."
+          },
+          {
+            "kind": "AHS_WRONG_ZONE_TIER",
+            "tracking": "716904962453",
+            "code": "AHS_DIMENSION",
+            "ruleId": "AHS_DIMENSION",
+            "billed": 32.75,
+            "expected": 29.5,
+            "recoverable": 3.79,
+            "note": "The surcharge is real; 52 in exceeds the 48 in trigger. The amount is the Zones 3-4 figure on a zone 2 package."
+          },
+          {
+            "kind": "BILLED_WEIGHT_INFLATED",
+            "tracking": "720564905121",
+            "code": "TRANSPORTATION",
+            "ruleId": "DIM_WEIGHT",
+            "billed": 10.97,
+            "expected": 9.49,
+            "recoverable": 1.72,
+            "note": "Actual 9 lb, dimensional 13 lb, billed 18 lb. Nothing in the shipper's record supports the billed weight."
+          },
+          {
+            "kind": "DAS_DUPLICATE",
+            "tracking": "724827804451",
+            "code": "DAS",
+            "ruleId": "DAS",
+            "billed": 13.2,
+            "expected": 6.6,
+            "recoverable": 7.69,
+            "note": "Two DAS lines on one package. The surcharge is per package, once."
+          },
+          {
+            "kind": "OVERSIZE_NO_TRIGGER",
+            "tracking": "728021438452",
+            "code": "OVERSIZE",
+            "ruleId": "OVERSIZE",
+            "billed": 275,
+            "expected": 0,
+            "recoverable": 282.22,
+            "note": "Longest side 60 in, length plus girth 128 in, 17,280 cubic in. Oversize needs more than 96, 130, or 17,280. Additional Handling, Dimension, applies instead at $32.75, so the recovery is the difference."
+          },
+          {
+            "kind": "FUEL_WRONG_PERCENT",
+            "tracking": "732239346926",
+            "code": "FUEL",
+            "ruleId": "FUEL",
+            "billed": 3.13,
+            "expected": 2.79,
+            "recoverable": 0.34,
+            "note": "Fuel on this line works out to 18.5% of the base. The invoice period states 16.5%."
+          }
+        ],
+        "missed": [],
+        "falsePositives": [],
+        "amountOff": [],
+        "plantedRecoverable": 342,
+        "claimedRecoverable": 342
+      }
+    }
+  ]
+}

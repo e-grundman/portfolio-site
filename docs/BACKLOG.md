@@ -34,6 +34,16 @@ Deferred on purpose. Each line says why, so a future session does not relitigate
 | Real population weighting for demand | Census population by ZCTA now needs an API key. Revisit with a keyless public source. |
 | Transit time alongside zone | Zone drives both cost and transit, and showing days would make the service argument as well as the cost one. Needs a transit matrix with its own provenance. |
 
+## Invoice audit agent, deferred 2026-09-25
+
+| Item | Why deferred |
+|---|---|
+| Durable rate limit for the live run | The counters are in memory and reset per serverless instance. Fine for a demo behind a daily cap; a KV store is the fix if the button gets real traffic. |
+| Cheaper model for the audit | Opus 5 is the default. Sonnet 5 would cut cost per run several times over, but the number that matters is the false positive rate across models, and it has not been measured. Measure on twenty seeds first. |
+| Real invoice upload | A parser for FedEx invoice CSV in front of the same tools. Deferred because an uploaded invoice is someone's data, and the site's data policy has no place to hold it. |
+| UPS and USPS rule sets | The rules module is one carrier. A second carrier is a second rules file and a service field on the invoice, with the same provenance bar: read from the published guide, cited by page. |
+| Contract terms in the audit | Negotiated surcharge discounts and earned discount tiers are where most real recoveries sit. Needs a contract model, which is its own tool (see the career workspace for the contract extractor idea). |
+
 ## Candidates from the 2026-09-24 resume sync
 
 | Item | Why deferred |
