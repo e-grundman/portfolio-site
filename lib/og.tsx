@@ -11,7 +11,7 @@ import { ImageResponse } from "next/og";
 import sharp from "sharp";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
-import { barcodeModules } from "@/lib/barcode";
+import { barcodeModules, code128Modules, CODE128_QUIET_ZONE } from "@/lib/barcode";
 import { site } from "@/lib/site";
 
 export const ogSize = { width: 1200, height: 630 };
@@ -429,5 +429,91 @@ export async function renderIcon(px: number, framed: boolean) {
       height: px,
       fonts: [{ name: "Caps", data: caps, style: "normal", weight: 700 }],
     },
+  );
+}
+
+/**
+ * The LinkedIn banner, 1584 by 396. The profile photo sits over the bottom
+ * left of the banner on every LinkedIn layout, so the left field is left
+ * empty for it and everything that matters sits to the right. The barcode is
+ * a real Code 128 of the domain, the same as the one on the home page, and
+ * the domain is the only text: the headline under the photo already carries
+ * the title.
+ */
+export const bannerSize = { width: 1584, height: 396 };
+
+export async function renderBanner() {
+  const fonts = await loadFonts();
+  const host = new URL(site.url).host;
+  const quiet = Array<number>(CODE128_QUIET_ZONE).fill(1);
+  // Quiet zone, symbol, quiet zone. The symbol starts and ends with a bar, so
+  // the leading quiet zone is one blank run and the trailing one is another.
+  const widths = [quiet.reduce((a, b) => a + b, 0), ...code128Modules(host), quiet.reduce((a, b) => a + b, 0)];
+  const total = widths.reduce((sum, w) => sum + w, 0);
+
+  return toJpeg(
+    new ImageResponse(
+      (
+        <Label>
+          <div style={{ flex: 1, display: "flex" }}>
+            {/* Ship-to field, left blank for the profile photo LinkedIn draws over it. */}
+            <div style={{ width: 430, display: "flex", borderRight: `${LINE}px solid ${color.ink}` }} />
+
+            <div
+              style={{
+                flex: 1,
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                padding: "0 44px",
+              }}
+            >
+              <div style={{ display: "flex", width: "100%", height: 150 }}>
+                {widths.map((w, i) => (
+                  <div
+                    key={i}
+                    style={{
+                      width: `${(w / total) * 100}%`,
+                      height: "100%",
+                      // Index 0 is the leading quiet zone, so bars sit on odd indexes.
+                      background: i % 2 === 1 ? color.ink : "transparent",
+                    }}
+                  />
+                ))}
+              </div>
+              <div
+                style={{
+                  fontFamily: "Mono",
+                  fontSize: 40,
+                  letterSpacing: "0.3em",
+                  marginTop: 18,
+                  paddingLeft: 12,
+                }}
+              >
+                {host.toUpperCase()}
+              </div>
+            </div>
+
+            <div
+              style={{
+                width: 300,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                background: color.highlight,
+                borderLeft: `${LINE}px solid ${color.ink}`,
+                fontSize: 230,
+                letterSpacing: "-0.02em",
+                lineHeight: 1,
+                paddingTop: 12,
+              }}
+            >
+              EG
+            </div>
+          </div>
+        </Label>
+      ),
+      { ...bannerSize, fonts },
+    ),
   );
 }

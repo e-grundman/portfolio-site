@@ -12,7 +12,8 @@
     "zones:generate": "tsx scripts/generate-zone-matrix.ts",
     "zones:centroids": "tsx scripts/generate-zip3-centroids.ts",
     "rates:generate": "tsx scripts/generate-rate-table.ts",
-    "icons:generate": "tsx scripts/generate-favicon.ts"
+    "icons:generate": "tsx scripts/generate-favicon.ts",
+    "banner:generate": "tsx scripts/generate-banner.ts"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
