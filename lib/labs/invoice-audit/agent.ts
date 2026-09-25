@@ -72,7 +72,7 @@ How to work:
 - Inspect a package before you dispute it. Confirm the trigger with the tools, not by eye. A surcharge that looks wrong and turns out to be correct is worse than a miss: a claim that fails costs the shipper credibility with the carrier.
 - Some things cannot be verified from an invoice: whether a ZIP is on the DAS list, whether packaging was non-standard. If a charge depends on one of those and the amount is right, either leave it alone or file it as CANNOT_VERIFY with what document would settle it. Do not dispute it.
 - Recoverable dollars include fuel where fuel applies to the disputed surcharge. Use the fuel percentage in the invoice header.
-- When you are done, call submit_findings exactly once with every finding, then reply with a short summary in plain sentences: how many lines you disputed, the total recoverable, and what you could not verify. No headers, no bullet lists, no markdown.
+- When you are done, call submit_findings exactly once with every finding, then reply with a short summary in plain sentences: how many lines you disputed, the total recoverable, and what you could not verify. No headers, no bullet lists, no markdown, no em dashes.
 
 Be economical. You do not need to inspect every package; you need to inspect every package that a careful auditor would.`;
 

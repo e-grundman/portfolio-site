@@ -22,37 +22,45 @@ if (!process.env.ANTHROPIC_API_KEY) {
   process.exit(1);
 }
 
-// Imported after the env is loaded so the client picks the key up.
-const { runAudit } = await import("../lib/labs/invoice-audit/agent");
-const { DEFAULT_SEED } = await import("../lib/labs/invoice-audit/invoice");
 type AuditEvent = import("../lib/labs/invoice-audit/events").AuditEvent;
 type RecordedRun = import("../lib/labs/invoice-audit/events").RecordedRun;
 
-const events: AuditEvent[] = [];
-console.log("Running the audit on the default invoice. This takes a minute or two.");
-await runAudit({
-  seed: DEFAULT_SEED,
-  onEvent: (event) => {
-    events.push(event);
-    if (event.type === "tool_call") console.log(`  ${event.name}(${JSON.stringify(event.input)})`);
-    if (event.type === "assistant") console.log(`  > ${event.text.slice(0, 120)}`);
-    if (event.type === "error") console.error(`  error: ${event.message}`);
-    if (event.type === "done") {
-      const s = event.score;
-      console.log(
-        `Done in ${Math.round(event.elapsedMs / 1000)}s, ${event.iterations} turns. Caught ${s.caught.length} of ${s.planted}, ${s.falsePositives.length} false positives, claimed $${s.claimedRecoverable.toFixed(2)} of $${s.plantedRecoverable.toFixed(2)}.`,
-      );
-    }
-  },
-});
+async function main(): Promise<void> {
+  // Imported after the env is loaded so the client picks the key up.
+  const { runAudit } = await import("../lib/labs/invoice-audit/agent");
+  const { DEFAULT_SEED } = await import("../lib/labs/invoice-audit/invoice");
 
-const done = events.some((e) => e.type === "done");
-if (!done) {
-  console.error("The run did not finish. Nothing written.");
-  process.exit(1);
+  const events: AuditEvent[] = [];
+  console.log("Running the audit on the default invoice. This takes a minute or two.");
+  await runAudit({
+    seed: DEFAULT_SEED,
+    onEvent: (event) => {
+      events.push(event);
+      if (event.type === "tool_call") console.log(`  ${event.name}(${JSON.stringify(event.input)})`);
+      if (event.type === "assistant") console.log(`  > ${event.text.slice(0, 120)}`);
+      if (event.type === "error") console.error(`  error: ${event.message}`);
+      if (event.type === "done") {
+        const s = event.score;
+        console.log(
+          `Done in ${Math.round(event.elapsedMs / 1000)}s, ${event.iterations} turns. Caught ${s.caught.length} of ${s.planted}, ${s.falsePositives.length} false positives, claimed $${s.claimedRecoverable.toFixed(2)} of $${s.plantedRecoverable.toFixed(2)}.`,
+        );
+      }
+    },
+  });
+
+  const done = events.some((e) => e.type === "done");
+  if (!done) {
+    console.error("The run did not finish. Nothing written.");
+    process.exit(1);
+  }
+
+  const out: RecordedRun = { recordedAt: new Date().toISOString(), events };
+  const target = resolve(process.cwd(), "lib/labs/invoice-audit/recorded-run.json");
+  writeFileSync(target, `${JSON.stringify(out, null, 2)}\n`);
+  console.log(`Wrote ${target}`);
 }
 
-const out: RecordedRun = { recordedAt: new Date().toISOString(), events };
-const target = resolve(process.cwd(), "lib/labs/invoice-audit/recorded-run.json");
-writeFileSync(target, `${JSON.stringify(out, null, 2)}\n`);
-console.log(`Wrote ${target}`);
+main().catch((error) => {
+  console.error(error instanceof Error ? error.message : error);
+  process.exit(1);
+});
