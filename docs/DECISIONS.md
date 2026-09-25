@@ -116,6 +116,14 @@ Architectural choices and the reasoning behind them. Newest first.
 
 **Why.** Erich's call after the site review. The audience is recruiters and hiring managers, and the case studies are the proof they came for. The tools are the second thing.
 
+## 2026-09-24, the hero barcode is a real Code 128
+
+**Decision.** `lib/barcode.ts` gains a Code 128 subset B encoder, and the home page barcode encodes the site host (`erichgrundman.com`) with a 10 module quiet zone. The `Barcode` component takes `symbology="code128"` for this; the footer and the share cards keep the decorative hashed bars.
+
+**Why.** A label barcode that does not scan is a prop, and the site's argument is that Erich knows the mechanics of shipping. A reader who points a phone at it gets the domain. Verified by rendering the symbol to a PNG and decoding it with the zxing library at 420, 624, and 1200 pixel widths; it fails at 340 CSS pixels at 1x, which no phone renders at, since device pixel ratios of 2x and 3x give the SVG the resolution it needs.
+
+**Not changed.** The share cards encode case study titles, which run long enough that a real symbol would be too fine to scan at card size, so they stay decorative. The bars stay hidden from assistive technology because the caption repeats the host in text.
+
 ## 2026-09-24, case studies carry their own share cards
 
 **Decision.** `app/case-studies/[slug]/opengraph-image.tsx` renders one card per published study, leading with the study's first metric. Rendered at build through its own `generateStaticParams`.

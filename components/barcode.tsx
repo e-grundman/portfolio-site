@@ -1,24 +1,33 @@
-import { barcodeModules } from "@/lib/barcode";
+import { CODE128_QUIET_ZONE, barcodeModules, code128Modules } from "@/lib/barcode";
 
 /**
- * Decorative barcode with its human readable line underneath. Hidden from
- * assistive technology, because the bars carry no information and the
- * caption repeats text that is already on the page.
+ * Label barcode with its human readable line underneath.
+ *
+ * `symbology="code128"` renders a real Code 128 B symbol of `value` with a
+ * quiet zone, so a phone scanner reads it. The default is decorative bars
+ * hashed from `value`, for spots where a real symbol would be too dense.
+ *
+ * Hidden from assistive technology either way: the caption repeats text that
+ * is already on the page, and the bars add nothing a screen reader can use.
  */
 export function Barcode({
   value,
   caption,
+  symbology = "decorative",
   className = "",
   height = 56,
 }: {
   value: string;
   caption?: string;
+  symbology?: "code128" | "decorative";
   className?: string;
   height?: number;
 }) {
-  const widths = barcodeModules(value);
-  const total = widths.reduce((sum, w) => sum + w, 0);
-  let x = 0;
+  const real = symbology === "code128";
+  const widths = real ? code128Modules(value) : barcodeModules(value);
+  const quiet = real ? CODE128_QUIET_ZONE : 0;
+  const total = widths.reduce((sum, w) => sum + w, 0) + quiet * 2;
+  let x = quiet;
   const bars = widths.map((w, i) => {
     const bar = i % 2 === 0 ? { x, w } : null;
     x += w;
@@ -30,6 +39,7 @@ export function Barcode({
       <svg
         viewBox={`0 0 ${total} 10`}
         preserveAspectRatio="none"
+        shapeRendering="crispEdges"
         className="block w-full fill-ink"
         style={{ height }}
       >

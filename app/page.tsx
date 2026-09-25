@@ -64,7 +64,13 @@ export default function Home() {
           </div>
 
           <div className="border-b-2 border-line px-4 py-4 sm:px-6">
-            <Barcode value={site.name} caption="ERICHGRUNDMAN.COM" height={64} />
+            {/* Real Code 128 of the domain, so a phone scanner lands on the site. */}
+            <Barcode
+              value={new URL(site.url).host}
+              caption={new URL(site.url).host.toUpperCase()}
+              symbology="code128"
+              height={64}
+            />
           </div>
 
           <div className="p-4 sm:p-6">
