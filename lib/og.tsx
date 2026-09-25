@@ -118,8 +118,8 @@ function Label({ children }: { children: React.ReactNode }) {
   );
 }
 
-/** The home page card: ship to, the priority box, the barcode, the lead number. */
-export async function renderHomeCard(headline: { figure: string; label: string }) {
+/** The home page card: ship to, the priority box, the barcode, the contents field. */
+export async function renderHomeCard(contents: string) {
   const [fonts, headshot] = await Promise.all([loadFonts(), loadHeadshot()]);
 
   return toJpeg(
@@ -177,11 +177,17 @@ export async function renderHomeCard(headline: { figure: string; label: string }
             </div>
           </div>
 
-          <div style={{ flex: 1, display: "flex", alignItems: "center", gap: 28, padding: "0 28px" }}>
-            <div style={{ fontSize: 104, lineHeight: 1 }}>{headline.figure}</div>
-            <div style={{ fontSize: 34, textTransform: "uppercase", lineHeight: 1.05, maxWidth: 420 }}>
-              {headline.label}
-            </div>
+          <div
+            style={{
+              flex: 1,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              padding: "0 28px",
+            }}
+          >
+            <div style={fieldLabel}>Contents</div>
+            <div style={{ fontSize: 40, lineHeight: 1.1, marginTop: 6 }}>{contents}</div>
           </div>
         </Label>
       ),
